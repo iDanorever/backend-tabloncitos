@@ -171,7 +171,12 @@ Se desarrollaron y validaron 14 pantallas interactivas alineadas a la arquitectu
    cd Tabloncitos
    
 2. **RUN**
-    ```bash
+
+ debes activar el XAMPP y activar el mysql y Apache una vez creado entrar al phpmyadmi de mySQL y ejecutar en SQL esto:
+```bash
+CREATE DATABASE db_tabloncitos;
+y luego ejecutar en la terminal de Visual Estudio:
+```bash
     .\mvnw spring-boot:run
 
 
