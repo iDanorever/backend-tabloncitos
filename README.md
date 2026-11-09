@@ -100,15 +100,15 @@ Se desarrollaron y validaron 14 pantallas interactivas alineadas a la arquitectu
 
 <div align="center">
   <img src="./pruebas-frontend/prueba1.1.png" width="45%" alt="Pantalla 1" />
+</div>
+
+<div align="center">
   <img src="./pruebas-frontend/pruebas1.21.png" width="45%" alt="Pantalla 2" />
-</div>
-
-<div align="center">
   <img src="./pruebas-frontend/pruebas1.22.png" width="45%" alt="Pantalla 3" />
-  <img src="./pruebas-frontend/pruebas1.23.png" width="45%" alt="Pantalla 4" />
 </div>
 
 <div align="center">
+  <img src="./pruebas-frontend/pruebas1.23.png" width="45%" alt="Pantalla 4" />
   <img src="./pruebas-frontend/prueba1.2.png" width="45%" alt="Pantalla 5" />
 </div>
 
