@@ -59,14 +59,14 @@ El sistema maneja una arquitectura de pedidos en esquema **Maestro / Detalle** y
 * **Configuración de BD:** Gestión segura de restricciones de clave foránea (`SET FOREIGN_KEY_CHECKS`) para mantenimiento y scripts de arranque automáticos.
 
 ### 🍽️ Bloque 3: Operación de Salón & Atención al Cliente
-* **11. Mapa de Disponibilidad de Mesas:** Grilla interactiva en tiempo real sincronizada con la base de datos para la gestión visual del salón y cambios de estado.
-* **12. Toma de Pedidos (Comandas Maestro/Detalle):** Interfaz táctil de alta velocidad para la selección de platos por categoría, personalización de guarniciones/términos de cocción, cálculo de subtotal/IGV en vivo y transmisión directa a cocina.
-* **13. Monitor de Entrega en Salón:** Pantalla de alertas visuales y sonoras para notify al mozo cuando una bandeja está lista en el pasaplatos, con registro e historial de tiempo de servicio.
-* **15. Mi Rendimiento:** Dashboard táctico para mozos con métricas clave de eficiencia y comandas servidas en la jornada.
+* **Mapa de Disponibilidad de Mesas:** Grilla interactiva en tiempo real sincronizada con la base de datos para la gestión visual del salón y cambios de estado.
+* **Toma de Pedidos (Comandas Maestro/Detalle):** Interfaz táctil de alta velocidad para la selección de platos por categoría, personalización de guarniciones/términos de cocción, cálculo de subtotal/IGV en vivo y transmisión directa a cocina.
+* **Monitor de Entrega en Salón:** Pantalla de alertas visuales y sonoras para notify al mozo cuando una bandeja está lista en el pasaplatos, con registro e historial de tiempo de servicio.
+* **Mi Rendimiento:** Dashboard táctico para mozos con métricas clave de eficiencia y comandas servidas en la jornada.
 
 ### 🍳 Bloque 4: Producción & Cocina (KDS)
-* **16. Cola de Cocina General (KDS):** Pantalla operativa para cocineros con comandas organizadas por tiempo de espera (alertas SLA), control táctil por ítem (`Pendiente`, `En Cocción` / `En Fuego`, `Listo`) y despacho directo hacia el pasaplatos de salón.
-* **19. Dashboard de Rendimiento de Cocina:** Panel analítico para monitorear tiempos promedio de salida, mermas e incidencias de producción.
+* **Cola de Cocina General (KDS):** Pantalla operativa para cocineros con comandas organizadas por tiempo de espera (alertas SLA), control táctil por ítem (`Pendiente`, `En Cocción` / `En Fuego`, `Listo`) y despacho directo hacia el pasaplatos de salón.
+* **Dashboard de Rendimiento de Cocina:** Panel analítico para monitorear tiempos promedio de salida, mermas e incidencias de producción.
 
 ## 🔌 Pruebas de Endpoints y Backend (API REST)
 
