@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Tabloncitos - Login Corporativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+    <style>input[type="password"]::-ms-reveal,input[type="password"]::-ms-clear{display:none;}</style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#514533","tertiary-fixed":"#f2dfd2","primary":"#ffc56c","on-primary-fixed":"#281800","surface-container":"#201f1e","on-primary":"#442c00","primary-container":"#f0a500","on-secondary":"#640d00","on-error-container":"#ffdad6","surface-bright":"#3a3938","surface-container-highest":"#363433","on-background":"#e6e2df","surface":"#141312","error-container":"#93000a","surface-dim":"#141312","error":"#ffb4ab","secondary-fixed":"#ffdad3","on-surface":"#e6e2df","on-tertiary-fixed":"#231a12","surface-variant":"#363433","on-secondary-fixed-variant":"#891e07","on-tertiary-fixed-variant":"#51443b","on-secondary-container":"#ff9a84","on-tertiary-container":"#50443a","primary-fixed-dim":"#ffba44","outline":"#9f8e79","primary-fixed":"#ffddaf","on-secondary-fixed":"#3e0500","surface-container-high":"#2b2a29","surface-tint":"#ffba44","surface-container-low":"#1c1b1a","tertiary-fixed-dim":"#d5c3b7","on-primary-fixed-variant":"#614000","tertiary":"#dfccc0","background":"#141312","on-surface-variant":"#d6c4ac","inverse-on-surface":"#32302f","secondary-container":"#891e07","secondary":"#ffb4a4","on-error":"#690005","inverse-primary":"#805600","on-tertiary":"#392e26","surface-container-lowest":"#0f0e0d","secondary-fixed-dim":"#ffb4a4","on-primary-container":"#5f3f00","inverse-surface":"#e6e2df","tertiary-container":"#c2b1a5"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"1.75rem","gutter":"0.75rem","gutter-kds":"1rem","space-lg":"1.25rem","space-sm":"0.5rem","margin-kds":"1.5rem","space-xs":"0.25rem","margin":"1rem","space-md":"0.75rem"},"fontFamily":{"label-numeric-sm":["JetBrains Mono"],"label-numeric-lg":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"label-numeric-md":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"label-numeric-sm":["12px",{"lineHeight":"14px","fontWeight":"500"}],"label-numeric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-numeric-md":["16px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"display-lg-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}]}}}};
+    </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between">
+
+<header class="w-full py-space-lg flex justify-center">
+    <div class="flex items-center gap-space-sm">
+        <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+            <span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+        </div>
+        <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">TABLONCITOS</span>
+            <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Pollos &amp; Parrillas</span>
+        </div>
+    </div>
+</header>
+
+<main class="w-full flex-1 flex items-center justify-center px-space-md py-space-lg">
+    <div class="flex flex-col w-full max-w-6xl mx-auto px-space-xs sm:px-space-md py-space-sm sm:py-space-md">
+        
+        <div class="relative w-full">
+            <div class="absolute -top-16 left-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-16 right-1/4 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+
+
+            <!-- Frame Principal -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-stretch">
+                
+                <!-- Columna Izquierda (Terminal, Rol, Credenciales) -->
+                <div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-container-lowest/50 p-space-md rounded-xl">
+                            <div class="flex flex-col">
+                                <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[14px]">tune</span> Terminal Maestro POS • KDS
+                                </span>
+                                <span class="font-headline-sm text-headline-sm text-on-surface font-extrabold mt-0.5">Portal de Operaciones Internas</span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">Sistema Tabloncitos Core • Control y Despacho</span>
+                            </div>
+                            <div class="hidden sm:flex flex-col items-end">
+                                <span class="font-label-caps text-label-caps text-tertiary uppercase">Turno Actual</span>
+                                <span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">VESPERTINO A2</span>
+                            </div>
+                        </div>
+
+                        <!-- Puesto Selector -->
+                        <div class="mb-space-md">
+                            <div class="flex items-center justify-between mb-space-xs">
+                                <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[14px] text-primary">desktop_windows</span> Puesto de Operación / Terminal
+                                </span>
+                                <span class="font-label-caps text-label-caps text-primary">Activo en Red</span>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs" id="terminalSelector">
+                                <button class="terminal-btn flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container-high text-on-surface shadow-sm active:scale-95 transition-all text-left" onclick="selectTerminal(this, 'caja')" type="button">
+                                    <span class="material-symbols-outlined text-[22px] text-primary mb-1">point_of_sale</span>
+                                    <span class="font-label-caps text-label-caps text-center font-bold">Caja Salón 1</span>
+                                    <span class="font-label-numeric-sm text-[10px] text-on-surface-variant">POS-01</span>
+                                </button>
+                                <button class="terminal-btn flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container text-on-surface shadow-sm active:scale-95 transition-all text-left opacity-80 hover:opacity-100" onclick="selectTerminal(this, 'kds')" type="button">
+                                    <span class="material-symbols-outlined text-[22px] text-secondary mb-1" style="font-variation-settings: 'FILL' 1;">outdoor_grill</span>
+                                    <span class="font-label-caps text-label-caps text-center font-bold">Monitor Parrillas</span>
+                                    <span class="font-label-numeric-sm text-[10px] text-on-surface-variant">KDS-GRILL</span>
+                                </button>
+                                <button class="terminal-btn flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container text-on-surface shadow-sm active:scale-95 transition-all text-left opacity-80 hover:opacity-100" onclick="selectTerminal(this, 'admin')" type="button">
+                                    <span class="material-symbols-outlined text-[22px] text-tertiary mb-1">admin_panel_settings</span>
+                                    <span class="font-label-caps text-label-caps text-center font-bold">Admin Central</span>
+                                    <span class="font-label-numeric-sm text-[10px] text-on-surface-variant">MGR-SRV</span>
+                                </button>
+                                <button class="terminal-btn flex flex-col items-center justify-center p-space-sm rounded-lg bg-surface-container text-on-surface shadow-sm active:scale-95 transition-all text-left opacity-80 hover:opacity-100" onclick="selectTerminal(this, 'barra')" type="button">
+                                    <span class="material-symbols-outlined text-[22px] text-on-surface-variant mb-1">takeout_dining</span>
+                                    <span class="font-label-caps text-label-caps text-center font-bold">Barra Despacho</span>
+                                    <span class="font-label-numeric-sm text-[10px] text-on-surface-variant">DSP-04</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Role Selector -->
+                        <div class="mb-space-md">
+                            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider block mb-space-xs">Rol de Acceso Rápido</span>
+                            <div class="grid grid-cols-4 gap-space-xs" id="roleSelector">
+                                <button class="role-btn bg-surface-container p-space-xs sm:p-space-sm rounded-lg flex items-center justify-center gap-1.5 shadow-sm opacity-80 hover:opacity-100 transition-all" data-role="CAJERO" onclick="selectRole(this)" type="button">
+                                    <span class="material-symbols-outlined text-[16px] text-primary">payments</span>
+                                    <span class="font-body-sm text-body-sm font-semibold">Cajero</span>
+                                </button>
+                                <button class="role-btn bg-surface-container p-space-xs sm:p-space-sm rounded-lg flex items-center justify-center gap-1.5 shadow-sm opacity-80 hover:opacity-100 transition-all" data-role="MOZO" onclick="selectRole(this)" type="button">
+                                    <span class="material-symbols-outlined text-[16px] text-primary">room_service</span>
+                                    <span class="font-body-sm text-body-sm font-semibold">Mesero</span>
+                                </button>
+                                <button class="role-btn bg-surface-container p-space-xs sm:p-space-sm rounded-lg flex items-center justify-center gap-1.5 shadow-sm opacity-80 hover:opacity-100 transition-all" data-role="COCINERO" onclick="selectRole(this)" type="button">
+                                    <span class="material-symbols-outlined text-[16px] text-secondary">skillet</span>
+                                    <span class="font-body-sm text-body-sm font-semibold">Cocina</span>
+                                </button>
+                                <button class="role-btn bg-surface-container p-space-xs sm:p-space-sm rounded-lg flex items-center justify-center gap-1.5 shadow-sm opacity-80 hover:opacity-100 transition-all" data-role="ADMIN" onclick="selectRole(this)" type="button">
+                                    <span class="material-symbols-outlined text-[16px] text-tertiary">shield_person</span>
+                                    <span class="font-body-sm text-body-sm font-semibold">Admin</span>
+                                </button>
+                            </div>
+                            <p class="mt-1 text-center text-xs text-on-surface-variant" id="selected-role-message">Al iniciar sesión se seleccionará automáticamente el rol de tu cuenta.</p>
+                        </div>
+
+                        <!-- Form -->
+                        <form class="space-y-space-sm" id="authForm" onsubmit="event.preventDefault(); triggerAuth();">
+                            <div>
+                                <label class="block font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-1" for="empCode">Código o correo del empleado</label>
+                                <div class="relative flex items-center bg-surface-container-highest rounded-lg px-space-sm py-2 shadow-inner focus-within:bg-surface-bright transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px] mr-2">badge</span>
+                                    <input autocomplete="username" class="bg-transparent w-full text-on-surface font-label-numeric-md text-label-numeric-md tracking-wider focus:outline-none placeholder-outline" id="empCode" onfocus="activeInput = 'empCode'" placeholder="EMP-XXXX o correo" required="" type="text"/>
+                                    <button class="text-outline hover:text-on-surface transition-colors p-1" onclick="clearField('empCode')" title="Limpiar código" type="button">
+                                        <span class="material-symbols-outlined text-[18px]">backspace</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider" for="empPin">Contraseña Corporativa / PIN Maestro</label>
+                                    <span class="font-label-numeric-sm text-label-numeric-sm text-primary" id="pinDots">● ● ● ●</span>
+                                </div>
+                                <div class="relative flex items-center bg-surface-container-highest rounded-lg px-space-sm py-2 shadow-inner focus-within:bg-surface-bright transition-all">
+                                    <span class="material-symbols-outlined text-primary text-[20px] mr-2">pin</span>
+                                    <input autocomplete="current-password" class="bg-transparent w-full text-on-surface font-label-numeric-md text-label-numeric-md tracking-widest focus:outline-none placeholder-outline" id="empPin" maxlength="128" onfocus="activeInput = 'empPin'" placeholder="••••••••" required="" type="password"/>
+                                    <button class="text-outline hover:text-primary transition-colors p-1" onclick="togglePasswordVisibility()" title="Mostrar/Ocultar" type="button">
+                                        <span class="material-symbols-outlined text-[20px]" id="eyeIcon">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="pt-space-xs">
+                                <button class="w-full bg-secondary-container hover:bg-on-secondary-fixed-variant text-secondary-fixed py-space-sm px-space-md rounded-lg font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-sm shadow-xl active:scale-[0.99] transition-all cursor-pointer" id="submitBtn" type="submit">
+                                    <span class="material-symbols-outlined text-[24px]">login</span>
+                                    <span>INGRESAR AL SISTEMA OPERATIVO</span>
+                                </button>
+                                <p class="mt-2 text-center text-sm text-error" id="auth-message" role="status"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="pt-space-md mt-space-md flex flex-wrap items-center justify-between gap-space-xs text-on-surface-variant">
+                        <a class="font-body-sm text-body-sm text-primary hover:underline flex items-center gap-1" id="btn-forgot-password" href="recuperar.html">
+                            <span class="material-symbols-outlined text-[16px]">contact_support</span> ¿Olvidó su contraseña corporativa?
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <!-- Columna Derecha (Numpad) -->
+                <div class="lg:col-span-5 flex flex-col gap-space-md">
+                    <div class="bg-surface-container-low rounded-xl p-space-md shadow-xl flex-1 flex flex-col justify-between">
+                        <div class="flex items-center justify-between mb-space-sm bg-surface-container-lowest/60 p-space-xs rounded-lg px-space-sm">
+                            <div class="flex items-center gap-space-xs">
+                                <span class="material-symbols-outlined text-[18px] text-primary">dialpad</span>
+                                <span class="font-label-caps text-label-caps text-on-surface font-bold uppercase tracking-wider">Numpad Táctil Industrial</span>
+                            </div>
+                            <span class="font-label-caps text-label-caps bg-surface-container-high text-primary px-space-xs py-0.5 rounded" id="targetInputBadge">MODO: PIN</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-space-xs flex-1 my-1">
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('1')" type="button">1</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('2')" type="button">2</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('3')" type="button">3</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('4')" type="button">4</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('5')" type="button">5</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('6')" type="button">6</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('7')" type="button">7</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('8')" type="button">8</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('9')" type="button">9</button>
+                            <button class="h-14 sm:h-16 bg-surface-container-high hover:bg-surface-variant active:bg-error-container text-error rounded-lg font-label-numeric-md text-label-numeric-md font-bold shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadClearAll()" type="button">C</button>
+                            <button class="h-14 sm:h-16 bg-surface-container hover:bg-surface-container-high active:bg-primary active:text-on-primary rounded-lg text-on-surface font-label-numeric-lg text-label-numeric-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadInput('0')" type="button">0</button>
+                            <button class="h-14 sm:h-16 bg-surface-container-high hover:bg-surface-variant active:bg-error-container text-primary rounded-lg shadow-sm flex items-center justify-center transition-all select-none" onclick="numpadBackspace()" title="Borrar último dígito" type="button">
+                                <span class="material-symbols-outlined text-[24px]">backspace</span>
+                            </button>
+                        </div>
+                        <div class="flex gap-space-xs mt-space-sm pt-space-xs">
+                            <button class="flex-1 py-1.5 px-2 rounded-lg bg-surface-container hover:bg-surface-container-high font-label-caps text-label-caps text-on-surface-variant text-center transition-all" onclick="switchActiveTarget('empCode')" type="button">Teclar Código</button>
+                            <button class="flex-1 py-1.5 px-2 rounded-lg bg-primary-container text-on-primary font-label-caps text-label-caps font-bold text-center transition-all" onclick="switchActiveTarget('empPin')" type="button">Teclar PIN</button>
+                        </div>
+                    </div>
+
+                    <div class="relative bg-surface-container-low rounded-xl p-space-md shadow-xl overflow-hidden flex items-center justify-between">
+                        <div class="absolute -right-4 -bottom-4 w-28 h-28 bg-primary/10 rounded-full blur-xl pointer-events-none"></div>
+                        <div class="flex items-center gap-space-md">
+                            <div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shadow-inner">
+                                <span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                            </div>
+                            <div>
+                                <div class="font-headline-sm text-headline-sm text-on-surface font-bold">Salón Principal</div>
+                                <div class="font-body-sm text-body-sm text-on-surface-variant">15 Mesas activas • Ocupación 84%</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="inline-flex items-center gap-1 font-label-numeric-sm text-label-numeric-sm text-primary font-bold bg-surface-container px-space-xs py-1 rounded">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span> EN LÍNEA
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="w-full py-space-md text-center">
+    <span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Seguridad Operativa y Terminales Internos • Tabloncitos © 2026</span>
+</footer>
+
+<script>
+  let activeInput = 'empPin';
+  let selectedRole = null;
+  const submitButton = document.getElementById('submitBtn');
+  const initialSubmitButtonContent = submitButton.innerHTML;
+  let loginRedirectTimer;
+
+  function resetSubmitButton() {
+    submitButton.disabled = false;
+    submitButton.innerHTML = initialSubmitButtonContent;
+    submitButton.classList.remove('bg-primary-container', 'text-on-primary');
+    submitButton.classList.add('bg-secondary-container');
+  }
+
+  window.addEventListener('pageshow', () => {
+    clearTimeout(loginRedirectTimer);
+    resetSubmitButton();
+  });
+
+  function switchActiveTarget(fieldId) {
+    activeInput = fieldId;
+    const badge = document.getElementById('targetInputBadge');
+    if (badge) {
+      badge.textContent = fieldId === 'empPin' ? 'MODO: PIN' : 'MODO: CÓDIGO';
+    }
+    const inputElem = document.getElementById(fieldId);
+    if (inputElem) {
+      inputElem.focus();
+    }
+  }
+
+  function numpadInput(char) {
+    const target = document.getElementById(activeInput);
+    if (!target) return;
+    
+    if (activeInput === 'empCode' && target.value.length >= 10) return;
+    if (activeInput === 'empPin' && target.value.length >= 128) return;
+
+    target.value += char;
+    updatePinDots();
+  }
+
+  function numpadBackspace() {
+    const target = document.getElementById(activeInput);
+    if (!target) return;
+    target.value = target.value.slice(0, -1);
+    updatePinDots();
+  }
+
+  function numpadClearAll() {
+    const target = document.getElementById(activeInput);
+    if (!target) return;
+    target.value = '';
+    updatePinDots();
+  }
+
+  function clearField(fieldId) {
+    const target = document.getElementById(fieldId);
+    if (target) {
+      target.value = '';
+      target.focus();
+      updatePinDots();
+    }
+  }
+
+  function togglePasswordVisibility() {
+    const pin = document.getElementById('empPin');
+    const eye = document.getElementById('eyeIcon');
+    if (!pin || !eye) return;
+    if (pin.type === 'password') {
+      pin.type = 'text';
+      eye.textContent = 'visibility_off';
+    } else {
+      pin.type = 'password';
+      eye.textContent = 'visibility';
+    }
+  }
+
+  function updatePinDots() {
+    const pin = document.getElementById('empPin');
+    const dotsElem = document.getElementById('pinDots');
+    if (!pin || !dotsElem) return;
+    const count = pin.value.length;
+    dotsElem.textContent = count > 0 ? '● '.repeat(count).trim() : '● ● ● ●';
+  }
+
+  function selectTerminal(btn, type) {
+    document.querySelectorAll('.terminal-btn').forEach(b => {
+      b.classList.remove('bg-surface-container-high', 'opacity-100');
+      b.classList.add('bg-surface-container', 'opacity-80');
+    });
+    btn.classList.add('bg-surface-container-high', 'opacity-100');
+    btn.classList.remove('bg-surface-container', 'opacity-80');
+  }
+
+  function selectRole(btn) {
+    aplicarRolSeleccionado(btn.dataset.role, btn.textContent.trim());
+    switchActiveTarget('empPin');
+  }
+
+  function aplicarRolSeleccionado(rol, nombreVisible = rol) {
+    document.querySelectorAll('.role-btn').forEach(b => {
+      b.classList.remove('bg-surface-container-high', 'opacity-100');
+      b.classList.add('bg-surface-container', 'opacity-80');
+    });
+    const rolElemento = rol === 'MESERO' ? 'MOZO' : rol;
+    const botonRol = document.querySelector(`.role-btn[data-role="${rolElemento}"]`);
+    if (!botonRol) return;
+    botonRol.classList.remove('bg-surface-container', 'opacity-80');
+    botonRol.classList.add('bg-surface-container-high', 'opacity-100');
+    selectedRole = rolElemento;
+    document.getElementById('selected-role-message').textContent =
+      `Rol de tu cuenta: ${nombreVisible}.`;
+  }
+
+  async function triggerAuth() {
+    const code = document.getElementById('empCode').value;
+    const pin = document.getElementById('empPin').value;
+    const btn = document.getElementById('submitBtn');
+    const message = document.getElementById('auth-message');
+
+    if (!code || !pin) {
+      message.textContent = 'Ingresa tu código o correo y contraseña.';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[24px] animate-spin">refresh</span><span>AUTENTICANDO TERMINAL...</span>';
+
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          identificador: code,
+          password: pin,
+          rolSeleccionado: selectedRole
+        })
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'Credenciales inválidas.');
+      }
+
+      const rol = String(data.rol || '').trim().toUpperCase();
+      const rolVisible = rol === 'MESERO' ? 'MOZO' : rol;
+      const rutasPorRol = {
+        ADMIN: 'admin-empleados.html',
+        COCINERO: 'kds.html',
+        MOZO: 'mesas.html',
+        MESERO: 'mesas.html',
+        CAJERO: 'caja.html'
+      };
+      const destino = rutasPorRol[rol];
+      if (!destino) {
+        throw new Error('El rol de esta cuenta no tiene un módulo asignado.');
+      }
+
+      const botonRol = document.querySelector(`.role-btn[data-role="${rolVisible}"]`);
+      if (botonRol) {
+        aplicarRolSeleccionado(rol, botonRol.textContent.trim());
+      }
+
+      localStorage.setItem('tabloncitos.usuario', JSON.stringify({
+        nombre: data.nombre || '',
+        rol,
+        codigo: data.codigo || ''
+      }));
+
+      message.textContent = '';
+      btn.innerHTML = '<span class="material-symbols-outlined text-[24px]">verified</span><span>ACCESO CONCEDIDO • CARGANDO</span>';
+      btn.classList.remove('bg-secondary-container');
+      btn.classList.add('bg-primary-container', 'text-on-primary');
+      loginRedirectTimer = setTimeout(() => {
+        window.location.replace(`${destino}?v=${Date.now()}`);
+      }, 1000);
+    } catch (error) {
+      message.textContent = error.message || 'No se pudo conectar con el servidor.';
+      resetSubmitButton();
+    }
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_dashboard" name="shell-type"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <style>
+    @layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab", "on-secondary-container": "#ff9a84", "secondary-fixed": "#ffdad3",
+            "surface-container-low": "#1c1b1a", "tertiary-container": "#c2b1a5", "inverse-primary": "#805600",
+            "on-surface": "#e6e2df", "primary-fixed-dim": "#ffba44", "on-error-container": "#ffdad6",
+            "surface-tint": "#ffba44", "primary-fixed": "#ffddaf", "tertiary-fixed-dim": "#d5c3b7",
+            "on-error": "#690005", "on-tertiary-container": "#50443a", "on-primary-fixed": "#281800",
+            "primary-container": "#f0a500", "tertiary": "#dfccc0", "on-primary": "#442c00",
+            "inverse-on-surface": "#32302f", "primary": "#ffc56c", "on-primary-container": "#5f3f00",
+            "background": "#141312", "on-surface-variant": "#d6c4ac", "tertiary-fixed": "#f2dfd2",
+            "secondary": "#ffb4a4", "surface-variant": "#363433", "outline": "#9f8e79",
+            "secondary-container": "#891e07", "inverse-surface": "#e6e2df", "outline-variant": "#514533",
+            "on-background": "#e6e2df", "on-primary-fixed-variant": "#614000", "secondary-fixed-dim": "#ffb4a4",
+            "on-secondary": "#640d00", "on-secondary-fixed": "#3e0500", "surface-dim": "#141312",
+            "on-tertiary": "#392e26", "error-container": "#93000a", "surface-container-high": "#2b2a29",
+            "on-tertiary-fixed-variant": "#51443b", "surface-container-lowest": "#0f0e0d",
+            "surface-container-highest": "#363433", "surface-bright": "#3a3938", "surface": "#141312",
+            "surface-container": "#201f1e", "on-tertiary-fixed": "#231a12"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-sans text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- Sidebar Izquierdo -->
+  <aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+    <div class="h-16 px-6 flex items-center gap-3 bg-surface-container-low">
+      <div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center text-secondary">
+        <span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold text-primary uppercase tracking-tight text-lg">Tabloncitos</span>
+        <span class="text-xs uppercase text-on-surface-variant tracking-wider">Pollos &amp; Parrillas</span>
+      </div>
+    </div>
+    <div class="px-4 py-3 bg-surface-container">
+      <div class="flex items-center justify-between">
+        <span class="text-xs uppercase text-on-surface-variant font-bold">Módulo Activo</span>
+        <span class="text-xs text-primary bg-surface-container-high px-2 py-0.5 rounded font-mono">BLQ-MESERO</span>
+      </div>
+      <div class="text-base font-bold text-on-surface mt-1">Atención y Salón</div>
+    </div>
+    <nav class="flex-1 px-3 py-4 flex flex-col gap-1 overflow-y-auto">
+      <span class="px-3 text-xs uppercase text-on-surface-variant font-bold mb-1">Operación de Turno</span>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-primary-container text-on-primary-container font-bold shadow-md" href="mesas.html" aria-current="page">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">table_restaurant</span>
+          <span>11. Mapa de Mesas</span>
+        </div>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="toma-pedidos.html">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+          <span>12. Toma de Pedidos</span>
+        </div>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="monitor-entrega.html">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">notifications_active</span>
+          <span>13. Monitor Entrega</span>
+        </div>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">local_bar</span>
+          <span>14. Despacho Rápido</span>
+        </div>
+        <span class="text-xs text-primary font-mono">Bebidas</span>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="mesero-dashboard.html">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span>15. Mi Rendimiento</span>
+        </div>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      </a>
+    </nav>
+    <div class="p-4 bg-surface-container-low flex flex-col gap-2">
+      <div class="flex items-center justify-between bg-surface-container-lowest p-2.5 rounded-lg">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+            <span class="material-symbols-outlined text-[16px]">wifi</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] text-on-surface-variant uppercase font-bold">RED SENATI</span>
+            <span class="text-xs text-on-surface font-mono">50ms • Conectado</span>
+          </div>
+        </div>
+        <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+      </div>
+      <a id="lock-terminal" class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors text-xs uppercase font-bold" href="login.html">
+        <span class="material-symbols-outlined text-[18px]">lock</span>
+        <span>Cerrar Sesión</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Contenedor Principal -->
+  <div class="pl-72">
+    <!-- Header Superior -->
+    <header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl z-40 px-6 flex items-center justify-between shadow-md">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container">
+          <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs uppercase text-primary font-bold">Salón Activo</span>
+          <span class="text-on-surface-variant">•</span>
+          <span class="text-xs text-on-surface-variant uppercase">Turno Tarde / Noche</span>
+        </div>
+        <div class="hidden lg:flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-lg">
+          <span class="material-symbols-outlined text-primary text-[18px]">touch_app</span>
+          <span class="text-xs text-on-surface-variant uppercase">Estación:</span>
+          <span class="text-xs text-on-surface font-bold font-mono">SJM - Lima</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container cursor-pointer shadow-sm">
+          <span class="material-symbols-outlined text-[20px] text-secondary">room_service</span>
+          <span class="text-xs uppercase font-bold text-secondary-fixed">Platos Listos</span>
+          <span class="text-xs px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold">4</span>
+        </div>
+        <div class="h-8 w-px bg-surface-variant"></div>
+        <div class="flex items-center gap-3">
+          <div class="flex flex-col text-right">
+            <span id="signed-in-name" class="text-sm text-on-surface font-bold leading-tight">Sin usuario</span>
+            <div class="flex items-center justify-end gap-1">
+              <span id="signed-in-role" class="text-[10px] text-on-surface-variant uppercase">—</span>
+              <span id="signed-in-code" class="text-xs text-primary font-mono">—</span>
+            </div>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">
+            <span class="material-symbols-outlined text-[18px]">person</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="relative pt-16 bg-surface min-h-screen flex flex-col">
+      
+      <!-- Selector de Zonas / Salones -->
+      <div class="w-full bg-surface-container-low px-6 py-4 flex flex-col xl:flex-row xl:items-center justify-between gap-4 shadow-sm">
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 xl:pb-0" id="zone-selector">
+          <button class="zone-tab active flex items-center gap-2 px-4 py-3 rounded-xl bg-primary-container text-on-primary-container font-bold transition-all whitespace-nowrap shadow-sm min-h-[48px]" onclick="switchZone('Salón Principal', event)">
+            <span class="material-symbols-outlined text-[20px]">room_preferences</span>
+            <span>Salón Principal</span>
+          </button>
+          <button class="zone-tab flex items-center gap-2 px-4 py-3 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all whitespace-nowrap min-h-[48px]" onclick="switchZone('Terraza', event)">
+            <span class="material-symbols-outlined text-[20px]">deck</span>
+            <span>Terraza</span>
+          </button>
+        </div>
+
+        <!-- Telemetría general -->
+        <div class="min-w-[280px] rounded-xl bg-surface-container px-4 py-3">
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <span class="text-[10px] uppercase text-on-surface-variant font-bold">Ocupación Total</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-xl font-bold text-primary" id="kpi-ocupacion">0%</span>
+                <span class="text-[10px] text-on-surface-variant">ocupadas</span>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined text-[18px]">donut_large</span>
+            </div>
+          </div>
+          <div class="mt-2 grid grid-cols-3 gap-2 border-t border-surface-variant pt-2 text-[10px]">
+            <div>
+              <span class="block text-emerald-300">Libres</span>
+              <strong id="kpi-mesas-libres" class="text-on-surface">0 (0%)</strong>
+            </div>
+            <div>
+              <span class="block text-primary">Ocupadas</span>
+              <strong id="kpi-mesas-ocupadas" class="text-on-surface">0 (0%)</strong>
+            </div>
+            <div>
+              <span class="block text-sky-300">Reservadas</span>
+              <strong id="kpi-mesas-reservadas" class="text-on-surface">0 (0%)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leyenda de Estados y Filtros -->
+      <div class="px-6 py-3 bg-surface-container shadow-inner">
+        <div id="status-legend" class="flex items-center flex-wrap gap-2" aria-label="Estados actuales de las mesas"></div>
+        <p id="mesa-sync-message" class="mt-1 hidden text-xs text-error" role="status" aria-live="polite"></p>
+      </div>
+
+      <!-- Canvas Principal: Grid de Mesas + Drawer Lateral -->
+      <div class="relative w-full flex-1 flex flex-col lg:flex-row overflow-hidden bg-background">
+        
+        <!-- Grid Dinámico de Mesas -->
+        <div class="flex-1 p-6 overflow-y-auto">
+          <div class="flex items-center justify-between mb-4 pb-2 border-b border-surface-variant">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[24px]">fireplace</span>
+              <span class="text-lg font-bold text-on-surface uppercase tracking-tight" id="zone-display-title">Salón Principal • Brasas &amp; Madera</span>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant text-xs">
+              <span class="material-symbols-outlined text-[16px]">touch_app</span>
+              <span>Toca una mesa para ver comanda y acciones</span>
+            </div>
+          </div>
+
+          <!-- Grid donde se inyectan las mesas desde MySQL -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" id="mesas-grid-container">
+            <!-- Las tarjetas de mesas se cargan automáticamente aquí por JS -->
+            <div class="col-span-full text-center py-12 text-on-surface-variant">
+              <span class="material-symbols-outlined text-4xl animate-spin mb-2">progress_activity</span>
+              <p>Conectando con base de datos MySQL de Tabloncitos...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drawer Lateral Rápido (Inspector de Mesa) -->
+        <aside class="w-full lg:w-96 bg-surface-container-low p-6 flex flex-col justify-between shadow-2xl transition-all duration-300 hidden" id="mesa-detail-drawer">
+          <div class="flex flex-col gap-4">
+            <!-- Cabecera del Drawer -->
+            <div class="flex items-start justify-between pb-2 border-b border-surface-variant">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-secondary-container text-secondary flex items-center justify-center text-xl font-black" id="panel-mesa-num">M-01</div>
+                <div class="flex flex-col">
+                  <div class="flex items-center gap-2">
+                    <span class="text-base font-bold text-on-surface" id="panel-mesa-title">Mesa M-01</span>
+                    <span class="text-xs px-2 py-0.5 rounded bg-surface-container-high text-primary font-mono" id="panel-mesa-pax">4 Personas</span>
+                  </div>
+                  <span class="text-xs text-secondary-fixed font-semibold" id="panel-mesa-status">Seleccionada</span>
+                </div>
+              </div>
+              <button class="w-8 h-8 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant flex items-center justify-center transition-colors" onclick="closeInspector()">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+              </button>
+            </div>
+
+            <!-- Metadatos de la Comanda -->
+            <div class="grid grid-cols-2 gap-2 bg-surface-container p-3 rounded-xl">
+              <div class="flex flex-col">
+                <span class="text-[10px] text-on-surface-variant uppercase font-bold">Comanda Activa</span>
+                <span class="text-xs text-primary font-bold font-mono" id="panel-order-id">#C-8421</span>
+              </div>
+              <div class="flex flex-col text-right">
+                <span id="panel-time-container" class="flex flex-col hidden">
+                  <span class="text-[10px] text-on-surface-variant uppercase font-bold">Tiempo en Salón</span>
+                  <span class="text-xs text-secondary font-bold font-mono" id="panel-time"></span>
+                </span>
+              </div>
+              <div class="flex flex-col pt-1">
+                <span class="text-[10px] text-on-surface-variant uppercase font-bold">Mozo Responsable</span>
+                <span class="text-xs text-on-surface font-semibold" id="panel-server">Sin Asignar</span>
+              </div>
+              <div class="flex flex-col text-right pt-1">
+                <span class="text-[10px] text-on-surface-variant uppercase font-bold">Consumo Total</span>
+                <span class="text-sm text-primary font-black" id="panel-total">S/ 0.00</span>
+              </div>
+            </div>
+            <div id="panel-reservation" class="hidden rounded-xl border border-sky-400/30 bg-sky-950/20 p-3">
+              <p class="mb-2 text-[10px] font-bold uppercase text-sky-300">Datos de la reserva</p>
+              <p id="panel-reservation-name" class="text-sm font-semibold text-on-surface"></p>
+              <p id="panel-reservation-phone" class="mt-1 text-xs text-on-surface-variant"></p>
+              <p id="panel-reservation-datetime" class="mt-1 text-xs text-on-surface-variant"></p>
+              <p id="panel-reservation-people" class="mt-1 text-xs text-on-surface-variant"></p>
+            </div>
+          </div>
+
+          <!-- Botones de Acción Tácticos sobre la Mesa -->
+          <div class="flex flex-col gap-2 mt-6 pt-4 border-t border-surface-variant">
+            <button id="btn-reservar-mesa" type="button" class="hidden w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-sky-400/40 bg-sky-950/40 text-sky-200 font-bold transition-colors hover:bg-sky-900/50" onclick="abrirModalReserva()">
+              <span class="material-symbols-outlined text-[20px]">event_available</span>
+              <span>Reservar mesa</span>
+            </button>
+            <button id="btn-tomar-pedido" type="button" class="hidden w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-bold transition-colors shadow-md" onclick="abrirTomaPedido()">
+              <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+              <span id="btn-tomar-pedido-texto">Tomar pedido</span>
+            </button>
+            <button class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-bold transition-colors shadow-md" onclick="cambiarEstadoMesaActual('OCUPADA')">
+              <span class="material-symbols-outlined text-[20px]">add_circle</span>
+              <span>Marcar como Ocupada</span>
+            </button>
+            <button class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-secondary-container hover:bg-on-secondary-fixed-variant text-secondary-fixed font-bold transition-all shadow-sm" onclick="cambiarEstadoMesaActual('CUENTA_PEDIDA')">
+              <span class="material-symbols-outlined text-[20px]">point_of_sale</span>
+              <span>Pedir Pre-cuenta a Caja</span>
+            </button>
+            <button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-semibold transition-colors" onclick="cambiarEstadoMesaActual('LIBRE')">
+              <span class="material-symbols-outlined text-[18px]">check_circle_outline</span>
+              <span>Liberar Mesa / Limpiar</span>
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </main>
+  </div>
+
+  <div id="modal-reserva" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-4" role="dialog" aria-modal="true" aria-labelledby="modal-reserva-title">
+    <form id="form-reserva" class="w-full max-w-md rounded-2xl border border-outline-variant/50 bg-surface-container-low p-6 shadow-2xl">
+      <div class="mb-4 flex items-start justify-between gap-4">
+        <div>
+          <h2 id="modal-reserva-title" class="text-lg font-bold text-on-surface">Reservar mesa</h2>
+          <p id="modal-reserva-mesa" class="mt-1 text-sm text-secondary"></p>
+        </div>
+        <button id="btn-cerrar-reserva" type="button" class="rounded-lg p-1 text-on-surface-variant hover:bg-surface-container-high" aria-label="Cerrar formulario de reserva">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-3">
+        <label class="text-xs font-semibold text-on-surface-variant">
+          Nombre del cliente
+          <input name="nombre" type="text" maxlength="120" required class="mt-1 w-full rounded-lg border border-outline-variant/40 bg-surface-container-high px-3 py-2 text-sm text-on-surface">
+        </label>
+        <label class="text-xs font-semibold text-on-surface-variant">
+          Teléfono
+          <input name="telefono" type="tel" required pattern="[0-9+() -]{7,30}" maxlength="30" placeholder="Ej. 999 123 456" class="mt-1 w-full rounded-lg border border-outline-variant/40 bg-surface-container-high px-3 py-2 text-sm text-on-surface">
+        </label>
+        <label class="text-xs font-semibold text-on-surface-variant">
+          Fecha y hora
+          <input name="fechaHora" type="datetime-local" required class="mt-1 w-full rounded-lg border border-outline-variant/40 bg-surface-container-high px-3 py-2 text-sm text-on-surface">
+        </label>
+        <label class="text-xs font-semibold text-on-surface-variant">
+          Cantidad de personas
+          <input name="personas" type="number" min="1" max="50" value="2" required class="mt-1 w-full rounded-lg border border-outline-variant/40 bg-surface-container-high px-3 py-2 text-sm text-on-surface">
+        </label>
+        <p id="error-reserva" class="hidden text-sm text-error" role="alert"></p>
+      </div>
+      <div class="mt-5 flex justify-end gap-2">
+        <button id="btn-cancelar-reserva" type="button" class="rounded-lg bg-surface-container-high px-4 py-2 text-sm text-on-surface">Cancelar</button>
+        <button type="submit" class="rounded-lg bg-primary-container px-4 py-2 text-sm font-bold text-on-primary-container">Guardar reserva</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Script Dinámico de Conexión con Spring Boot Backend -->
+  <script>
+    let mesasGlobales = [];
+    let salonSeleccionado = 'Salón Principal';
+    let cargaMesasEnCurso = false;
+    let mesaSeleccionada = null;
+
+    const estadosMesa = {
+      LIBRE: {
+        etiqueta: 'Libre',
+        punto: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]'
+      },
+      OCUPADA: {
+        etiqueta: 'Ocupada',
+        punto: 'bg-primary-container shadow-[0_0_8px_rgba(240,165,0,0.5)]'
+      },
+      SERVIDA: {
+        etiqueta: 'Servida',
+        punto: 'bg-tertiary'
+      },
+      CUENTA_PEDIDA: {
+        etiqueta: 'Cuenta Pedida',
+        punto: 'bg-secondary',
+        contenedor: 'bg-secondary-container text-secondary-fixed animate-pulse',
+        texto: 'text-xs font-bold uppercase'
+      },
+      RESERVADA: {
+        etiqueta: 'Reservada',
+        punto: 'bg-sky-400'
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      mostrarUsuarioIniciado();
+      document.getElementById('lock-terminal').addEventListener('click', async event => {
+        event.preventDefault();
+        const boton = event.currentTarget;
+        boton.classList.add('pointer-events-none', 'opacity-60');
+        localStorage.removeItem('tabloncitos.usuario');
+        sessionStorage.removeItem('tabloncitos.usuario');
+        try {
+          const response = await fetch('/api/auth/logout', { method: 'POST' });
+          if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+        } catch (error) {
+          console.error('No se pudo cerrar la sesión en el servidor:', error);
+        } finally {
+          window.location.assign('login.html');
+        }
+      });
+      document.getElementById('btn-cerrar-reserva').addEventListener('click', cerrarModalReserva);
+      document.getElementById('btn-cancelar-reserva').addEventListener('click', cerrarModalReserva);
+      document.getElementById('form-reserva').addEventListener('submit', guardarReserva);
+      document.getElementById('modal-reserva').addEventListener('click', event => {
+        if (event.target === event.currentTarget) cerrarModalReserva();
+      });
+      document.getElementById('form-reserva').elements.namedItem('fechaHora').min =
+        obtenerFechaHoraLocal(new Date());
+      cargarMesas();
+      setInterval(cargarMesas, 3000);
+      setInterval(actualizarContadoresOcupacion, 1000);
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) actualizarContadoresOcupacion();
+      });
+    });
+
+    async function mostrarUsuarioIniciado() {
+      let usuarioGuardado = null;
+      try {
+        const datosGuardados = localStorage.getItem('tabloncitos.usuario')
+          || sessionStorage.getItem('tabloncitos.usuario');
+        usuarioGuardado = JSON.parse(datosGuardados || 'null');
+      } catch (error) {
+        console.error('No se pudo leer la cuenta guardada:', error);
+      }
+      mostrarIdentidadUsuario(usuarioGuardado);
+
+      try {
+        const response = await fetch('/api/auth/sesion', { cache: 'no-store' });
+        if (response.status === 401 || response.status === 404) return;
+        if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+        const usuario = await response.json();
+        localStorage.setItem('tabloncitos.usuario', JSON.stringify(usuario));
+        mostrarIdentidadUsuario(usuario);
+      } catch (error) {
+        console.error('No se pudo consultar la cuenta iniciada:', error);
+      }
+    }
+
+    function mostrarIdentidadUsuario(usuario) {
+      document.getElementById('signed-in-name').textContent = usuario?.nombre || 'Sin usuario';
+      document.getElementById('signed-in-role').textContent = usuario?.rol || '—';
+      document.getElementById('signed-in-code').textContent = usuario?.codigo
+        ? `#${usuario.codigo}`
+        : '—';
+    }
+
+    async function cargarMesas() {
+      if (cargaMesasEnCurso) return;
+      cargaMesasEnCurso = true;
+      const mensaje = document.getElementById('mesa-sync-message');
+      try {
+        const response = await fetch('/api/mesas', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+        const data = await response.json();
+        if (!Array.isArray(data)) throw new Error('La respuesta de mesas no es válida');
+        mesasGlobales = data;
+        mesasGlobales.forEach(obtenerInicioOcupacion);
+        actualizarResumenMesas();
+        renderizarLeyendaEstados();
+        renderizarGridMesas();
+        if (mesaSeleccionada) {
+          const mesaActualizada = mesasGlobales.find(mesa => mesa.id === mesaSeleccionada.id);
+          if (mesaActualizada) seleccionarMesa(mesaActualizada);
+        }
+        mensaje.textContent = '';
+        mensaje.classList.add('hidden');
+      } catch (error) {
+        mensaje.textContent = 'No se pudo sincronizar el estado de las mesas. Reintentando automáticamente.';
+        mensaje.classList.remove('hidden');
+        console.error('Error al sincronizar mesas con el backend:', error);
+      } finally {
+        cargaMesasEnCurso = false;
+      }
+    }
+
+    function renderizarLeyendaEstados() {
+      const contenedor = document.getElementById('status-legend');
+      const cantidades = new Map();
+      mesasGlobales.forEach(mesa => {
+        const estado = String(mesa.estado || 'LIBRE').trim().toUpperCase();
+        cantidades.set(estado, (cantidades.get(estado) || 0) + 1);
+      });
+
+      const ordenEstados = ['LIBRE', 'OCUPADA', 'SERVIDA', 'RESERVADA', 'CUENTA_PEDIDA'];
+      const estadosVisibles = [
+        ...ordenEstados.filter(estado => cantidades.has(estado)),
+        ...[...cantidades.keys()].filter(estado => !ordenEstados.includes(estado)).sort()
+      ];
+
+      contenedor.replaceChildren();
+      estadosVisibles.forEach(estado => {
+        const configuracion = estadosMesa[estado] || {
+          etiqueta: estado.replace(/_/g, ' ').toLocaleLowerCase()
+            .replace(/(^|\s)\S/g, letra => letra.toLocaleUpperCase()),
+          punto: 'bg-outline'
+        };
+        const elemento = document.createElement('div');
+        elemento.className = `flex items-center gap-2 rounded-lg px-3 py-1 ${
+          configuracion.contenedor || 'bg-surface-container-high text-on-surface'
+        }`;
+
+        const punto = document.createElement('span');
+        punto.className = `h-2.5 w-2.5 rounded-full ${configuracion.punto}`;
+        const etiqueta = document.createElement('span');
+        etiqueta.className = configuracion.texto || 'text-xs font-semibold';
+        etiqueta.textContent = `${configuracion.etiqueta} (${cantidades.get(estado)})`;
+        elemento.append(punto, etiqueta);
+        contenedor.append(elemento);
+      });
+    }
+
+    function actualizarResumenMesas() {
+      const total = mesasGlobales.length;
+      const libres = mesasGlobales.filter(mesa => (mesa.estado || 'LIBRE').toUpperCase() === 'LIBRE').length;
+      const reservadas = mesasGlobales.filter(mesa => (mesa.estado || 'LIBRE').toUpperCase() === 'RESERVADA').length;
+      const ocupadas = total - libres - reservadas;
+      const porcentaje = cantidad => total === 0 ? 0 : Math.round(cantidad / total * 100);
+      const resumen = (cantidad) => `${cantidad} (${porcentaje(cantidad)}%)`;
+
+      document.getElementById('kpi-ocupacion').textContent = `${porcentaje(ocupadas)}%`;
+      document.getElementById('kpi-mesas-libres').textContent = resumen(libres);
+      document.getElementById('kpi-mesas-ocupadas').textContent = resumen(ocupadas);
+      document.getElementById('kpi-mesas-reservadas').textContent = resumen(reservadas);
+    }
+
+    function switchZone(salon, event) {
+      salonSeleccionado = salon;
+      document.getElementById('zone-display-title').textContent = salon + ' • Operación en Vivo';
+      
+      document.querySelectorAll('.zone-tab').forEach(tab => {
+        tab.classList.remove('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+        tab.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      });
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        event.currentTarget.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+      }
+      renderizarGridMesas();
+    }
+
+    function renderizarGridMesas() {
+      const container = document.getElementById('mesas-grid-container');
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      const mesasFiltradas = mesasGlobales
+        .filter(mesa => String(mesa.zona || '').trim().toLocaleLowerCase() === salonSeleccionado.toLocaleLowerCase())
+        .sort((a, b) => Number(a.numeroMesa) - Number(b.numeroMesa));
+
+      if (mesasFiltradas.length === 0) {
+        container.innerHTML = `<p class="col-span-full text-center text-on-surface-variant py-8">No hay mesas en este salón.</p>`;
+        return;
+      }
+
+      mesasFiltradas.forEach(mesa => {
+        const numeroMesa = formatearNumeroMesa(mesa);
+        const estado = (mesa.estado || 'LIBRE').toUpperCase();
+        const ocupada = esEstadoOcupado(estado);
+        const mesaOcupadaDesde = obtenerInicioOcupacion(mesa);
+        const contadorActivo = ocupada && mesaOcupadaDesde;
+        let estiloCard = 'bg-surface-container hover:bg-surface-container-high';
+        let badgeColor = 'text-primary bg-primary-container/20';
+
+        if (estado === 'LIBRE') {
+          estiloCard = 'bg-surface-container-low border border-emerald-950/40 hover:bg-surface-container';
+          badgeColor = 'text-emerald-300 bg-emerald-950/60';
+        } else if (estado === 'CUENTA_PEDIDA') {
+          estiloCard = 'bg-surface-container-high animate-pulse border border-secondary/40';
+          badgeColor = 'text-secondary-fixed bg-secondary-container';
+        } else if (estado === 'RESERVADA') {
+          estiloCard = 'bg-surface-container-low border border-sky-950/40';
+          badgeColor = 'text-sky-300 bg-sky-950/60';
+        }
+
+        const cardHTML = `
+          <div class="cursor-pointer group relative p-4 rounded-2xl ${estiloCard} transition-all shadow-md flex flex-col justify-between min-h-[150px]"
+               data-mesa-id="${Number(mesa.id)}"
+               onclick='seleccionarMesa(${JSON.stringify(mesa)})'>
+            ${estado === 'CUENTA_PEDIDA' ? '<div class="absolute -top-1 left-4 right-4 h-1.5 rounded-t-lg bg-secondary animate-pulse"></div>' : ''}
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col">
+                <span class="text-3xl font-black text-primary tracking-tighter">${numeroMesa}</span>
+                <span class="text-xs text-on-surface-variant mt-0.5 font-semibold">${mesa.zona || 'Salón Principal'}</span>
+              </div>
+              <div class="flex flex-col items-end gap-1">
+                <span class="text-[10px] uppercase ${badgeColor} px-2 py-0.5 rounded font-bold">${estado}</span>
+                <div class="flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant text-xs font-mono">
+                  <span class="material-symbols-outlined text-[13px] text-primary">group</span>
+                  <span>${mesa.capacidad || 4} pax</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 pt-2 border-t border-surface-variant flex items-center justify-between text-xs">
+              <div class="mesa-occupied-time-container flex items-center gap-1 text-primary font-mono font-bold${contadorActivo ? '' : ' hidden'}">
+                <span class="material-symbols-outlined text-[15px]">schedule</span>
+                <span class="mesa-occupied-time">${formatearTiempoOcupacion(mesaOcupadaDesde, estado, false)}</span>
+              </div>
+              <span class="text-sm font-bold text-on-surface font-mono">S/ ${(mesa.consumoActual || 0).toFixed(2)}</span>
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', cardHTML);
+      });
+    }
+
+    function formatearNumeroMesa(mesa) {
+      const numero = Number(mesa.numeroMesa ?? mesa.numero);
+      return Number.isInteger(numero) && numero > 0
+        ? `M-${String(numero).padStart(2, '0')}`
+        : 'M-00';
+    }
+
+    function seleccionarMesa(mesa) {
+      mesaSeleccionada = mesa;
+      const numeroMesa = formatearNumeroMesa(mesa);
+      document.getElementById('panel-mesa-num').textContent = numeroMesa;
+      document.getElementById('panel-mesa-title').textContent = 'Mesa ' + numeroMesa;
+      document.getElementById('panel-mesa-pax').textContent = (mesa.capacidad || 4) + ' Personas';
+      document.getElementById('panel-order-id').textContent = mesa.codigoComanda || '#C-8421';
+      const inicioOcupacion = obtenerInicioOcupacion(mesa);
+      const panelTiempo = document.getElementById('panel-time');
+      const contadorActivo = esEstadoOcupado(mesa.estado) && inicioOcupacion;
+      document.getElementById('panel-time-container').classList.toggle('hidden', !contadorActivo);
+      panelTiempo.textContent = formatearTiempoOcupacion(inicioOcupacion, mesa.estado, true);
+      panelTiempo.dataset.occupiedSince = inicioOcupacion || '';
+      document.getElementById('panel-time').dataset.state = mesa.estado || 'LIBRE';
+      document.getElementById('panel-server').textContent = mesa.mozoResponsable || 'Sin asignar';
+      document.getElementById('panel-total').textContent = 'S/ ' + (mesa.consumoActual || 0).toFixed(2);
+      document.getElementById('panel-mesa-status').textContent = 'Estado: ' + (mesa.estado || 'LIBRE');
+
+      const esReservada = String(mesa.estado || '').toUpperCase() === 'RESERVADA';
+      document.getElementById('btn-reservar-mesa').classList.toggle('hidden', !(
+        String(mesa.estado || 'LIBRE').toUpperCase() === 'LIBRE'));
+      document.getElementById('btn-tomar-pedido').classList.toggle('hidden', !esEstadoOcupado(mesa.estado));
+      document.getElementById('btn-tomar-pedido-texto').textContent =
+        `Tomar pedido en ${numeroMesa}`;
+      const panelReserva = document.getElementById('panel-reservation');
+      panelReserva.classList.toggle('hidden', !esReservada);
+      if (esReservada) {
+        document.getElementById('panel-reservation-name').textContent = mesa.reservaNombre || 'Cliente sin nombre';
+        document.getElementById('panel-reservation-phone').textContent = `Teléfono: ${mesa.reservaTelefono || '—'}`;
+        document.getElementById('panel-reservation-datetime').textContent =
+          `Fecha: ${formatearFechaReserva(mesa.reservaFechaHora)}`;
+        document.getElementById('panel-reservation-people').textContent =
+          `Personas: ${mesa.reservaPersonas ?? '—'}`;
+      }
+
+      const drawer = document.getElementById('mesa-detail-drawer');
+      if (drawer) {
+        drawer.dataset.mesaId = mesa.id;
+        drawer.classList.remove('hidden');
+      }
+    }
+
+    function abrirTomaPedido() {
+      if (!mesaSeleccionada || !esEstadoOcupado(mesaSeleccionada.estado)) return;
+      window.location.assign(`toma-pedidos.html?mesaId=${encodeURIComponent(mesaSeleccionada.id)}`);
+    }
+
+    function esEstadoOcupado(estado) {
+      return ['OCUPADA', 'SERVIDA', 'CUENTA_PEDIDA'].includes(String(estado || '').trim().toUpperCase());
+    }
+
+    function obtenerInicioOcupacion(mesa) {
+      const claveInicio = `tabloncitos.mesa.${mesa.id}.ocupadaDesde`;
+      if (!esEstadoOcupado(mesa.estado)) {
+        localStorage.removeItem(claveInicio);
+        return null;
+      }
+
+      if (mesa.ocupadaDesde && !Number.isNaN(new Date(mesa.ocupadaDesde).getTime())) {
+        localStorage.removeItem(claveInicio);
+        return mesa.ocupadaDesde;
+      }
+
+      const inicioGuardado = localStorage.getItem(claveInicio);
+      if (inicioGuardado && !Number.isNaN(new Date(inicioGuardado).getTime())) {
+        return inicioGuardado;
+      }
+
+      const nuevoInicio = new Date().toISOString();
+      localStorage.setItem(claveInicio, nuevoInicio);
+      return nuevoInicio;
+    }
+
+    function formatearTiempoOcupacion(ocupadaDesde, estado, incluirSegundos) {
+      if (!esEstadoOcupado(estado) || !ocupadaDesde) return '';
+
+      const inicio = new Date(ocupadaDesde);
+      if (Number.isNaN(inicio.getTime())) return '';
+      const segundosTranscurridos = Math.max(0, Math.floor((Date.now() - inicio.getTime()) / 1000));
+      const minutos = Math.floor(segundosTranscurridos / 60);
+      if (!incluirSegundos) return `${minutos} min`;
+      const segundos = String(segundosTranscurridos % 60).padStart(2, '0');
+      return `${minutos} min ${segundos} seg`;
+    }
+
+    function actualizarContadoresOcupacion() {
+      document.querySelectorAll('.mesa-occupied-time').forEach(contador => {
+        const mesaId = contador.closest('[data-mesa-id]')?.dataset.mesaId;
+        const mesa = mesasGlobales.find(item => String(item.id) === mesaId);
+        if (mesa) {
+          const inicio = obtenerInicioOcupacion(mesa);
+          contador.closest('.mesa-occupied-time-container').classList.toggle('hidden', !inicio);
+          contador.textContent = formatearTiempoOcupacion(inicio, mesa.estado, false);
+        }
+      });
+
+      const panel = document.getElementById('panel-time');
+      const mesaPanel = mesaSeleccionada
+        ? mesasGlobales.find(mesa => String(mesa.id) === String(mesaSeleccionada.id))
+        : null;
+      const inicioOcupacion = mesaPanel && obtenerInicioOcupacion(mesaPanel);
+      document.getElementById('panel-time-container').classList.toggle('hidden', !inicioOcupacion);
+      if (inicioOcupacion) {
+        panel.dataset.occupiedSince = inicioOcupacion;
+        panel.dataset.state = mesaPanel.estado;
+        panel.textContent = formatearTiempoOcupacion(inicioOcupacion, mesaPanel.estado, true);
+      }
+    }
+
+    function closeInspector() {
+      const drawer = document.getElementById('mesa-detail-drawer');
+      if (drawer) drawer.classList.add('hidden');
+      mesaSeleccionada = null;
+    }
+
+    function abrirModalReserva() {
+      if (!mesaSeleccionada || String(mesaSeleccionada.estado || 'LIBRE').toUpperCase() !== 'LIBRE') return;
+      document.getElementById('modal-reserva-mesa').textContent =
+        `${formatearNumeroMesa(mesaSeleccionada)} · ${mesaSeleccionada.zona}`;
+      document.getElementById('error-reserva').classList.add('hidden');
+      document.getElementById('form-reserva').elements.namedItem('fechaHora').min =
+        obtenerFechaHoraLocal(new Date());
+      document.getElementById('modal-reserva').classList.remove('hidden');
+      document.getElementById('modal-reserva').classList.add('flex');
+    }
+
+    function cerrarModalReserva() {
+      const modal = document.getElementById('modal-reserva');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    async function guardarReserva(event) {
+      event.preventDefault();
+      if (!mesaSeleccionada) return;
+      const form = event.currentTarget;
+      const boton = form.querySelector('button[type="submit"]');
+      const error = document.getElementById('error-reserva');
+      boton.disabled = true;
+      error.classList.add('hidden');
+      try {
+        const datos = Object.fromEntries(new FormData(form).entries());
+        datos.personas = Number(datos.personas);
+        const response = await fetch(`/api/mesas/${mesaSeleccionada.id}/reserva`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(datos)
+        });
+        const resultado = await response.json();
+        if (!response.ok) throw new Error(resultado.mensaje || `Error HTTP ${response.status}`);
+        form.reset();
+        form.elements.namedItem('personas').value = '2';
+        form.elements.namedItem('fechaHora').min = obtenerFechaHoraLocal(new Date());
+        cerrarModalReserva();
+        await cargarMesas();
+      } catch (exception) {
+        error.textContent = `No se pudo guardar la reserva: ${exception.message}`;
+        error.classList.remove('hidden');
+      } finally {
+        boton.disabled = false;
+      }
+    }
+
+    function obtenerFechaHoraLocal(fecha) {
+      const zonaHoraria = fecha.getTimezoneOffset() * 60000;
+      return new Date(fecha.getTime() - zonaHoraria).toISOString().slice(0, 16);
+    }
+
+    function formatearFechaReserva(fechaHora) {
+      if (!fechaHora) return '—';
+      const fecha = new Date(fechaHora);
+      return Number.isNaN(fecha.getTime()) ? '—' : fecha.toLocaleString('es-PE');
+    }
+
+    async function cambiarEstadoMesaActual(nuevoEstado) {
+      const drawer = document.getElementById('mesa-detail-drawer');
+      const mesaId = drawer ? drawer.dataset.mesaId : null;
+
+      if (!mesaId) {
+        alert('Por favor seleccione una mesa primero.');
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/mesas/${mesaId}/estado`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ estado: nuevoEstado })
+        });
+        const resultado = await response.json();
+        if (!response.ok) throw new Error(resultado.mensaje || `Error HTTP ${response.status}`);
+        await cargarMesas();
+        closeInspector();
+      } catch (error) {
+        console.error('Error al actualizar estado:', error);
+        alert(`No se pudo actualizar la mesa: ${error.message}`);
+      }
+    }
+  </script>
+</body>
+</html>

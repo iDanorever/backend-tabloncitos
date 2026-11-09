@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_dashboard" name="shell-type"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <style>
+    @layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab", "on-secondary-container": "#ff9a84", "secondary-fixed": "#ffdad3",
+            "surface-container-low": "#1c1b1a", "tertiary-container": "#c2b1a5", "inverse-primary": "#805600",
+            "on-surface": "#e6e2df", "primary-fixed-dim": "#ffba44", "on-error-container": "#ffdad6",
+            "surface-tint": "#ffba44", "primary-fixed": "#ffddaf", "tertiary-fixed-dim": "#d5c3b7",
+            "on-error": "#690005", "on-tertiary-container": "#50443a", "on-primary-fixed": "#281800",
+            "primary-container": "#f0a500", "tertiary": "#dfccc0", "on-primary": "#442c00",
+            "inverse-on-surface": "#32302f", "primary": "#ffc56c", "on-primary-container": "#5f3f00",
+            "background": "#141312", "on-surface-variant": "#d6c4ac", "tertiary-fixed": "#f2dfd2",
+            "secondary": "#ffb4a4", "surface-variant": "#363433", "outline": "#9f8e79",
+            "secondary-container": "#891e07", "inverse-surface": "#e6e2df", "outline-variant": "#514533",
+            "on-background": "#e6e2df", "on-primary-fixed-variant": "#614000", "secondary-fixed-dim": "#ffb4a4",
+            "on-secondary": "#640d00", "on-secondary-fixed": "#3e0500", "surface-dim": "#141312",
+            "on-tertiary": "#392e26", "error-container": "#93000a", "surface-container-high": "#2b2a29",
+            "on-tertiary-fixed-variant": "#51443b", "surface-container-lowest": "#0f0e0d",
+            "surface-container-highest": "#363433", "surface-bright": "#3a3938", "surface": "#141312",
+            "surface-container": "#201f1e", "on-tertiary-fixed": "#231a12"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-sans text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- Sidebar Izquierdo -->
+  <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+    <div class="h-16 px-6 flex items-center gap-3 bg-surface-container-low">
+      <div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center text-secondary">
+        <span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-bold text-primary uppercase tracking-tight text-lg">Tabloncitos</span>
+        <span class="text-xs uppercase text-on-surface-variant tracking-wider">Pollos &amp; Parrillas</span>
+      </div>
+    </div>
+    <div class="px-4 py-3 bg-surface-container">
+      <div class="flex items-center justify-between">
+        <span class="text-xs uppercase text-on-surface-variant font-bold">Módulo Activo</span>
+        <span class="text-xs text-primary bg-surface-container-high px-2 py-0.5 rounded font-mono">BLQ-MESERO</span>
+      </div>
+      <div class="text-base font-bold text-on-surface mt-1">Atención y Salón</div>
+    </div>
+    <nav class="min-h-0 flex-1 py-4 flex flex-col gap-1 overflow-y-auto">
+      <span class="px-3 text-xs uppercase text-on-surface-variant font-bold mb-1">Operación de Turno</span>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="mesas.html">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">table_restaurant</span>
+          <span>11. Mapa de Mesas</span>
+        </div>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl bg-primary-container text-on-primary-container font-bold shadow-md" href="toma-pedidos.html" aria-current="page">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">receipt_long</span>
+          <span>12. Toma de Pedidos</span>
+        </div>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="monitor-entrega.html">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">notifications_active</span>
+          <span>13. Monitor Entrega</span>
+        </div>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="#">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">local_bar</span>
+          <span>14. Despacho Rápido</span>
+        </div>
+        <span class="text-xs text-primary font-mono">Bebidas</span>
+      </a>
+      <a class="flex items-center justify-between px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" href="mesero-dashboard.html">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span>15. Mi Rendimiento</span>
+        </div>
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+      </a>
+    </nav>
+    <div class="mt-auto p-4 bg-surface-container-low flex flex-col gap-2">
+      <div class="flex items-center justify-between bg-surface-container-lowest p-2.5 rounded-lg">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+            <span class="material-symbols-outlined text-[16px]">wifi</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] text-on-surface-variant uppercase font-bold">RED SENATI</span>
+            <span class="text-xs text-on-surface font-mono">50ms • Conectado</span>
+          </div>
+        </div>
+        <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+      </div>
+      <a id="lock-terminal" class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface transition-colors text-xs uppercase font-bold" href="login.html">
+        <span class="material-symbols-outlined text-[18px]">lock</span>
+        <span>Cerrar Sesión</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Contenedor Principal -->
+  <div class="pl-72">
+    <!-- Header Superior -->
+    <header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl z-40 px-6 flex items-center justify-between shadow-md">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container">
+          <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="text-xs uppercase text-primary font-bold">Salón Activo</span>
+          <span class="text-on-surface-variant">•</span>
+          <span class="text-xs text-on-surface-variant uppercase">Turno Tarde / Noche</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex flex-col text-right">
+          <span id="signed-in-name" class="text-sm text-on-surface font-bold leading-tight">Sin usuario</span>
+          <div class="flex items-center justify-end gap-1">
+            <span id="signed-in-role" class="text-[10px] text-on-surface-variant uppercase">—</span>
+            <span id="signed-in-code" class="text-xs text-primary font-mono">—</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold">
+          <span class="material-symbols-outlined text-[18px]">person</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas de Toma de Pedidos -->
+    <main class="relative pt-16 bg-surface min-h-screen">
+      <div class="grid grid-cols-12 gap-4 p-4 bg-surface min-h-[calc(100vh-4rem)] select-none">
+        
+        <!-- COLUMNA IZQUIERDA: Catálogo Táctil (Cols 1-7) -->
+        <section class="col-span-12 xl:col-span-7 flex flex-col gap-3">
+          
+          <!-- Contexto de la Mesa -->
+          <div class="bg-surface-container-low rounded-xl p-4 shadow-md flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="bg-primary-container text-on-primary-container font-black text-xl px-4 py-2 rounded-lg flex items-center gap-2 shadow-sm">
+                <span class="material-symbols-outlined text-[24px]">table_bar</span>
+                <span id="txt-mesa-activa">Selecciona una mesa</span>
+              </div>
+              <div class="flex flex-col">
+                <span id="txt-zona-activa" class="text-base font-bold text-on-surface">—</span>
+                <span id="txt-mozo-activo" class="text-xs text-on-surface-variant">Mozo: —</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+              <label class="flex items-center gap-2 text-xs font-semibold text-on-surface-variant" for="select-mesa-activa">
+                Cambiar mesa ocupada
+                <select id="select-mesa-activa" class="max-w-[220px] rounded-lg border border-outline-variant/50 bg-surface-container-high px-3 py-2 text-sm text-on-surface">
+                  <option value="">Cargando mesas...</option>
+                </select>
+              </label>
+              <div class="flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-lg">
+              <span class="material-symbols-outlined text-primary text-[18px]">group</span>
+                <span id="txt-pax-activa" class="text-xs font-bold text-on-surface">— Pax</span>
+              </div>
+            </div>
+          </div>
+          <p id="mensaje-mesa-activa" class="hidden rounded-lg border border-secondary/30 bg-secondary-container/30 px-4 py-3 text-sm text-secondary-fixed" role="status"></p>
+
+          <p id="mensaje-catalogo" class="rounded-lg bg-surface-container px-4 py-3 text-sm text-on-surface-variant" role="status">Cargando menú...</p>
+
+          <!-- Categorías y productos cargados desde la base de datos -->
+          <div id="category-filters" class="flex items-center gap-2 overflow-x-auto py-1"></div>
+          <label class="flex items-center gap-2 rounded-xl border border-outline-variant/40 bg-surface-container-low px-3 py-2.5 text-on-surface-variant focus-within:border-primary">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">search</span>
+            <input id="product-search" type="search" class="min-w-0 flex-1 bg-transparent text-sm text-on-surface outline-none placeholder:text-on-surface-variant" placeholder="Buscar por nombre o código del producto..." autocomplete="off" aria-label="Buscar productos por nombre o código">
+          </label>
+          <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto max-h-[calc(100vh-17.5rem)] pr-1"></div>
+        </section>
+
+        <!-- COLUMNA DERECHA: Resumen de Comanda en Vivo (Cols 8-12) -->
+        <section class="col-span-12 xl:col-span-5 bg-surface-container-low rounded-xl p-4 shadow-xl flex flex-col justify-between">
+          
+          <!-- Encabezado del Ticket -->
+          <div class="flex flex-col gap-2 pb-3 border-b border-surface-variant">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span id="txt-ticket-mesa" class="text-xl font-bold text-primary font-mono">#M-—</span>
+                <span id="estado-comanda" class="rounded bg-secondary-container px-2 py-0.5 text-xs font-bold text-secondary">ABIERTA</span>
+              </div>
+              <span class="flex items-center gap-1 text-xs font-mono text-on-surface-variant" title="Tiempo desde que se ocupó la mesa">
+                <span class="material-symbols-outlined text-[15px]">schedule</span>
+                <span id="txt-tiempo-mesa">—</span>
+              </span>
+              <span id="txt-ticket-zona" class="text-xs font-semibold text-on-surface-variant">—</span>
+              <button id="btn-vaciar-comanda" class="text-xs text-error font-bold flex items-center gap-1 hover:underline" onclick="clearTicket()">
+                <span class="material-symbols-outlined text-[16px]">delete_sweep</span>
+                <span>Vaciar</span>
+              </button>
+            </div>
+            <div class="flex items-center gap-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">person</span>
+              <span id="txt-ticket-mozo">Mesero: —</span>
+            </div>
+          </div>
+
+          <!-- Lista de Ítems en la Comanda -->
+          <div class="flex-1 overflow-y-auto max-h-[calc(100vh-25rem)] flex flex-col gap-2 py-3" id="ticket-items-container">
+            <!-- Renderizado dinámico desde JS -->
+          </div>
+
+          <!-- Cálculos de Total e IGV -->
+          <div class="bg-surface-container rounded-xl p-4 flex flex-col gap-1 mt-2">
+            <div class="flex items-center justify-between text-xs text-on-surface-variant">
+              <span>Subtotal Operativo:</span>
+              <span class="font-mono font-bold text-on-surface" id="txt-subtotal">S/ 0.00</span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-on-surface-variant">
+              <span>IGV (18% Incluido):</span>
+              <span class="font-mono font-bold text-on-surface" id="txt-igv">S/ 0.00</span>
+            </div>
+            <div class="h-px bg-surface-variant my-1"></div>
+            <div class="flex items-baseline justify-between">
+              <span class="text-lg font-bold text-on-surface uppercase">Total Comanda</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-base text-primary">S/</span>
+                <span class="text-3xl font-black text-primary font-mono" id="txt-total">0.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de Envío Principal -->
+          <button class="w-full bg-secondary-container hover:bg-secondary-container/90 text-secondary-fixed py-4 px-6 rounded-xl font-bold uppercase flex items-center justify-center gap-3 shadow-xl mt-3 transition-all min-h-[58px]" id="btn-dispatch-order" onclick="dispatchOrder()">
+            <span class="material-symbols-outlined text-[28px] text-secondary">local_fire_department</span>
+            <span class="tracking-wide">Enviar Comanda a Cocina y Barra</span>
+            <span class="material-symbols-outlined text-[24px]">send</span>
+          </button>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: Personalizador Táctil -->
+  <div class="fixed inset-0 bg-surface-container-lowest/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4" id="modal-customizer">
+    <div class="bg-surface-container-low max-w-lg w-full rounded-xl p-6 shadow-2xl flex flex-col gap-4">
+      <div class="flex items-center justify-between border-b border-surface-variant pb-2">
+        <span class="font-bold text-on-surface text-lg" id="modal-item-title">Personalizar Producto</span>
+        <button class="text-on-surface-variant hover:text-on-surface" onclick="closeItemCustomizer()">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-bold text-on-surface uppercase">Guarnición o Término Especial:</label>
+        <input class="bg-surface-container rounded-lg px-4 py-2 text-on-surface text-sm outline-none border border-surface-variant" id="modal-custom-detail" placeholder="Ej: Papas Nativas / Bien tostado..." type="text"/>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="text-xs font-bold text-on-surface uppercase">Comentario para Cocina (KDS):</label>
+        <input class="bg-surface-container rounded-lg px-4 py-2 text-on-surface text-sm outline-none border border-surface-variant" id="modal-custom-note" placeholder="Ej: Servir sin vinagreta..." type="text"/>
+      </div>
+      <div class="flex items-center gap-2 pt-2">
+        <button class="flex-1 bg-surface-container-high text-on-surface py-3 rounded-lg font-bold uppercase text-xs" onclick="closeItemCustomizer()">Cancelar</button>
+        <button class="flex-2 bg-primary text-on-primary py-3 px-4 rounded-lg font-bold uppercase text-xs shadow-md" onclick="confirmItemCustomizer()">Agregar a Comanda</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT DINÁMICO E INTEGRACIÓN SPRING BOOT -->
+  <script>
+    let currentItem = { productId: null, title: '', price: 0, detail: '' };
+    let nextTicketItemId = 0;
+
+    let ticketItems = [];
+    let menuProducts = [];
+    let menuCategories = [];
+    let selectedCategoryId = 'all';
+    let catalogLoadInProgress = false;
+    let catalogHasLoaded = false;
+    let mesasOcupadas = [];
+    let mesaActiva = null;
+    let cargaMesasEnCurso = false;
+    let cargaInicialCompletada = false;
+    let ticketsPorMesa = new Map();
+    let envioComandaEnCurso = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      mostrarUsuarioIniciado();
+      document.getElementById('lock-terminal').addEventListener('click', async event => {
+        event.preventDefault();
+        const boton = event.currentTarget;
+        boton.classList.add('pointer-events-none', 'opacity-60');
+        localStorage.removeItem('tabloncitos.usuario');
+        sessionStorage.removeItem('tabloncitos.usuario');
+        try {
+          const response = await fetch('/api/auth/logout', { method: 'POST' });
+          if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+        } catch (error) {
+          console.error('No se pudo cerrar la sesión en el servidor:', error);
+        } finally {
+          window.location.assign('login.html');
+        }
+      });
+      document.getElementById('select-mesa-activa').addEventListener('change', event => {
+        seleccionarMesaActiva(event.currentTarget.value);
+      });
+      document.getElementById('product-search').addEventListener('input', renderizarProductos);
+      renderTicket();
+      cargarCatalogo();
+      setInterval(cargarCatalogo, 10000);
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) cargarCatalogo();
+      });
+      cargarMesasOcupadas();
+      setInterval(cargarMesasOcupadas, 5000);
+      setInterval(actualizarContadorMesaActiva, 1000);
+    });
+
+    async function mostrarUsuarioIniciado() {
+      let usuarioGuardado = null;
+      try {
+        const datosGuardados = localStorage.getItem('tabloncitos.usuario')
+          || sessionStorage.getItem('tabloncitos.usuario');
+        usuarioGuardado = JSON.parse(datosGuardados || 'null');
+      } catch (error) {
+        console.error('No se pudo leer la cuenta guardada:', error);
+      }
+      mostrarIdentidadUsuario(usuarioGuardado);
+
+      try {
+        const response = await fetch('/api/auth/sesion', { cache: 'no-store' });
+        if (response.status === 401 || response.status === 404) return;
+        if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+        const usuario = await response.json();
+        localStorage.setItem('tabloncitos.usuario', JSON.stringify(usuario));
+        mostrarIdentidadUsuario(usuario);
+      } catch (error) {
+        console.error('No se pudo consultar la cuenta iniciada:', error);
+      }
+    }
+
+    function mostrarIdentidadUsuario(usuario) {
+      document.getElementById('signed-in-name').textContent = usuario?.nombre || 'Sin usuario';
+      document.getElementById('signed-in-role').textContent = usuario?.rol || '—';
+      document.getElementById('signed-in-code').textContent = usuario?.codigo
+        ? `#${usuario.codigo}`
+        : '—';
+    }
+
+    async function cargarMesasOcupadas() {
+      if (cargaMesasEnCurso) return;
+      cargaMesasEnCurso = true;
+      const mensaje = document.getElementById('mensaje-mesa-activa');
+      try {
+        const response = await fetch('/api/mesas', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`Error HTTP ${response.status}`);
+        const data = await response.json();
+        if (!Array.isArray(data)) throw new Error('La respuesta de mesas no es válida');
+
+        mesasOcupadas = data
+          .filter(mesa => esMesaOcupada(mesa.estado))
+          .sort((a, b) => {
+            const zona = String(a.zona || '').localeCompare(String(b.zona || ''), 'es');
+            return zona || Number(a.numeroMesa ?? a.numero) - Number(b.numeroMesa ?? b.numero);
+          });
+
+        if (!cargaInicialCompletada) {
+          const mesaSolicitada = new URLSearchParams(window.location.search).get('mesaId');
+          const mesaInicial = mesaSolicitada
+            ? mesasOcupadas.find(mesa => String(mesa.id) === mesaSolicitada)
+            : mesasOcupadas[0];
+          if (mesaInicial) {
+            cambiarMesaActiva(mesaInicial);
+          } else if (mesaSolicitada) {
+            mensaje.textContent = 'La mesa seleccionada ya no está ocupada. Elige otra mesa ocupada para continuar.';
+            mensaje.classList.remove('hidden');
+          }
+          cargaInicialCompletada = true;
+        } else if (mesaActiva) {
+          const mesaActualizada = mesasOcupadas.find(mesa => String(mesa.id) === String(mesaActiva.id));
+          if (mesaActualizada) {
+            mesaActiva = mesaActualizada;
+            actualizarContextoMesa();
+          } else {
+            ticketsPorMesa.set(String(mesaActiva.id), ticketItems.map(item => ({ ...item })));
+            mesaActiva = null;
+            ticketItems = [];
+            renderTicket();
+            mensaje.textContent = 'La mesa actual ya no está ocupada. Elige otra mesa ocupada para continuar.';
+            mensaje.classList.remove('hidden');
+            actualizarContextoMesa();
+          }
+        }
+
+        actualizarSelectorMesas();
+        if (mesasOcupadas.length === 0) {
+          mensaje.textContent = 'No hay mesas ocupadas. Marca una mesa como ocupada desde el mapa para empezar a tomar su pedido.';
+          mensaje.classList.remove('hidden');
+        } else if (mesaActiva) {
+          mensaje.classList.add('hidden');
+        }
+      } catch (error) {
+        mensaje.textContent = 'No se pudieron cargar las mesas ocupadas. Intenta actualizar la página.';
+        mensaje.classList.remove('hidden');
+        console.error('Error al cargar las mesas ocupadas:', error);
+      } finally {
+        cargaMesasEnCurso = false;
+      }
+    }
+
+    function actualizarSelectorMesas() {
+      const selector = document.getElementById('select-mesa-activa');
+      selector.replaceChildren();
+
+      const opcionInicial = document.createElement('option');
+      opcionInicial.value = '';
+      opcionInicial.textContent = mesasOcupadas.length
+        ? 'Selecciona una mesa'
+        : 'No hay mesas ocupadas';
+      selector.append(opcionInicial);
+
+      mesasOcupadas.forEach(mesa => {
+        const opcion = document.createElement('option');
+        opcion.value = mesa.id;
+        opcion.textContent = `${nombreMesa(mesa)} · ${mesa.zona || 'Sin salón'}`;
+        selector.append(opcion);
+      });
+
+      selector.value = mesaActiva ? String(mesaActiva.id) : '';
+      selector.disabled = mesasOcupadas.length === 0;
+    }
+
+    function seleccionarMesaActiva(mesaId) {
+      if (!mesaId) {
+        actualizarSelectorMesas();
+        return;
+      }
+      const mesa = mesasOcupadas.find(item => String(item.id) === String(mesaId));
+      if (mesa) cambiarMesaActiva(mesa);
+    }
+
+    function cambiarMesaActiva(mesa) {
+      if (mesaActiva) {
+        ticketsPorMesa.set(String(mesaActiva.id), ticketItems.map(item => ({ ...item })));
+      }
+      mesaActiva = mesa;
+      ticketItems = ticketsPorMesa.get(String(mesa.id)) || [];
+      actualizarSelectorMesas();
+      actualizarContextoMesa();
+      renderTicket();
+      document.getElementById('mensaje-mesa-activa').classList.add('hidden');
+    }
+
+    function actualizarContextoMesa() {
+      const seleccionada = Boolean(mesaActiva);
+      document.getElementById('txt-mesa-activa').textContent =
+        seleccionada ? nombreMesa(mesaActiva) : 'Selecciona una mesa';
+      document.getElementById('txt-zona-activa').textContent =
+        seleccionada ? (mesaActiva.zona || 'Sin salón') : '—';
+      document.getElementById('txt-mozo-activo').textContent =
+        `Mozo: ${seleccionada ? (mesaActiva.mozoResponsable || 'Sin asignar') : '—'}`;
+      document.getElementById('txt-pax-activa').textContent =
+        seleccionada ? `${mesaActiva.capacidad || 4} Pax` : '— Pax';
+      actualizarEncabezadoComanda();
+      document.getElementById('btn-dispatch-order').disabled = !seleccionada || ticketItems.length === 0;
+      document.getElementById('btn-dispatch-order').classList.toggle('opacity-50', !seleccionada);
+      document.getElementById('btn-vaciar-comanda').disabled = !seleccionada || ticketItems.length === 0;
+      document.getElementById('btn-vaciar-comanda').classList.toggle('opacity-50', !seleccionada || ticketItems.length === 0);
+    }
+
+    function nombreMesa(mesa) {
+      const numero = Number(mesa.numeroMesa ?? mesa.numero);
+      return Number.isInteger(numero) && numero > 0
+        ? `Mesa ${String(numero).padStart(2, '0')}`
+        : `Mesa ${mesa.id}`;
+    }
+
+    function esMesaOcupada(estado) {
+      return ['OCUPADA', 'SERVIDA', 'CUENTA_PEDIDA'].includes(String(estado || '').trim().toUpperCase());
+    }
+
+    function actualizarEncabezadoComanda() {
+      const mesaSeleccionada = Boolean(mesaActiva);
+      const etiquetaMesa = mesaSeleccionada ? nombreCortoMesa(mesaActiva) : 'Sin mesa';
+      document.getElementById('txt-ticket-mesa').textContent = `#${etiquetaMesa}`;
+      document.getElementById('txt-ticket-zona').textContent =
+        mesaSeleccionada ? (mesaActiva.zona || 'Sin salón') : '—';
+      document.getElementById('txt-ticket-mozo').textContent =
+        `Mesero: ${mesaSeleccionada ? (mesaActiva.mozoResponsable || 'Sin asignar') : '—'}`;
+
+      const estado = document.getElementById('estado-comanda');
+      const atendida = mesaSeleccionada && ticketItems.length === 0 && mesaActiva.ultimaComandaEnviada;
+      estado.textContent = atendida ? 'ATENDIDA' : 'ABIERTA';
+      estado.classList.toggle('bg-primary-container', Boolean(atendida));
+      estado.classList.toggle('text-on-primary-container', Boolean(atendida));
+      estado.classList.toggle('bg-secondary-container', !atendida);
+      estado.classList.toggle('text-secondary', !atendida);
+      actualizarContadorMesaActiva();
+    }
+
+    function nombreCortoMesa(mesa) {
+      const numero = Number(mesa.numeroMesa ?? mesa.numero);
+      const formato = Number.isInteger(numero) && numero > 0
+        ? String(numero).padStart(2, '0')
+        : String(mesa.id);
+      const zona = String(mesa.zona || '').toLocaleLowerCase();
+      const prefijo = zona.includes('terraza') ? 'T' : 'M';
+      return `${prefijo}-${formato}`;
+    }
+
+    function actualizarContadorMesaActiva() {
+      const contador = document.getElementById('txt-tiempo-mesa');
+      if (!mesaActiva || !mesaActiva.ocupadaDesde) {
+        contador.textContent = '—';
+        return;
+      }
+
+      const inicio = new Date(mesaActiva.ocupadaDesde);
+      if (Number.isNaN(inicio.getTime())) {
+        contador.textContent = '—';
+        return;
+      }
+      const transcurrido = Math.max(0, Math.floor((Date.now() - inicio.getTime()) / 1000));
+      const horas = Math.floor(transcurrido / 3600);
+      const minutos = Math.floor((transcurrido % 3600) / 60);
+      const segundos = String(transcurrido % 60).padStart(2, '0');
+      contador.textContent = horas > 0
+        ? `${horas} h ${minutos} min`
+        : `${minutos} min ${segundos} seg`;
+    }
+
+    async function cargarCatalogo() {
+      if (catalogLoadInProgress) return;
+      catalogLoadInProgress = true;
+      const mensaje = document.getElementById('mensaje-catalogo');
+      try {
+        const [productosResponse, categoriasResponse] = await Promise.all([
+          fetch('/api/productos', { cache: 'no-store' }),
+          fetch('/api/categorias', { cache: 'no-store' })
+        ]);
+        if (!productosResponse.ok) throw new Error(`Error HTTP ${productosResponse.status} al cargar productos`);
+        if (!categoriasResponse.ok) throw new Error(`Error HTTP ${categoriasResponse.status} al cargar categorías`);
+
+        const [productos, categorias] = await Promise.all([
+          productosResponse.json(),
+          categoriasResponse.json()
+        ]);
+        if (!Array.isArray(productos) || !Array.isArray(categorias)) {
+          throw new Error('La respuesta del menú no tiene un formato válido');
+        }
+
+        const categoriasPorId = new Map(categorias.map(categoria => [String(categoria.id), categoria]));
+        const productosNormalizados = productos.map(producto => {
+          const categoriaId = producto.categoria?.id ?? producto.categoriaId;
+          const categoria = categoriasPorId.get(String(categoriaId)) || producto.categoria;
+          const precio = Number(producto.precio);
+          if (!producto.id || !producto.nombre || !categoria?.id || !categoria?.nombre || !Number.isFinite(precio)) {
+            throw new Error(`El producto ${producto.nombre || producto.id || '(sin nombre)'} tiene datos incompletos`);
+          }
+          return {
+            id: Number(producto.id),
+            nombre: producto.nombre,
+            precio,
+            categoriaId: String(categoria.id),
+            categoriaNombre: categoria.nombre,
+            tieneImagen: Boolean(producto.tieneImagen)
+          };
+        });
+
+        menuProducts = productosNormalizados;
+        const categoriasConProductos = new Set(menuProducts.map(producto => producto.categoriaId));
+        const ordenCategorias = ['brasas & pollos', 'parrillas & cortes', 'guarniciones', 'bebidas'];
+        menuCategories = categorias
+          .filter(categoria => categoriasConProductos.has(String(categoria.id)))
+          .sort((a, b) => {
+            const indiceA = ordenCategorias.indexOf(a.nombre.trim().toLocaleLowerCase());
+            const indiceB = ordenCategorias.indexOf(b.nombre.trim().toLocaleLowerCase());
+            const ordenA = indiceA === -1 ? ordenCategorias.length : indiceA;
+            const ordenB = indiceB === -1 ? ordenCategorias.length : indiceB;
+            return ordenA - ordenB || a.nombre.localeCompare(b.nombre, 'es');
+          });
+        if (selectedCategoryId !== 'all'
+            && !menuCategories.some(categoria => String(categoria.id) === selectedCategoryId)) {
+          selectedCategoryId = 'all';
+        }
+
+        catalogHasLoaded = true;
+        renderizarCategorias();
+        renderizarProductos();
+        mensaje.classList.add('hidden');
+      } catch (error) {
+        console.error('No se pudo cargar el catálogo de productos:', error);
+        mensaje.textContent = catalogHasLoaded
+          ? 'No se pudo actualizar el menú. Se mantienen los productos cargados anteriormente.'
+          : 'No se pudo cargar el menú. Verifica la conexión con el servidor e intenta actualizar la página.';
+        mensaje.classList.remove('hidden');
+      } finally {
+        catalogLoadInProgress = false;
+      }
+    }
+
+    function renderizarCategorias() {
+      const contenedor = document.getElementById('category-filters');
+      contenedor.replaceChildren();
+      agregarBotonCategoria(contenedor, 'all', 'Todos', 'restaurant_menu');
+      menuCategories.forEach(categoria => {
+        agregarBotonCategoria(
+          contenedor,
+          String(categoria.id),
+          categoria.nombre,
+          iconoCategoria(categoria.nombre)
+        );
+      });
+    }
+
+    function agregarBotonCategoria(contenedor, id, nombre, icono) {
+      const boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'category-btn flex items-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 font-bold transition-colors min-h-[44px]';
+      boton.classList.add(
+        selectedCategoryId === id ? 'bg-primary-container' : 'bg-surface-container-high',
+        selectedCategoryId === id ? 'text-on-primary-container' : 'text-on-surface'
+      );
+      boton.addEventListener('click', () => filterCategory(id));
+
+      const iconoElemento = document.createElement('span');
+      iconoElemento.className = 'material-symbols-outlined text-[20px]';
+      iconoElemento.textContent = icono;
+      const nombreElemento = document.createElement('span');
+      nombreElemento.textContent = nombre;
+      boton.append(iconoElemento, nombreElemento);
+      contenedor.append(boton);
+    }
+
+    function renderizarProductos() {
+      const contenedor = document.getElementById('product-grid');
+      contenedor.replaceChildren();
+      const productosDeCategoria = selectedCategoryId === 'all'
+        ? menuProducts
+        : menuProducts.filter(producto => producto.categoriaId === selectedCategoryId);
+      const consulta = normalizarBusqueda(document.getElementById('product-search').value);
+      const productosVisibles = productosDeCategoria.filter(producto =>
+        normalizarBusqueda(producto.nombre).includes(consulta)
+        || String(producto.id).includes(consulta));
+
+      if (productosVisibles.length === 0) {
+        const mensaje = document.createElement('p');
+        mensaje.className = 'col-span-full rounded-xl bg-surface-container-low p-6 text-center text-on-surface-variant';
+        mensaje.textContent = consulta
+          ? 'No se encontraron productos con esa búsqueda.'
+          : menuProducts.length
+          ? 'No hay productos activos en esta categoría.'
+          : 'No hay productos activos para mostrar.';
+        contenedor.append(mensaje);
+        return;
+      }
+
+      productosVisibles.forEach(producto => contenedor.append(crearTarjetaProducto(producto)));
+    }
+
+    function normalizarBusqueda(valor) {
+      return String(valor || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim()
+        .toLocaleLowerCase();
+    }
+
+    function crearTarjetaProducto(producto) {
+      const tarjeta = document.createElement('div');
+      tarjeta.className = 'group flex cursor-pointer flex-col justify-between rounded-xl bg-surface-container-low p-3 shadow-md transition-all hover:bg-surface-container';
+      tarjeta.tabIndex = 0;
+      tarjeta.setAttribute('role', 'button');
+      tarjeta.addEventListener('click', () => openItemCustomizer(producto.id, producto.nombre, producto.precio));
+      tarjeta.addEventListener('keydown', event => {
+        if (event.target === tarjeta && (event.key === 'Enter' || event.key === ' ')) {
+          event.preventDefault();
+          openItemCustomizer(producto.id, producto.nombre, producto.precio);
+        }
+      });
+
+      const imagen = document.createElement('div');
+      imagen.className = 'relative mb-2 aspect-[4/3] w-full overflow-hidden rounded-lg bg-surface-container-highest text-primary';
+      const icono = document.createElement('span');
+      icono.className = 'material-symbols-outlined absolute inset-0 flex items-center justify-center text-4xl';
+      icono.textContent = iconoCategoria(producto.categoriaNombre);
+      imagen.append(icono);
+
+      const foto = document.createElement('img');
+      foto.className = 'absolute inset-0 h-full w-full object-cover';
+      foto.src = `/images/productos/${producto.id}.jpg?v=${Date.now()}`;
+      foto.alt = producto.nombre;
+      foto.loading = 'lazy';
+      foto.addEventListener('load', () => icono.classList.add('hidden'), { once: true });
+      foto.addEventListener('error', () => foto.remove(), { once: true });
+      imagen.append(foto);
+
+      const informacion = document.createElement('div');
+      informacion.className = 'flex flex-col';
+      const nombre = document.createElement('span');
+      nombre.className = 'font-bold leading-tight text-on-surface';
+      nombre.textContent = producto.nombre;
+      const categoria = document.createElement('span');
+      categoria.className = 'mt-1 text-xs text-on-surface-variant';
+      categoria.textContent = producto.categoriaNombre;
+      informacion.append(nombre, categoria);
+
+      const pie = document.createElement('div');
+      pie.className = 'mt-3 flex items-center justify-between border-t border-surface-variant pt-2';
+      const precio = document.createElement('span');
+      precio.className = 'font-mono text-lg font-bold text-primary';
+      precio.textContent = `S/ ${producto.precio.toFixed(2)}`;
+      const botonAgregar = document.createElement('button');
+      botonAgregar.type = 'button';
+      botonAgregar.className = 'flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-bold text-on-primary';
+      botonAgregar.setAttribute('aria-label', `Agregar ${producto.nombre}`);
+      botonAgregar.addEventListener('click', event => {
+        event.stopPropagation();
+        addItemDirect(producto.id, producto.nombre, producto.precio);
+      });
+      const iconoAgregar = document.createElement('span');
+      iconoAgregar.className = 'material-symbols-outlined text-[20px]';
+      iconoAgregar.textContent = 'add';
+      botonAgregar.append(iconoAgregar);
+      pie.append(precio, botonAgregar);
+      tarjeta.append(imagen, informacion, pie);
+      return tarjeta;
+    }
+
+    function iconoCategoria(nombre) {
+      const categoria = String(nombre || '').toLocaleLowerCase();
+      if (categoria.includes('bebida') || categoria.includes('refresco')) return 'local_bar';
+      if (categoria.includes('pollo') || categoria.includes('brasa')) return 'local_fire_department';
+      if (categoria.includes('parrilla') || categoria.includes('corte')) return 'outdoor_grill';
+      if (categoria.includes('guarnici')) return 'lunch_dining';
+      return 'restaurant_menu';
+    }
+
+    function renderTicket() {
+      const container = document.getElementById('ticket-items-container');
+      container.innerHTML = '';
+      let total = 0;
+
+      ticketItems.forEach(item => {
+        const subtotalItem = item.price * item.qty;
+        total += subtotalItem;
+
+        const card = document.createElement('div');
+        card.className = 'flex flex-col gap-1 rounded-lg bg-surface-container p-3 shadow-sm';
+        const fila = document.createElement('div');
+        fila.className = 'flex items-start justify-between gap-2';
+        const informacion = document.createElement('div');
+        informacion.className = 'flex items-center gap-2';
+        const controles = document.createElement('div');
+        controles.className = 'flex items-center rounded bg-surface-container-high';
+        controles.append(
+          crearBotonCantidad('-', item.id, -1),
+          crearTextoTicket(String(item.qty), 'w-6 text-center font-mono text-sm font-bold text-on-surface'),
+          crearBotonCantidad('+', item.id, 1)
+        );
+        const descripcion = document.createElement('div');
+        descripcion.className = 'flex flex-col';
+        descripcion.append(
+          crearTextoTicket(item.title, 'text-sm font-bold leading-tight text-on-surface'),
+          crearTextoTicket(item.detail, 'text-xs font-medium text-primary')
+        );
+        informacion.append(controles, descripcion);
+        const subtotalElemento = crearTextoTicket(
+          `S/ ${subtotalItem.toFixed(2)}`,
+          'font-mono text-sm font-bold text-primary'
+        );
+        fila.append(informacion, subtotalElemento);
+        card.append(fila);
+        if (item.note) {
+          card.append(crearTextoTicket(item.note, 'rounded bg-surface-container-low px-2 py-0.5 text-[11px] text-secondary'));
+        }
+        container.appendChild(card);
+      });
+
+      const subtotal = total / 1.18;
+      const igv = total - subtotal;
+
+      document.getElementById('txt-subtotal').textContent = 'S/ ' + subtotal.toFixed(2);
+      document.getElementById('txt-igv').textContent = 'S/ ' + igv.toFixed(2);
+      document.getElementById('txt-total').textContent = total.toFixed(2);
+      actualizarContextoMesa();
+    }
+
+    function crearBotonCantidad(texto, itemId, delta) {
+      const boton = document.createElement('button');
+      boton.type = 'button';
+      boton.className = 'flex h-7 w-7 items-center justify-center font-bold text-on-surface hover:bg-surface-bright';
+      boton.textContent = texto;
+      boton.addEventListener('click', () => updateQty(itemId, delta));
+      return boton;
+    }
+
+    function crearTextoTicket(texto, className) {
+      const elemento = document.createElement('span');
+      elemento.className = className;
+      elemento.textContent = texto;
+      return elemento;
+    }
+
+    function addItemDirect(productId, title, price, detail = '', note = '') {
+      if (!mesaActiva) {
+        alert('Selecciona una mesa ocupada antes de agregar productos.');
+        return;
+      }
+      const existing = ticketItems.find(i =>
+        i.productId === productId && i.detail === detail && i.note === note);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        ticketItems.push({
+          id: ++nextTicketItemId,
+          productId,
+          title: title,
+          price: price,
+          qty: 1,
+          detail: detail,
+          note: note
+        });
+      }
+      renderTicket();
+    }
+
+    function updateQty(id, delta) {
+      const item = ticketItems.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        ticketItems = ticketItems.filter(i => i.id !== id);
+      }
+      renderTicket();
+    }
+
+    function clearTicket() {
+      if (confirm('¿Vaciar los productos de la comanda?')) {
+        ticketItems = [];
+        renderTicket();
+      }
+    }
+
+    function openItemCustomizer(productId, title, price) {
+      if (!mesaActiva) {
+        alert('Selecciona una mesa ocupada antes de agregar productos.');
+        return;
+      }
+      currentItem = { productId, title, price, detail: '' };
+      document.getElementById('modal-item-title').textContent = title + ' (S/ ' + price.toFixed(2) + ')';
+      document.getElementById('modal-custom-detail').value = '';
+      document.getElementById('modal-customizer').classList.remove('hidden');
+      document.getElementById('modal-customizer').classList.add('flex');
+    }
+
+    function closeItemCustomizer() {
+      document.getElementById('modal-customizer').classList.add('hidden');
+      document.getElementById('modal-customizer').classList.remove('flex');
+    }
+
+    function confirmItemCustomizer() {
+      const detail = document.getElementById('modal-custom-detail').value.trim();
+      const note = document.getElementById('modal-custom-note').value || '';
+      addItemDirect(currentItem.productId, currentItem.title, currentItem.price, detail, note);
+      closeItemCustomizer();
+    }
+
+    function filterCategory(categoryId) {
+      selectedCategoryId = categoryId;
+      renderizarCategorias();
+      renderizarProductos();
+    }
+
+    // CONEXIÓN CON SPRING BOOT (Guarda en MySQL y redirige al mapa de mesas)
+    async function dispatchOrder() {
+      if (!mesaActiva) {
+        alert('Selecciona una mesa ocupada antes de enviar la comanda.');
+        return;
+      }
+      if (ticketItems.length === 0) {
+        alert('Agregue al menos un producto a la comanda.');
+        return;
+      }
+      if (envioComandaEnCurso) return;
+
+      const btn = document.getElementById('btn-dispatch-order');
+      const textoOriginal = btn.innerHTML;
+      envioComandaEnCurso = true;
+      btn.disabled = true;
+      btn.innerText = 'Transmitiendo a Cocina...';
+
+      const payload = {
+        pedido: {
+          mesa: { id: Number(mesaActiva.id) },
+          tipoService: 'SALON'
+        },
+        detalles: ticketItems.map(item => ({
+          producto: { id: item.productId },
+          cantidad: item.qty,
+          observacion: [item.detail, item.note].filter(Boolean).join(' - ')
+        }))
+      };
+
+      try {
+        const response = await fetch('/api/pedidos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.mensaje || `Error HTTP ${response.status}`);
+        }
+
+        ticketItems = [];
+        ticketsPorMesa.delete(String(mesaActiva.id));
+        renderTicket();
+        await cargarMesasOcupadas();
+        alert(`Comanda ${data.id ? `#COM-${data.id}` : ''} enviada a cocina. La mesa quedó atendida.`);
+      } catch (error) {
+        console.error('Error al enviar la comanda:', error);
+        alert(`No se pudo enviar la comanda: ${error.message}`);
+      } finally {
+        envioComandaEnCurso = false;
+        btn.innerHTML = textoOriginal;
+        actualizarContextoMesa();
+      }
+    }
+  </script>
+</body>
+</html>

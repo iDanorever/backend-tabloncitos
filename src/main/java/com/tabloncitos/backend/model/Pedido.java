@@ -52,4 +52,10 @@ public class Pedido {
 
     @Column(name = "fecha_creacion", updatable = false)
     private LocalDateTime fechaCreacion = LocalDateTime.now();
+
+    @Column(name = "fecha_inicio_preparacion")
+    private LocalDateTime fechaInicioPreparacion;
+
+    @Column(name = "fecha_fin_preparacion")
+    private LocalDateTime fechaFinPreparacion;
 }

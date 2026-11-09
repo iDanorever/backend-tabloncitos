@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="web_blank" name="shell-type"/>
+    <title>Tabloncitos - Validación de Token OTP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline-variant":"#514533","tertiary-fixed":"#f2dfd2","primary":"#ffc56c","on-primary-fixed":"#281800","surface-container":"#201f1e","on-primary":"#442c00","primary-container":"#f0a500","on-secondary":"#640d00","on-error-container":"#ffdad6","surface-bright":"#3a3938","surface-container-highest":"#363433","on-background":"#e6e2df","surface":"#141312","error-container":"#93000a","surface-dim":"#141312","error":"#ffb4ab","secondary-fixed":"#ffdad3","on-surface":"#e6e2df","on-tertiary-fixed":"#231a12","surface-variant":"#363433","on-secondary-fixed-variant":"#891e07","on-tertiary-fixed-variant":"#51443b","on-secondary-container":"#ff9a84","on-tertiary-container":"#50443a","primary-fixed-dim":"#ffba44","outline":"#9f8e79","primary-fixed":"#ffddaf","on-secondary-fixed":"#3e0500","surface-container-high":"#2b2a29","surface-tint":"#ffba44","surface-container-low":"#1c1b1a","tertiary-fixed-dim":"#d5c3b7","on-primary-fixed-variant":"#614000","tertiary":"#dfccc0","background":"#141312","on-surface-variant":"#d6c4ac","inverse-on-surface":"#32302f","secondary-container":"#891e07","secondary":"#ffb4a4","on-error":"#690005","inverse-primary":"#805600","on-tertiary":"#392e26","surface-container-lowest":"#0f0e0d","secondary-fixed-dim":"#ffb4a4","on-primary-container":"#5f3f00","inverse-surface":"#e6e2df","tertiary-container":"#c2b1a5"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xl":"1.75rem","gutter":"0.75rem","gutter-kds":"1rem","space-lg":"1.25rem","space-sm":"0.5rem","margin-kds":"1.5rem","space-xs":"0.25rem","margin":"1rem","space-md":"0.75rem"},"fontFamily":{"label-numeric-sm":["JetBrains Mono"],"label-numeric-lg":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"label-numeric-md":["JetBrains Mono"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"label-numeric-sm":["12px",{"lineHeight":"14px","fontWeight":"500"}],"label-numeric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-numeric-md":["16px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"display-lg-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}]}}}};</script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between">
+<header class="w-full py-space-lg flex justify-center">
+    <div class="flex items-center gap-space-sm">
+        <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+            <span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+        </div>
+        <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">TABLONCITOS</span>
+            <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Pollos &amp; Parrillas</span>
+        </div>
+    </div>
+</header>
+
+<main class="w-full flex-1 flex items-center justify-center px-space-md py-space-lg">
+    <div class="flex flex-col w-full max-w-5xl mx-auto px-space-xs sm:px-space-md">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+            
+            <!-- Left Column: Context, Visual Brand Card & OTP Cells -->
+            <div class="lg:col-span-7 flex flex-col justify-between bg-surface-container rounded-xl p-space-md sm:p-space-lg shadow-xl relative overflow-hidden">
+                <div class="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-secondary-container opacity-20 blur-3xl pointer-events-none"></div>
+                <div>
+                    <div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+                        <div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-highest rounded-lg">
+                            <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                            <span class="font-label-caps text-label-caps text-primary uppercase">Paso 2 de 3: Validación de Token</span>
+                        </div>
+                        <div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg text-outline">
+                            <span class="material-symbols-outlined text-[16px]">lock</span>
+                            <span class="font-label-numeric-sm text-label-numeric-sm text-tertiary">TLS 1.3 Cifrado Activo</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-space-md">
+                        <h1 class="font-headline-lg text-headline-lg text-on-surface mb-space-xs font-bold tracking-tight">Validación de Turno por Administrador</h1>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-3">
+                           Su solicitud para la cuenta <span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold" id="masked-email">correo@tabloncitos.com.pe</span> ha sido registrada.
+                        </p>
+                        <div class="p-3 bg-surface-container-high rounded-lg border border-outline-variant/30">
+                            <p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+                                <span>Comuníquese con el <strong>Administrador de Turno</strong> para que le entregue el código OTP de 6 dígitos y apruebe su solicitud.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-low rounded-xl mb-space-lg">
+                        <div class="flex items-center gap-space-xs text-primary-container">
+                            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">timer</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Vigencia del Token:</span>
+                            <span class="font-label-numeric-md text-label-numeric-md text-primary-container tracking-wider font-bold" id="countdown-timer">04:32</span>
+                            <span class="font-body-sm text-body-sm text-outline">restante</span>
+                        </div>
+                    </div>
+
+                    <div class="relative bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg mb-space-md shadow-md">
+                        <div class="flex items-center justify-between mb-space-sm">
+                            <span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">CÓDIGO DE ACCESO SEGURO (OTP)</span>
+                            <span class="font-label-numeric-sm text-label-numeric-sm text-primary" id="pin-status">Esperando 6 dígitos</span>
+                        </div>
+
+                        <div class="grid grid-cols-6 gap-space-xs sm:gap-space-sm" id="otp-container">
+                            <div class="otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-high rounded-lg text-primary shadow-sm transition-all" data-index="0">
+                                <span class="font-label-numeric-lg text-label-numeric-lg text-primary tracking-tight font-bold">-</span>
+                                <div class="slot-cursor w-5 h-0.5 bg-primary-container mt-1 animate-pulse"></div>
+                            </div>
+                            <div class="otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-low rounded-lg text-on-surface shadow-sm transition-all" data-index="1">
+                                <span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">-</span>
+                                <div class="slot-cursor w-5 h-0.5 bg-transparent mt-1"></div>
+                            </div>
+                            <div class="otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-low rounded-lg text-on-surface shadow-sm transition-all" data-index="2">
+                                <span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">-</span>
+                                <div class="slot-cursor w-5 h-0.5 bg-transparent mt-1"></div>
+                            </div>
+                            <div class="otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-low rounded-lg text-on-surface shadow-sm transition-all" data-index="3">
+                                <span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">-</span>
+                                <div class="slot-cursor w-5 h-0.5 bg-transparent mt-1"></div>
+                            </div>
+                            <div class="otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-low rounded-lg text-on-surface shadow-sm transition-all" data-index="4">
+                                <span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">-</span>
+                                <div class="slot-cursor w-5 h-0.5 bg-transparent mt-1"></div>
+                            </div>
+                            <div class="otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-low rounded-lg text-on-surface shadow-sm transition-all" data-index="5">
+                                <span class="font-label-numeric-lg text-label-numeric-lg text-on-surface tracking-tight font-bold">-</span>
+                                <div class="slot-cursor w-5 h-0.5 bg-transparent mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative h-24 rounded-xl overflow-hidden shadow-inner hidden sm:flex items-center px-space-md" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT5lljx6RVLbEoX1wdxeEcSeAXPl4akxnevwkNQRgyjY_PjR81ZMh7yogLFUwEOoSViahT3IZiT4QMzH0vv2yFr9dAH3CwfY71sdgCsLmKlsBpo4pqBzgjY9_EfKAdPiPC0PC-QqnMYZ_OwQQQ8pcPRT-0Wd8IczRmkgYHnyV_RWpz0dIuo8ZXpyxMh4_QJDga-_Z9SH6Ou5m0q9Wv8kQ-1Sfm9lgy1EB8YnRIoHKC'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/85 to-transparent"></div>
+                        <div class="relative z-10 flex items-center gap-space-sm">
+                            <div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-[20px]">badge</span>
+                            </div>
+                            <div>
+                                <p class="font-body-sm text-body-sm text-tertiary-fixed font-bold">Autorización de Nivel 2: Maestro Parrillero &amp; Caja</p>
+                                <p class="font-label-numeric-sm text-label-numeric-sm text-outline">Nodo Salverry #14 • Sesión #8841-B</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-space-md flex flex-wrap items-center justify-between gap-space-sm">
+                    <button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-outline font-body-sm text-body-sm cursor-not-allowed transition-colors" disabled id="btn-resend" type="button">
+                        <span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+                        <span id="resend-label">Reenviar código (disponible en <span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold" id="resend-countdown">38s</span>)</span>
+                    </button>
+                    <a class="font-body-sm text-body-sm text-outline hover:text-primary transition-colors flex items-center gap-1 text-decoration-none" href="recuperar.html">
+                        <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                        Cancelar y volver al inicio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Touch-First POS Numpad & Primary Submission -->
+            <div class="lg:col-span-5 flex flex-col justify-between bg-surface-container rounded-xl p-space-md sm:p-space-lg shadow-xl">
+                <div>
+                    <div class="flex items-center justify-between pb-space-sm mb-space-sm">
+                        <div class="flex items-center gap-space-xs text-on-surface-variant">
+                            <span class="material-symbols-outlined text-[18px]">dialpad</span>
+                            <span class="font-label-caps text-label-caps uppercase tracking-wider">TECLADO OPERATIVO TÁCTIL</span>
+                        </div>
+                        <span class="font-label-numeric-sm text-label-numeric-sm text-outline">MODO TOUCH POS</span>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-space-xs sm:gap-space-sm select-none" id="numpad">
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="1" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">1</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="2" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">2</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="3" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">3</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="4" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">4</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="5" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">5</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="6" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">6</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="7" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">7</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="8" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">8</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="9" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">9</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-low hover:bg-surface-bright active:bg-surface-container-highest text-secondary transition-colors shadow-sm cursor-pointer" data-key="clear" type="button"><span class="font-label-caps text-label-caps font-bold">BORRAR</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-bright active:bg-surface-container-highest transition-colors shadow-sm cursor-pointer" data-key="0" type="button"><span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">0</span></button>
+                        <button class="num-btn h-14 sm:h-16 flex items-center justify-center rounded-lg bg-surface-container-low hover:bg-surface-bright active:bg-surface-container-highest text-on-surface-variant transition-colors shadow-sm cursor-pointer" data-key="backspace" type="button"><span class="material-symbols-outlined text-[24px]">backspace</span></button>
+                    </div>
+                </div>
+
+                <div class="mt-space-md flex flex-col gap-space-sm">
+                    <button class="w-full h-14 rounded-xl bg-secondary-container hover:bg-on-secondary-fixed-variant active:scale-[0.99] text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-sm shadow-lg transition-all cursor-pointer" id="btn-submit" type="button">
+                        <span>VERIFICAR Y CONTINUAR</span>
+                        <span class="material-symbols-outlined text-[22px]">arrow_forward</span>
+                    </button>
+
+                    <div class="p-space-sm bg-surface-container-lowest rounded-xl flex items-center justify-between text-outline">
+                        <div class="flex items-center gap-space-xs">
+                            <span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+                            <span class="font-label-numeric-sm text-label-numeric-sm">DISPOSITIVO VINCULADO</span>
+                        </div>
+                        <span class="font-label-numeric-sm text-label-numeric-sm text-tertiary">Tabloncitos.web</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script>
+  (function() {
+    let pin = '';
+    const maxDigits = 6;
+    const slots = document.querySelectorAll('.otp-slot');
+    const statusMsg = document.getElementById('pin-status');
+    const submitBtn = document.getElementById('btn-submit');
+
+    function updateOtpDisplay() {
+      slots.forEach((slot, index) => {
+        const textSpan = slot.querySelector('span');
+        const cursor = slot.querySelector('.slot-cursor');
+        
+        if (index < pin.length) {
+          textSpan.textContent = pin[index];
+          textSpan.className = 'font-label-numeric-lg text-label-numeric-lg text-primary font-bold';
+          slot.className = 'otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-highest rounded-lg text-primary shadow-sm transition-all';
+          cursor.className = 'slot-cursor w-5 h-0.5 bg-transparent mt-1';
+        } else if (index === pin.length) {
+          textSpan.textContent = '-';
+          textSpan.className = 'font-label-numeric-lg text-label-numeric-lg text-outline font-bold';
+          slot.className = 'otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-high rounded-lg text-on-surface shadow-sm transition-all';
+          cursor.className = 'slot-cursor w-5 h-0.5 bg-primary-container mt-1 animate-pulse';
+        } else {
+          textSpan.textContent = '-';
+          textSpan.className = 'font-label-numeric-lg text-label-numeric-lg text-outline font-bold';
+          slot.className = 'otp-slot flex flex-col items-center justify-center h-16 sm:h-20 bg-surface-container-low rounded-lg text-on-surface shadow-sm transition-all';
+          cursor.className = 'slot-cursor w-5 h-0.5 bg-transparent mt-1';
+        }
+      });
+
+      if (pin.length === maxDigits) {
+        statusMsg.textContent = 'Código completo para validación';
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-primary font-bold';
+      } else {
+        statusMsg.textContent = `Faltan ${maxDigits - pin.length} dígitos`;
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-on-surface-variant';
+      }
+    }
+
+    document.querySelectorAll('.num-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-key');
+        if (key === 'clear') {
+          pin = '';
+        } else if (key === 'backspace') {
+          pin = pin.slice(0, -1);
+        } else if (pin.length < maxDigits) {
+          pin += key;
+        }
+        updateOtpDisplay();
+      });
+    });
+
+    // Soporte para teclado físico de la terminal
+    window.addEventListener('keydown', (e) => {
+      if (e.key >= '0' && e.key <= '9') {
+        if (pin.length < maxDigits) {
+          pin += e.key;
+          updateOtpDisplay();
+        }
+      } else if (e.key === 'Backspace') {
+        pin = pin.slice(0, -1);
+        updateOtpDisplay();
+      } else if (e.key === 'Escape') {
+        pin = '';
+        updateOtpDisplay();
+      }
+    });
+
+    // Conexión real con Spring Boot
+    submitBtn.addEventListener('click', () => {
+      if (pin.length === maxDigits) {
+        const codigoEmpleado = sessionStorage.getItem('emp_recovery_code');
+        if (!codigoEmpleado) {
+          statusMsg.textContent = 'No hay una solicitud de recuperación activa.';
+          statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-error font-bold';
+          return;
+        }
+        
+        statusMsg.textContent = 'Verificando con servidor central...';
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-primary-container animate-pulse';
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[22px] animate-spin">progress_activity</span><span>PROCESANDO...</span>';
+
+        fetch('http://localhost:8083/api/auth/validar-otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ codigo: codigoEmpleado, otp: pin })
+        })
+        .then(async response => {
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || 'Código OTP incorrecto o no autorizado.');
+          }
+          return data;
+        })
+        .then(data => {
+          submitBtn.innerHTML = '<span class="material-symbols-outlined text-[22px]">check_circle</span><span>ACCESO CONCEDIDO</span>';
+          submitBtn.className = 'w-full h-14 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-sm shadow-lg transition-all';
+
+          setTimeout(() => {
+            window.location.href = data.next || 'nueva-clave.html';
+          }, 1000);
+        })
+        .catch(error => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>VERIFICAR Y CONTINUAR</span><span class="material-symbols-outlined text-[22px]">arrow_forward</span>';
+          statusMsg.textContent = error.message || 'Código OTP incorrecto o expirado';
+          statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-error font-bold';
+        });
+
+      } else {
+        statusMsg.textContent = 'Por favor complete los 6 dígitos del token';
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-error font-bold';
+      }
+    });
+
+    // Temporizador de recuperar clave y cierre de sesión por seguridad
+    let secondsLeft = 272; // Segundos iniciales (4 minutos y 32 segundos)
+    const countdownEl = document.getElementById('countdown-timer');
+    const vigenciaInterval = setInterval(() => {
+      if (secondsLeft > 0) {
+        secondsLeft--;
+        const mins = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
+        const secs = String(secondsLeft % 60).padStart(2, '0');
+        countdownEl.textContent = `${mins}:${secs}`;
+      } else {
+        clearInterval(vigenciaInterval);
+        countdownEl.textContent = "00:00";
+        
+        statusMsg.textContent = "Token expirado. Sesión cerrada por seguridad.";
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-error font-bold';
+
+        document.querySelectorAll('.num-btn').forEach(b => b.disabled = true);
+        submitBtn.disabled = true;
+        submitBtn.className = 'w-full h-14 rounded-xl bg-surface-container-high text-outline font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-space-sm cursor-not-allowed';
+        
+        sessionStorage.removeItem('emp_recovery_code');
+        sessionStorage.removeItem('emp_recovery_email');
+
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 3000);
+      }
+    }, 1000);
+
+    // Lógica del temporizador y reenvío de código (Resend)
+    let resendSeconds = 38;
+    const resendBtn = document.getElementById('btn-resend');
+    const resendLabel = document.getElementById('resend-label');
+    let resendTimer = null;
+
+    function iniciarTemporizadorReenvio() {
+      resendSeconds = 38;
+      resendBtn.disabled = true;
+      resendBtn.className = 'flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-low text-outline font-body-sm text-body-sm cursor-not-allowed transition-colors';
+      
+      if (resendTimer) clearInterval(resendTimer);
+
+      resendTimer = setInterval(() => {
+        if (resendSeconds > 0) {
+          resendSeconds--;
+          const countdown = document.getElementById('resend-countdown');
+          if (countdown) countdown.textContent = `${resendSeconds}s`;
+        } else {
+          clearInterval(resendTimer);
+          resendBtn.disabled = false;
+          resendBtn.className = 'flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-body-sm text-body-sm cursor-pointer transition-colors';
+          resendLabel.innerHTML = 'Reenviar nuevo código ahora';
+        }
+      }, 1000);
+    }
+
+    resendBtn.addEventListener('click', () => {
+      const codigoEmpleado = sessionStorage.getItem('emp_recovery_code');
+      const correoEmpleado = sessionStorage.getItem('emp_recovery_email');
+      if (!codigoEmpleado) {
+        statusMsg.textContent = 'No hay una solicitud de recuperación activa.';
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-error font-bold';
+        return;
+      }
+
+      resendLabel.innerHTML = '<span class="inline-block animate-spin">⌛</span> Generando nuevo código...';
+      resendBtn.disabled = true;
+
+      fetch('http://localhost:8083/api/auth/recuperar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ codigo: codigoEmpleado, correo: correoEmpleado })
+      })
+      .then(async response => {
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || 'No se pudo reenviar el código.');
+        }
+        return data;
+      })
+      .then(data => {
+        statusMsg.textContent = 'Nueva solicitud enviada; espera la autorización del administrador.';
+        statusMsg.className = 'font-label-numeric-sm text-label-numeric-sm text-primary font-bold';
+        resendLabel.innerHTML = `Reenviar código (disponible en <span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold" id="resend-countdown">38s</span>)`;
+        iniciarTemporizadorReenvio();
+      })
+      .catch(error => {
+        resendLabel.textContent = error.message || 'Error al reenviar. Reintentar';
+        resendBtn.disabled = false;
+      });
+    });
+
+    iniciarTemporizadorReenvio();
+    updateOtpDisplay();
+  })();
+
+  function displayMaskedEmail() {
+    const correoReal = sessionStorage.getItem('emp_recovery_email')
+      || sessionStorage.getItem('emp_recovery_code')
+      || 'identificador no disponible';
+    const partes = correoReal.split('@');
+    
+    if (partes.length === 2) {
+      const usuario = partes[0];
+      const dominio = partes[1];
+      let maskedUser = usuario;
+      
+      if (usuario.length > 4) {
+        maskedUser = usuario.slice(0, 2) + '*****' + usuario.slice(-2);
+      } else {
+        maskedUser = usuario[0] + '***';
+      }
+      
+      document.getElementById('masked-email').textContent = maskedUser + '@' + dominio;
+    }
+  }
+
+  displayMaskedEmail();
+</script>
+
+<footer class="w-full py-space-md text-center">
+    <span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Seguridad Operativa y Terminales Internos • Tabloncitos © 2026</span>
+</footer>
+</body>
+</html>

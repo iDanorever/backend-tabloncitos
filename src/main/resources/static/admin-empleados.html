@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="web_dashboard" name="shell-type"/>
+    <title>Tabloncitos - Portal Administrativo & Gestión de Personal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"terracota":{"DEFAULT":"#c84b31","hover":"#b43e26","dark":"#942f1b","subtle":"#3a1a14"},"on-secondary-container":"#ff9a84","secondary-container":"#891e07","on-secondary":"#640d00","surface-variant":"#26221f","tertiary-container":"#c2b1a5","on-error":"#690005","secondary":"#ffb4a4","inverse-surface":"#e6e2df","surface-container-lowest":"#0d0c0b","surface":"#121212","surface-dim":"#121212","on-tertiary":"#392e26","outline-variant":"#443a32","on-surface-variant":"#d6c4ac","on-tertiary-container":"#50443a","tertiary-fixed-dim":"#d5c3b7","secondary-fixed":"#ffdad3","surface-tint":"#ffba44","on-primary-fixed-variant":"#614000","background":"#121212","on-background":"#e6e2df","inverse-primary":"#805600","primary-fixed":"#ffddaf","on-primary":"#442c00","on-primary-fixed":"#281800","error-container":"#93000a","primary-fixed-dim":"#ffba44","on-error-container":"#ffdad6","secondary-fixed-dim":"#ffb4a4","on-primary-container":"#5f3f00","surface-container-low":"#181615","surface-container":"#1f1c1a","on-surface":"#e6e2df","on-tertiary-fixed-variant":"#51443b","tertiary":"#dfccc0","surface-container-highest":"#2e2926","primary":"#ffc56c","on-secondary-fixed":"#3e0500","outline":"#8d7d6c","primary-container":"#f0a500","on-tertiary-fixed":"#231a12","tertiary-fixed":"#f2dfd2","error":"#ffb4ab","inverse-on-surface":"#32302f","surface-bright":"#332d29","on-secondary-fixed-variant":"#891e07","surface-container-high":"#25211e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-kds":"1rem","space-xl":"1.75rem","space-lg":"1.25rem","space-xs":"0.25rem","margin":"1rem","space-md":"0.75rem","margin-kds":"1.5rem","space-sm":"0.5rem","gutter":"0.75rem"},"fontFamily":{"label-caps":["Plus Jakarta Sans"],"label-numeric-sm":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-numeric-md":["JetBrains Mono"],"label-numeric-lg":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}],"label-numeric-sm":["12px",{"lineHeight":"14px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"500"}],"display-lg-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"800"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-numeric-md":["16px",{"lineHeight":"20px","fontWeight":"600"}],"label-numeric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}]}}}};</script></head>
+<body class="bg-[#121212] font-body-md text-on-surface antialiased">
+
+    <!-- SIDEBAR DE NAVEGACIÓN -->
+    <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)] border-r border-[#2a2420]">
+        <div class="flex flex-col flex-1 overflow-y-auto px-space-md pt-space-lg">
+            <div class="flex items-center gap-space-sm px-space-xs pb-space-md">
+                <div class="w-10 h-10 rounded-lg bg-terracota flex items-center justify-center text-white font-headline-md shadow-md shadow-terracota/20">
+                    <span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-headline-sm text-headline-sm text-primary tracking-tight font-extrabold leading-none">TABLONCITOS</span>
+                    <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest pt-space-xs">Pollos &amp; Parrillas</span>
+                </div>
+            </div>
+            
+            <div class="mt-space-xs mb-space-md px-space-xs">
+                <div class="bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between border border-outline-variant/40">
+                    <div class="flex items-center gap-space-xs">
+                        <span class="material-symbols-outlined text-primary text-[18px]">store</span>
+                        <div class="flex flex-col">
+                            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Sede Activa</span>
+                            <span class="font-body-sm text-body-sm text-on-surface font-semibold">Miraflores (Principal)</span>
+                        </div>
+                    </div>
+                    <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                </div>
+            </div>
+
+            <div class="px-space-xs pb-space-xs"><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Administración Core</span></div>
+            <nav class="flex flex-col gap-space-xs">
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-terracota/20 border border-terracota/40 text-primary font-semibold shadow-sm font-body-md text-body-md" href="admin-empleados.html">
+                    <span class="material-symbols-outlined text-[20px] text-terracota">badge</span><span>Gestión de Empleados</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="admin-dashboard.html">
+                    <span class="material-symbols-outlined text-[20px]">query_stats</span><span>Dashboard Gerencial</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="admin-precios.html">
+                    <span class="material-symbols-outlined text-[20px]">price_change</span><span>Precios &amp; Promociones</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="admin-menu.html">
+                    <span class="material-symbols-outlined text-[20px]">restaurant_menu</span><span>Catálogo &amp; Menú</span>
+                </a>
+                <a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="admin-inventario.html">
+                    <div class="flex items-center gap-space-sm">
+                        <span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Control de Inventario</span>
+                    </div>
+                    <span class="font-label-numeric-sm text-label-numeric-sm bg-secondary-container text-on-secondary-container px-space-xs py-0.5 rounded">3</span>
+                </a>
+            </nav>
+
+            <div class="mt-space-md pt-space-sm px-space-xs"><span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Otros Módulos</span></div>
+            <nav class="flex flex-col gap-space-xs mt-space-xs">
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="mesas.html">
+                    <span class="material-symbols-outlined text-[20px]">table_restaurant</span><span>Salón &amp; Mesas</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="kds.html">
+                    <span class="material-symbols-outlined text-[20px]">microwave</span><span>Cocina KDS</span>
+                </a>
+                <a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" href="caja.html">
+                    <span class="material-symbols-outlined text-[20px]">point_of_sale</span><span>Caja POS</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-space-md bg-surface-container mt-auto border-t border-[#2a2420]">
+            <div class="bg-surface-container-high rounded-xl p-space-sm flex items-center justify-between mb-space-sm border border-outline-variant/30">
+                <div class="flex items-center gap-space-sm">
+                    <div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+                    <div class="flex flex-col">
+                        <span class="font-body-sm text-body-sm font-bold text-on-surface truncate max-w-[130px]">Carlos Valdez</span>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant truncate max-w-[130px]">Gerente General</span>
+                    </div>
+                </div>
+                <span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">1001</span>
+            </div>
+            <div class="flex items-center justify-between text-on-surface-variant pt-space-xs">
+                <div class="flex items-center gap-space-xs">
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-label-caps text-label-caps uppercase">Turno Tarde Activo</span>
+                </div>
+                <a href="index.html" class="flex items-center gap-0.5 text-on-secondary-container hover:text-secondary transition-colors font-label-caps text-label-caps uppercase"><span class="material-symbols-outlined text-[16px]">logout</span><span>Salir</span></a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="pl-72">
+        <!-- TOPBAR CON ALERTA OTP INTERACTIVA DINÁMICA -->
+        <header class="fixed top-0 left-72 right-0 h-16 bg-[#181615]/95 backdrop-blur-xl border-b border-[#2a2420] shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 flex items-center justify-between px-gutter-kds">
+            <div class="flex items-center gap-space-md">
+                <div class="flex items-center gap-space-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-[18px] text-terracota">badge</span>
+                    <span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface">PORTAL ADMINISTRATIVO</span>
+                    <span class="text-outline">•</span>
+                    <span class="font-label-caps text-label-caps text-primary">GESTIÓN DE PERSONAL Y ROLES</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-space-md">
+                <!-- Alerta OTP en vivo conectada al backend -->
+                <button id="btn-otp-alert" class="relative hidden items-center gap-2 bg-secondary-container/60 hover:bg-secondary-container text-secondary-fixed px-3 py-1.5 rounded-lg transition-all cursor-pointer border border-secondary/40 shadow-sm animate-pulse">
+                    <span class="material-symbols-outlined text-[18px] text-primary">key</span>
+                    <span class="font-label-numeric-sm text-xs font-bold" id="otp-badge-count">0 Solicitudes OTP</span>
+                </button>
+
+                <div class="hidden xl:flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded-lg border border-outline-variant/40">
+                    <span class="material-symbols-outlined text-primary text-[16px]">payments</span>
+                    <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Venta Turno:</span>
+                    <span class="font-label-numeric-md text-label-numeric-md font-bold text-primary">S/ 14,850.00</span>
+                </div>
+                <div class="hidden lg:flex items-center gap-space-xs bg-terracota/20 border border-terracota/40 px-space-sm py-1.5 rounded-lg">
+                    <span class="material-symbols-outlined text-secondary text-[16px]">warning</span>
+                    <span class="font-label-caps text-label-caps text-secondary uppercase">Stock Crítico:</span>
+                    <span class="font-label-numeric-sm text-label-numeric-sm font-bold text-secondary">3 ítems</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+            </div>
+        </header>
+
+        <main class="w-full pt-16 bg-[#121212] px-margin-kds py-space-lg min-h-screen">
+            <div class="flex flex-col w-full gap-space-md">
+                
+                <!-- 1. BARRA SUPERIOR DE AUDITORÍA -->
+                <div class="w-full rounded-xl bg-surface-container-low border border-outline-variant/40 p-space-sm shadow-md flex items-center justify-between gap-space-md">
+                    <div class="flex items-center gap-space-sm min-w-0">
+                        <div class="w-8 h-8 rounded-lg bg-terracota/20 border border-terracota/50 flex items-center justify-center text-secondary flex-shrink-0">
+                            <span class="material-symbols-outlined text-[18px]">policy</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 min-w-0">
+                            <span class="font-label-caps text-label-caps uppercase font-extrabold tracking-wider text-secondary">AUDITORÍA DE PERSONAL:</span>
+                            <span class="font-body-sm text-body-sm text-on-surface"><strong id="employee-count" class="text-primary font-bold">0</strong> colaboradores activos en la base de datos</span>
+                            <span class="text-outline">•</span>
+                            <span class="font-body-sm text-body-sm text-on-surface"><strong class="text-primary font-bold">3</strong> turnos rotativos en operación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HEADER ACTIONS & HERO TITLE -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pt-space-xs">
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-space-xs">
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded bg-terracota/20 text-secondary">
+                                <span class="material-symbols-outlined text-[15px]">manage_accounts</span>
+                            </span>
+                            <span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">Nómina Operativa &amp; Control de Accesos</span>
+                            <span class="text-outline">•</span>
+                            <span class="font-label-numeric-sm text-label-numeric-sm text-on-surface-variant">Sede Miraflores #01</span>
+                        </div>
+                        <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">Gestión de Empleados, Altas, Bajas y Roles</h1>
+                    </div>
+                    <button class="inline-flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-xl bg-terracota hover:bg-terracota-hover text-white font-headline-sm text-[15px] font-bold shadow-[0_4px_16px_rgba(200,75,49,0.35)] active:scale-95 transition-all border border-terracota-dark cursor-pointer" id="btn-new-emp">
+                        <span class="material-symbols-outlined text-[22px]">person_add</span>
+                        <span>+ NUEVO EMPLEADO</span>
+                    </button>
+                </div>
+
+                <!-- VENTANA MODAL PARA NUEVO EMPLEADO -->
+                <div id="modal-nuevo-empleado" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
+                    <div class="bg-surface-container border border-outline-variant/30 rounded-2xl p-6 w-full max-w-lg shadow-2xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-on-surface">Registrar Nuevo Colaborador</h3>
+                                <button id="close-modal" class="text-on-surface-variant hover:text-on-surface text-xl font-bold">&times;</button>
+                </div>
+        
+                <form id="form-new-employee" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-medium text-on-surface-variant mb-1">DNI del Colaborador</label>
+                            <input name="dni" type="text" required class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm" placeholder="Ej: 74839201">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-on-surface-variant mb-1">Código (Opcional - Se autogenera si se deja vacío)</label>
+                    <input name="codigo" type="text" class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm" placeholder="Ej: EMP-2050">
+                </div>
+                    <div>
+                        <label class="block text-xs font-medium text-on-surface-variant mb-1">Nombre Completo</label>
+                    <input name="nombre" type="text" required class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm" placeholder="Ej: Juan Pérez">
+                        </div>
+                    <div>
+                        <label class="block text-xs font-medium text-on-surface-variant mb-1">Correo Electrónico (Gmail)</label>
+                        <input name="correo" type="email" required class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm" placeholder="empleado@tabloncitos.pe">
+                    </div>
+                <div>
+                    <label class="block text-xs font-medium text-on-surface-variant mb-1">PIN / Contraseña de Acceso</label>
+                        <input name="password" type="password" required class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm" placeholder="••••">
+                    </div>
+                <div>
+                <label class="block text-xs font-medium text-on-surface-variant mb-1">Rol Asignado (RBAC)</label>
+                <select name="rol" required class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                    <option value="MOZO">Mesero / Salón</option>
+                    <option value="COCINERO">Cocinero / KDS</option>
+                    <option value="CAJERO">Cajero / POS</option>
+                    <option value="ADMIN">Administrador</option>
+                </select>
+                    </div>
+                <div>
+                    <label class="block text-xs font-medium text-on-surface-variant mb-1">Sede</label>
+                    <input name="sede" type="text" value="Miraflores (Principal)" class="w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                </div>
+            
+                        <div class="flex justify-end gap-2 pt-2">
+                            <button type="button" id="btn-cancelar" class="px-4 py-2 rounded-xl bg-surface-variant text-on-surface text-sm hover:bg-outline-variant/20">Cancelar</button>
+                                <button type="submit" class="px-4 py-2 rounded-xl bg-terracota text-white text-sm font-bold hover:opacity-90">Guardar en Base de Datos</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="modal-editar-empleado" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4">
+                    <div class="bg-surface-container border border-outline-variant/30 rounded-2xl p-6 w-full max-w-lg shadow-2xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <h3 class="text-lg font-bold text-on-surface">Editar colaborador</h3>
+                                <p id="edit-employee-source" class="text-xs text-on-surface-variant"></p>
+                            </div>
+                            <button id="close-edit-modal" type="button" class="text-on-surface-variant hover:text-on-surface text-xl font-bold">&times;</button>
+                        </div>
+                        <form id="form-edit-employee" class="space-y-4">
+                            <label id="edit-dni-field" class="block text-xs font-medium text-on-surface-variant">
+                                DNI
+                                <input name="dni" type="text" class="mt-1 w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                            </label>
+                            <label class="block text-xs font-medium text-on-surface-variant">
+                                Nombre completo
+                                <input name="nombre" type="text" required class="mt-1 w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                            </label>
+                            <label class="block text-xs font-medium text-on-surface-variant">
+                                Correo
+                                <input name="correo" type="email" required class="mt-1 w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                            </label>
+                            <label class="block text-xs font-medium text-on-surface-variant">
+                                Rol
+                                <select name="rol" required class="mt-1 w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                                    <option value="ADMIN">Administrador</option>
+                                    <option value="MOZO">Mesero / Salón</option>
+                                    <option value="COCINERO">Cocinero / KDS</option>
+                                    <option value="CAJERO">Cajero / POS</option>
+                                </select>
+                            </label>
+                            <label id="edit-branch-field" class="block text-xs font-medium text-on-surface-variant">
+                                Sede
+                                <input name="sede" type="text" class="mt-1 w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm">
+                            </label>
+                            <label class="block text-xs font-medium text-on-surface-variant">
+                                Nueva contraseña o PIN (opcional)
+                                <input name="password" type="password" autocomplete="new-password" class="mt-1 w-full bg-surface-variant border border-outline-variant/40 rounded-xl px-3 py-2 text-on-surface text-sm" placeholder="Dejar vacío para conservarla">
+                            </label>
+                            <div class="flex justify-end gap-2 pt-2">
+                                <button id="cancel-edit-modal" type="button" class="px-4 py-2 rounded-xl bg-surface-variant text-on-surface text-sm">Cancelar</button>
+                                <button type="submit" class="px-4 py-2 rounded-xl bg-terracota text-white text-sm font-bold">Guardar cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 2. PATRÓN MAESTRO-DETALLE -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start mt-space-xs">
+                    
+                    <!-- PANEL IZQUIERDO: LISTA DE COLABORADORES -->
+                    <div class="lg:col-span-5 xl:col-span-5 flex flex-col bg-surface-container-low rounded-2xl border border-outline-variant/40 shadow-lg overflow-hidden">
+                        <div class="p-space-md bg-surface-container border-b border-outline-variant/30 flex flex-col gap-space-sm">
+                            <div class="relative">
+                                <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+                                <input class="w-full pl-9 pr-4 py-2.5 bg-surface-container-low rounded-xl border border-outline-variant/50 text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:border-terracota focus:ring-1 focus:ring-terracota transition-all" id="emp-search-input" placeholder="Buscar por nombre, código, correo o DNI..." type="text"/>
+                            </div>
+                            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5" id="role-filter-chips">
+                                <button class="filter-chip active px-3 py-1 rounded-lg text-xs font-semibold uppercase tracking-wider bg-terracota text-white transition-all shadow-sm cursor-pointer" data-role="all">Todos</button>
+                                <button class="filter-chip px-3 py-1 rounded-lg text-xs font-semibold uppercase tracking-wider bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all cursor-pointer" data-role="salon">Mesero / Salón</button>
+                                <button class="filter-chip px-3 py-1 rounded-lg text-xs font-semibold uppercase tracking-wider bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all cursor-pointer" data-role="cocina">Cocinero</button>
+                                <button class="filter-chip px-3 py-1 rounded-lg text-xs font-semibold uppercase tracking-wider bg-surface-container-high hover:bg-surface-bright text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all cursor-pointer" data-role="caja">Cajero</button>
+                            </div>
+                            <p id="employee-load-message" class="hidden text-xs text-secondary"></p>
+                        </div>
+
+                        <div class="flex flex-col divide-y divide-outline-variant/20 max-h-[720px] overflow-y-auto" id="employee-list">
+                            <p class="p-6 text-sm text-on-surface-variant">Cargando colaboradores desde la base de datos...</p>
+                        </div>
+                    </div>
+
+                    <!-- PANEL DERECHO: DETALLE Y MATRIZ RBAC -->
+                    <div class="lg:col-span-7 xl:col-span-7 flex flex-col gap-space-md">
+                        <div class="p-space-lg rounded-2xl bg-surface-container-low border border-outline-variant/40 shadow-lg relative overflow-hidden">
+                            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md pb-space-md border-b border-outline-variant/30">
+                                <div class="flex items-center gap-space-md min-w-0">
+                                    <div class="w-16 h-16 rounded-2xl bg-surface-variant flex items-center justify-center font-bold text-primary text-xl border-2 border-terracota/40" id="detail-avatar-txt">—</div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center gap-2">
+                                            <h2 class="font-headline-md text-headline-md text-on-surface font-extrabold truncate" id="detail-name">Selecciona un colaborador</h2>
+                                            <span class="font-label-numeric-sm text-xs font-bold text-primary bg-primary/10 border border-primary/30 px-2 py-0.5 rounded" id="detail-code">—</span>
+                                        </div>
+                                        <p class="font-body-sm text-body-sm text-secondary font-semibold" id="detail-role">—</p>
+                                        <span class="font-body-sm text-xs text-on-surface-variant truncate" id="detail-email">—</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span id="detail-status" class="text-xs font-bold"></span>
+                                    <button id="detail-edit-btn" type="button" class="px-3 py-2 rounded-xl bg-surface-container-high hover:bg-surface-bright border border-outline-variant/50 text-primary text-xs font-semibold flex items-center gap-1 cursor-pointer">
+                                        <span class="material-symbols-outlined text-[16px]">edit</span> Editar
+                                    </button>
+                                    <button class="px-3 py-2 rounded-xl bg-surface-container-high hover:bg-surface-bright border border-outline-variant/50 text-secondary text-xs font-semibold flex items-center gap-1 cursor-pointer" id="detail-status-btn">
+                                        Dar de baja
+                                    </button>
+                                </div>
+                                <div class="flex flex-wrap gap-x-6 gap-y-2 pt-3 text-xs text-on-surface-variant">
+                                    <span>DNI: <strong id="detail-dni" class="text-on-surface">—</strong></span>
+                                    <span>Sede: <strong id="detail-branch" class="text-on-surface">—</strong></span>
+                                    <span>Origen: <strong id="detail-source" class="text-on-surface">—</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="detail-otp-request" class="hidden rounded-xl border border-secondary/40 bg-secondary-container/20 p-4">
+                            <div class="flex flex-wrap items-center justify-between gap-3">
+                                <div>
+                                    <p class="font-label-caps text-label-caps uppercase text-secondary">OTP pendiente de autorización</p>
+                                    <p class="mt-1 text-xs text-on-surface-variant">El colaborador no podrá validarlo hasta que lo autorices.</p>
+                                </div>
+                                <strong id="detail-otp-code" class="font-label-numeric-lg text-2xl tracking-widest text-primary">------</strong>
+                                <button id="detail-approve-otp" type="button" class="rounded-lg bg-terracota px-3 py-2 text-xs font-bold text-white hover:bg-terracota-hover">
+                                    Aprobar y autorizar OTP
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- MATRIZ RBAC -->
+                        <div class="p-space-lg rounded-2xl bg-surface-container-low border border-outline-variant/40 shadow-lg flex flex-col">
+                            <div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-outline-variant/30">
+                                <div class="flex items-center gap-space-xs">
+                                    <div class="w-8 h-8 rounded-lg bg-terracota/20 border border-terracota/40 flex items-center justify-center text-secondary">
+                                        <span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-headline-sm text-headline-sm text-on-surface">Matriz de Permisos &amp; Roles RBAC</h3>
+                                        <p class="font-body-sm text-xs text-on-surface-variant">Configuración granular para <span class="text-primary font-semibold" id="rbac-target-name">—</span></p>
+                                    </div>
+                                </div>
+                                <span class="font-label-caps text-label-caps text-secondary bg-terracota/20 border border-terracota/30 px-2 py-0.5 rounded">v2.4 RBAC</span>
+                            </div>
+                            
+                            <div class="flex flex-col gap-space-sm my-space-xs">
+                                <div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+                                    <span class="font-body-md font-bold text-on-surface">Caja POS &amp; Arqueos</span>
+                                    <input type="checkbox" checked class="accent-terracota w-5 h-5 cursor-pointer"/>
+                                </div>
+                                <div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+                                    <span class="font-body-md font-bold text-on-surface">Cocina KDS &amp; Despacho</span>
+                                    <input type="checkbox" checked class="accent-terracota w-5 h-5 cursor-pointer"/>
+                                </div>
+                                <div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+                                    <span class="font-body-md font-bold text-on-surface">Descuentos &amp; Cortesías Especiales (&gt;15%)</span>
+                                    <input type="checkbox" checked class="accent-terracota w-5 h-5 cursor-pointer"/>
+                                </div>
+                                <div class="p-space-md rounded-xl bg-surface-container border border-outline-variant/30 flex items-center justify-between">
+                                    <span class="font-body-md font-bold text-on-surface">Control de Inventario &amp; Mermas</span>
+                                    <input type="checkbox" checked class="accent-terracota w-5 h-5 cursor-pointer"/>
+                                </div>
+                            </div>
+
+                            <div class="pt-space-md border-t border-outline-variant/30 flex justify-end">
+                                <button class="px-space-lg py-3 rounded-xl bg-terracota hover:bg-terracota-hover text-white font-headline-sm text-body-md font-bold shadow-md cursor-pointer transition-all" id="btn-save-rbac">
+                                    GUARDAR MATRIZ RBAC Y PERMISOS
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <section class="mt-6 rounded-2xl border border-outline-variant/40 bg-surface-container-low p-space-lg shadow-lg">
+                <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+                    <div>
+                        <h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Historial de empleados eliminados</h2>
+                        <p class="mt-1 text-xs text-on-surface-variant">Copia de los datos conservada antes de retirar cada cuenta.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button id="btn-toggle-inactive" type="button" aria-expanded="false" aria-controls="inactive-employees-panel"
+                                class="inline-flex items-center gap-1.5 rounded-lg border border-outline-variant/40 bg-surface-container-high px-3 py-2 text-xs font-semibold uppercase tracking-wider text-on-surface-variant transition-all hover:bg-surface-bright hover:text-on-surface">
+                            <span class="material-symbols-outlined text-[16px]">person_off</span>
+                            <span id="inactive-button-label">Bajas</span>
+                        </button>
+                        <span class="material-symbols-outlined text-secondary">history</span>
+                    </div>
+                </div>
+                <div id="inactive-employees-panel" class="mb-4 hidden rounded-xl border border-outline-variant/30 bg-surface-container/50 p-4">
+                    <h3 class="mb-2 text-sm font-bold text-on-surface">Empleados inactivos</h3>
+                    <div id="inactive-employee-list" class="divide-y divide-outline-variant/20">
+                        <p class="py-3 text-sm text-on-surface-variant">Cargando empleados inactivos...</p>
+                    </div>
+                </div>
+                <div id="employee-history" class="divide-y divide-outline-variant/20">
+                    <p class="py-4 text-sm text-on-surface-variant">Cargando historial...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- MODAL DE SUPERVISIÓN OTP EN VIVO -->
+    <div id="modal-otp" class="fixed inset-0 z-50 bg-[#0d0c0b]/80 backdrop-blur-sm hidden items-center justify-center p-space-md">
+        <div class="bg-surface-container-low border border-outline-variant/50 rounded-2xl max-w-lg w-full p-6 shadow-2xl flex flex-col gap-4">
+            <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+                <div class="flex items-center gap-2 text-primary">
+                    <span class="material-symbols-outlined text-[24px]">admin_panel_settings</span>
+                    <h3 class="font-headline-sm font-bold text-on-surface">Supervisión de Recuperación OTP</h3>
+                </div>
+                <button id="close-modal-otp" class="text-outline hover:text-on-surface cursor-pointer"><span class="material-symbols-outlined">close</span></button>
+            </div>
+            
+            <p class="text-xs text-on-surface-variant">
+                El colaborador <strong class="text-primary" id="modal-info-empleado">Sara Jiménez</strong> solicitó restablecer su contraseña.
+            </p>
+
+            <div class="grid grid-cols-1 gap-2 rounded-lg bg-surface-container p-3 text-sm">
+                <p><span class="text-outline">Código:</span> <strong id="modal-employee-code" class="text-on-surface">EMP-2044</strong></p>
+                <p><span class="text-outline">Correo:</span> <strong id="modal-employee-email" class="break-all text-on-surface">correo@tabloncitos.pe</strong></p>
+            </div>
+
+            <div class="bg-surface-container-highest p-4 rounded-lg flex items-center justify-between border border-primary/30">
+                <div class="flex flex-col">
+                    <span class="text-[10px] uppercase font-label-caps text-outline">CÓDIGO OTP ACTIVO EN BD</span>
+                    <span class="font-label-numeric-lg text-primary text-2xl font-bold tracking-widest" id="modal-otp-code">849201</span>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-[10px] text-outline">Estado:</span>
+                    <span class="font-label-numeric-sm text-emerald-400 font-bold text-xs uppercase">Pendiente de Admin</span>
+                </div>
+            </div>
+
+            <div class="p-3 bg-surface-container rounded-lg text-xs text-outline flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">info</span>
+                <span>Comuníquese con el trabajador y dictésele este código para que pueda continuar en su terminal.</span>
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <button id="btn-aprobar-otp" type="button" class="px-4 py-2.5 rounded-xl bg-terracota hover:bg-terracota-hover text-white font-bold text-xs flex items-center gap-2 cursor-pointer shadow-md">
+                    <span class="material-symbols-outlined text-[16px]">check_circle</span> Aprobar y Autorizar OTP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const api = '/api/admin';
+        const listaEmpleadosContainer = document.getElementById('employee-list');
+        const mensajeEmpleados = document.getElementById('employee-load-message');
+        const formNuevoEmpleado = document.getElementById('form-new-employee');
+        const formEditarEmpleado = document.getElementById('form-edit-employee');
+        const modalNuevo = document.getElementById('modal-nuevo-empleado');
+        const modalEditar = document.getElementById('modal-editar-empleado');
+        let empleados = [];
+        let empleadoActual = null;
+        let filtroActual = 'all';
+        let solicitudesPorCodigo = new Map();
+        let solicitudesPendientes = [];
+        let solicitudActual = null;
+        let cargaEnCurso = false;
+        let historialEnCurso = false;
+
+        const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        })[character]);
+
+        async function solicitar(url, options = {}) {
+            const response = await fetch(url, { cache: 'no-store', ...options });
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                throw new Error(data.mensaje || data.error || `Error HTTP ${response.status}`);
+            }
+            return data;
+        }
+
+        function abrirModal(modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function cerrarModal(modal) {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        document.getElementById('btn-new-emp').addEventListener('click', () => abrirModal(modalNuevo));
+        document.getElementById('close-modal').addEventListener('click', () => cerrarModal(modalNuevo));
+        document.getElementById('btn-cancelar').addEventListener('click', () => cerrarModal(modalNuevo));
+        document.getElementById('close-edit-modal').addEventListener('click', () => cerrarModal(modalEditar));
+        document.getElementById('cancel-edit-modal').addEventListener('click', () => cerrarModal(modalEditar));
+
+        function claveEmpleado(empleado) {
+            return `${empleado.fuente}:${empleado.id}`;
+        }
+
+        function empleadosVisibles() {
+            const busqueda = document.getElementById('emp-search-input').value.trim().toLocaleLowerCase();
+            return empleados.filter(empleado => {
+                const rol = String(empleado.rol || '').toUpperCase();
+                const esSalon = rol === 'MOZO' || rol === 'MESERO';
+                const coincideRol = empleado.activo && (
+                    filtroActual === 'all'
+                    || (filtroActual === 'salon' && esSalon)
+                    || (filtroActual === 'cocina' && rol === 'COCINERO')
+                    || (filtroActual === 'caja' && rol === 'CAJERO')
+                );
+                const texto = [empleado.nombre, empleado.codigo, empleado.dni, empleado.correo, empleado.rol]
+                    .filter(Boolean).join(' ').toLocaleLowerCase();
+                return coincideRol && texto.includes(busqueda);
+            });
+        }
+
+        function renderizarEmpleadosInactivos() {
+            const contenedor = document.getElementById('inactive-employee-list');
+            const inactivos = empleados.filter(empleado => !empleado.activo);
+            if (inactivos.length === 0) {
+                contenedor.innerHTML = '<p class="py-3 text-sm text-on-surface-variant">No hay empleados inactivos.</p>';
+                return;
+            }
+
+            contenedor.innerHTML = inactivos.map(empleado => `
+                <article class="flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div class="min-w-0">
+                        <strong class="text-sm text-on-surface">${escapeHtml(empleado.nombre || 'Sin nombre')}</strong>
+                        <p class="text-xs text-on-surface-variant">${escapeHtml(empleado.codigo || '—')} · ${escapeHtml(empleado.rol || '—')} · ${escapeHtml(empleado.correo || '—')}</p>
+                    </div>
+                    <button type="button" class="reactivate-employee shrink-0 rounded-lg border border-outline-variant/40 bg-surface-container-high px-3 py-2 text-xs font-semibold text-primary transition-all hover:bg-surface-bright"
+                            data-employee-source="${escapeHtml(empleado.fuente)}" data-employee-id="${escapeHtml(empleado.id)}"
+                            data-employee-name="${escapeHtml(empleado.nombre || 'este empleado')}">
+                        Reactivar
+                    </button>
+                    <button type="button" class="archive-employee shrink-0 rounded-lg border border-secondary/40 bg-surface-container-high px-3 py-2 text-xs font-semibold text-secondary transition-all hover:bg-surface-bright"
+                            data-employee-source="${escapeHtml(empleado.fuente)}" data-employee-id="${escapeHtml(empleado.id)}"
+                            data-employee-name="${escapeHtml(empleado.nombre || 'este empleado')}">
+                        Eliminar y archivar
+                    </button>
+                </article>
+            `).join('');
+        }
+
+        function renderizarEmpleados() {
+            const visibles = empleadosVisibles();
+            const seleccionAnterior = empleadoActual ? claveEmpleado(empleadoActual) : null;
+            listaEmpleadosContainer.innerHTML = '';
+            document.getElementById('employee-count').textContent =
+                String(empleados.filter(empleado => empleado.activo).length);
+
+            if (visibles.length === 0) {
+                listaEmpleadosContainer.innerHTML =
+                    '<p class="p-6 text-sm text-on-surface-variant">No hay colaboradores que coincidan con el filtro.</p>';
+                empleadoActual = null;
+                mostrarDetalleEmpleado(null);
+                return;
+            }
+
+            empleadoActual = visibles.find(item => claveEmpleado(item) === seleccionAnterior) || visibles[0];
+            const claveSeleccionada = claveEmpleado(empleadoActual);
+            for (const empleado of visibles) {
+                const nombreOriginal = empleado.nombre || 'Sin nombre';
+                const nombre = escapeHtml(nombreOriginal);
+                const codigo = escapeHtml(empleado.codigo || '—');
+                const correo = escapeHtml(empleado.correo || '—');
+                const rol = escapeHtml(empleado.rol || '—');
+                const dni = escapeHtml(empleado.dni || '—');
+                const iniciales = nombreOriginal.split(/\s+/).filter(Boolean).map(parte => parte[0]).join('').slice(0, 2).toUpperCase();
+                const seleccionado = claveEmpleado(empleado) === claveSeleccionada;
+                const estado = empleado.activo ? '' :
+                    '<span class="rounded bg-error-container/40 px-1.5 py-0.5 text-[10px] font-bold text-error">BAJA</span>';
+                listaEmpleadosContainer.insertAdjacentHTML('beforeend', `
+                    <div class="employee-card ${seleccionado ? 'active border-terracota bg-surface-container/90' : 'border-transparent'}
+                                p-space-md bg-transparent hover:bg-surface-container cursor-pointer transition-all border-l-4 flex items-center justify-between gap-space-sm"
+                         data-employee-key="${escapeHtml(claveEmpleado(empleado))}">
+                        <div class="flex items-center gap-space-sm min-w-0">
+                            <div class="w-12 h-12 rounded-xl bg-surface-variant flex items-center justify-center font-bold text-primary border border-outline-variant/40">${iniciales}</div>
+                            <div class="flex flex-col min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-body-md text-body-md font-bold text-on-surface truncate">${nombre}</span>
+                                    <span class="font-label-numeric-sm text-[11px] font-bold text-primary">${codigo}</span>${estado}
+                                </div>
+                                <span class="font-body-sm text-[11px] text-on-surface-variant truncate">${rol} • ${correo}</span>
+                                <span class="text-[10px] text-outline">DNI: ${dni}</span>
+                                <span class="otp-request-indicator hidden mt-1 w-fit rounded-full border border-secondary/40 bg-secondary-container/40 px-2 py-0.5 text-[10px] font-bold text-secondary">
+                                    <span class="material-symbols-outlined align-middle text-[13px]">vpn_key</span>
+                                    Recuperación solicitada
+                                </span>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-[18px] text-outline">chevron_right</span>
+                    </div>
+                `);
+            }
+
+            listaEmpleadosContainer.querySelectorAll('.employee-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    empleadoActual = empleados.find(item => claveEmpleado(item) === card.dataset.employeeKey) || null;
+                    renderizarEmpleados();
+                    mostrarDetalleEmpleado(empleadoActual);
+                });
+            });
+
+            mostrarDetalleEmpleado(empleadoActual);
+            actualizarIndicadoresOtp();
+        }
+
+        function mostrarDetalleEmpleado(empleado) {
+            const campos = {
+                'detail-name': empleado?.nombre || 'Selecciona un colaborador',
+                'detail-code': empleado?.codigo || '—',
+                'detail-role': empleado?.rol || '—',
+                'detail-email': empleado?.correo || '—',
+                'detail-dni': empleado?.dni || '—',
+                'detail-branch': empleado?.sede || '—',
+                'detail-source': empleado?.fuente === 'USUARIO' ? 'usuarios' : empleado ? 'empleados' : '—',
+                'rbac-target-name': empleado?.nombre || '—',
+                'detail-avatar-txt': empleado
+                    ? empleado.nombre.split(/\s+/).filter(Boolean).map(parte => parte[0]).join('').slice(0, 2).toUpperCase()
+                    : '—'
+            };
+            Object.entries(campos).forEach(([id, value]) => {
+                document.getElementById(id).textContent = value;
+            });
+
+            const botonEstado = document.getElementById('detail-status-btn');
+            const botonEditar = document.getElementById('detail-edit-btn');
+            botonEstado.disabled = !empleado;
+            botonEditar.disabled = !empleado;
+            botonEstado.textContent = 'Dar de baja';
+            botonEstado.classList.toggle('text-secondary', Boolean(empleado));
+            const estado = document.getElementById('detail-status');
+            estado.textContent = empleado ? (empleado.activo ? 'ACTIVO' : 'INACTIVO') : '';
+            estado.className = `text-xs font-bold ${empleado?.activo ? 'text-primary' : 'text-error'}`;
+            actualizarDetalleOtp();
+        }
+
+        async function cargarEmpleados() {
+            if (cargaEnCurso) return;
+            cargaEnCurso = true;
+            try {
+                empleados = await solicitar(`${api}/empleados`);
+                mensajeEmpleados.classList.add('hidden');
+                renderizarEmpleados();
+                renderizarEmpleadosInactivos();
+            } catch (error) {
+                mensajeEmpleados.textContent = `No se pudo cargar la nómina: ${error.message}`;
+                mensajeEmpleados.classList.remove('hidden');
+                listaEmpleadosContainer.textContent = 'No se pudo cargar la lista de colaboradores.';
+                empleadoActual = null;
+                mostrarDetalleEmpleado(null);
+                console.error('Error cargando empleados desde la base de datos:', error);
+            } finally {
+                cargaEnCurso = false;
+            }
+        }
+
+        formNuevoEmpleado.addEventListener('submit', async event => {
+            event.preventDefault();
+            const boton = formNuevoEmpleado.querySelector('button[type="submit"]');
+            boton.disabled = true;
+            try {
+                const nuevoEmpleado = Object.fromEntries(new FormData(formNuevoEmpleado).entries());
+                await solicitar(`${api}/empleados`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(nuevoEmpleado)
+                });
+                formNuevoEmpleado.reset();
+                cerrarModal(modalNuevo);
+                await cargarEmpleados();
+            } catch (error) {
+                alert(`No se pudo guardar el empleado: ${error.message}`);
+            } finally {
+                boton.disabled = false;
+            }
+        });
+
+        function abrirEdicion() {
+            if (!empleadoActual) return;
+            const form = formEditarEmpleado;
+            form.elements.namedItem('dni').value = empleadoActual.dni || '';
+            form.elements.namedItem('nombre').value = empleadoActual.nombre || '';
+            form.elements.namedItem('correo').value = empleadoActual.correo || '';
+            form.elements.namedItem('rol').value =
+                empleadoActual.rol === 'MESERO' ? 'MOZO' : empleadoActual.rol || '';
+            form.elements.namedItem('sede').value = empleadoActual.sede || '';
+            form.elements.namedItem('password').value = '';
+            const esUsuario = empleadoActual.fuente === 'USUARIO';
+            document.getElementById('edit-dni-field').classList.toggle('hidden', esUsuario);
+            document.getElementById('edit-branch-field').classList.toggle('hidden', esUsuario);
+            document.getElementById('edit-employee-source').textContent =
+                `Registro ${empleadoActual.codigo} en la tabla ${esUsuario ? 'usuarios' : 'empleados'}`;
+            abrirModal(modalEditar);
+        }
+
+        document.getElementById('detail-edit-btn').addEventListener('click', abrirEdicion);
+
+        formEditarEmpleado.addEventListener('submit', async event => {
+            event.preventDefault();
+            if (!empleadoActual) return;
+            const boton = formEditarEmpleado.querySelector('button[type="submit"]');
+            boton.disabled = true;
+            try {
+                const cambios = Object.fromEntries(new FormData(formEditarEmpleado).entries());
+                if (!cambios.password) delete cambios.password;
+                await solicitar(`${api}/empleados/${encodeURIComponent(empleadoActual.fuente)}/${empleadoActual.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(cambios)
+                });
+                cerrarModal(modalEditar);
+                await cargarEmpleados();
+            } catch (error) {
+                alert(`No se pudieron guardar los cambios: ${error.message}`);
+            } finally {
+                boton.disabled = false;
+            }
+        });
+
+        document.getElementById('detail-status-btn').addEventListener('click', async () => {
+            if (!empleadoActual) return;
+            if (!confirm(`¿Deseas dar de baja a ${empleadoActual.nombre}? Podrás reactivarlo después desde la lista de empleados inactivos.`)) return;
+            const url = `${api}/empleados/${encodeURIComponent(empleadoActual.fuente)}/${empleadoActual.id}`;
+            try {
+                await solicitar(`${url}/baja`, { method: 'PUT' });
+                await cargarEmpleados();
+            } catch (error) {
+                alert(`No se pudo dar de baja al empleado: ${error.message}`);
+            }
+        });
+
+        async function cargarHistorial() {
+            if (historialEnCurso) return;
+            historialEnCurso = true;
+            const contenedor = document.getElementById('employee-history');
+            try {
+                const historial = await solicitar(`${api}/empleados/historial`);
+                if (historial.length === 0) {
+                    contenedor.innerHTML = '<p class="py-4 text-sm text-on-surface-variant">Aún no hay empleados eliminados.</p>';
+                    return;
+                }
+                contenedor.innerHTML = historial.map(baja => `
+                    <article class="grid gap-2 py-4 text-sm md:grid-cols-[1.4fr_1.2fr_1fr_1fr] md:items-center">
+                        <div>
+                            <strong class="text-on-surface">${escapeHtml(baja.nombre)}</strong>
+                            <p class="text-xs text-on-surface-variant">${escapeHtml(baja.codigo)} · ${escapeHtml(baja.rol)}</p>
+                        </div>
+                        <div class="text-xs text-on-surface-variant">
+                            <p>${escapeHtml(baja.correo)}</p>
+                            <p>DNI: ${escapeHtml(baja.dni || '—')} · Sede: ${escapeHtml(baja.sede || '—')}</p>
+                        </div>
+                        <p class="text-xs text-secondary">${escapeHtml(baja.motivo)}</p>
+                        <time class="text-xs text-outline">${new Date(baja.eliminadoEn).toLocaleString()}</time>
+                    </article>
+                `).join('');
+            } catch (error) {
+                contenedor.textContent = `No se pudo cargar el historial: ${error.message}`;
+                console.error('Error cargando el historial de empleados:', error);
+            } finally {
+                historialEnCurso = false;
+            }
+        }
+
+        document.getElementById('btn-toggle-inactive').addEventListener('click', event => {
+            const boton = event.currentTarget;
+            const panel = document.getElementById('inactive-employees-panel');
+            const mostrar = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden', !mostrar);
+            boton.setAttribute('aria-expanded', String(mostrar));
+            document.getElementById('inactive-button-label').textContent = mostrar ? 'Ocultar bajas' : 'Bajas';
+        });
+
+        document.getElementById('inactive-employee-list').addEventListener('click', async event => {
+            const boton = event.target.closest('.reactivate-employee, .archive-employee');
+            if (!boton) return;
+            const reactivar = boton.classList.contains('reactivate-employee');
+            const accion = reactivar ? 'reactivar' : 'eliminar y archivar';
+            const confirmacion = reactivar
+                ? `¿Deseas reactivar a ${boton.dataset.employeeName}?`
+                : `¿Deseas eliminar y archivar a ${boton.dataset.employeeName}? Se guardará una copia en el historial de empleados eliminados.`;
+            if (!confirm(confirmacion)) return;
+            boton.disabled = true;
+            const { employeeSource, employeeId } = boton.dataset;
+            try {
+                const url = `${api}/empleados/${encodeURIComponent(employeeSource)}/${encodeURIComponent(employeeId)}`;
+                const resultado = await solicitar(
+                    reactivar ? `${url}/reactivar` : url,
+                    { method: reactivar ? 'PUT' : 'DELETE' });
+                if (!reactivar) alert(resultado.mensaje);
+                await cargarEmpleados();
+                await cargarHistorial();
+            } catch (error) {
+                alert(`No se pudo ${accion} al empleado: ${error.message}`);
+            } finally {
+                boton.disabled = false;
+            }
+        });
+
+        document.getElementById('emp-search-input').addEventListener('input', renderizarEmpleados);
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                filtroActual = chip.dataset.role;
+                document.querySelectorAll('.filter-chip').forEach(item => {
+                    item.classList.remove('active', 'bg-terracota', 'text-white');
+                    item.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                chip.classList.add('active', 'bg-terracota', 'text-white');
+                chip.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                renderizarEmpleados();
+            });
+        });
+
+        const btnOtpAlert = document.getElementById('btn-otp-alert');
+        const modalOtp = document.getElementById('modal-otp');
+        const closeModalOtp = document.getElementById('close-modal-otp');
+        const approveOtpButton = document.getElementById('btn-aprobar-otp');
+
+        function actualizarIndicadoresOtp() {
+            document.querySelectorAll('.employee-card').forEach(card => {
+                const empleado = empleados.find(item => claveEmpleado(item) === card.dataset.employeeKey);
+                const indicador = card.querySelector('.otp-request-indicator');
+                if (indicador) {
+                    indicador.classList.toggle('hidden', !empleado || !solicitudesPorCodigo.has(empleado.codigo));
+                }
+            });
+        }
+
+        function actualizarDetalleOtp() {
+            const solicitud = empleadoActual ? solicitudesPorCodigo.get(empleadoActual.codigo) : null;
+            const panel = document.getElementById('detail-otp-request');
+            panel.classList.toggle('hidden', !solicitud);
+            document.getElementById('detail-otp-code').textContent = solicitud ? solicitud.otpGenerado : '------';
+        }
+
+        async function aprobarSolicitudOtp(solicitud) {
+            await solicitar(`${api}/aprobar-otp`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ codigo: solicitud.codigo })
+            });
+            await verificarSolicitudesPendientes();
+        }
+
+        async function verificarSolicitudesPendientes() {
+            try {
+                solicitudesPendientes = await solicitar(`${api}/solicitudes-pendientes`);
+                solicitudesPorCodigo = new Map(solicitudesPendientes.map(solicitud => [solicitud.codigo, solicitud]));
+                solicitudActual = solicitudesPendientes[0] || null;
+                actualizarIndicadoresOtp();
+                actualizarDetalleOtp();
+
+                if (solicitudesPendientes.length > 0) {
+                    document.getElementById('otp-badge-count').textContent =
+                        `${solicitudesPendientes.length} Solicitud(es) OTP`;
+                    btnOtpAlert.classList.remove('hidden');
+                    btnOtpAlert.classList.add('flex');
+                } else {
+                    btnOtpAlert.classList.remove('flex');
+                    btnOtpAlert.classList.add('hidden');
+                    cerrarModal(modalOtp);
+                }
+            } catch (error) {
+                console.error('No se pudieron consultar solicitudes OTP:', error);
+            }
+        }
+
+        btnOtpAlert.addEventListener('click', () => {
+            if (!solicitudActual) return;
+            document.getElementById('modal-info-empleado').textContent = solicitudActual.nombre;
+            document.getElementById('modal-employee-code').textContent = solicitudActual.codigo;
+            document.getElementById('modal-employee-email').textContent = solicitudActual.correo;
+            document.getElementById('modal-otp-code').textContent = solicitudActual.otpGenerado || 'N/D';
+            abrirModal(modalOtp);
+        });
+
+        closeModalOtp.addEventListener('click', () => cerrarModal(modalOtp));
+        approveOtpButton.addEventListener('click', async () => {
+            if (!solicitudActual) return;
+            approveOtpButton.disabled = true;
+            try {
+                await aprobarSolicitudOtp(solicitudActual);
+                cerrarModal(modalOtp);
+            } catch (error) {
+                alert(`No se pudo aprobar la solicitud OTP: ${error.message}`);
+            } finally {
+                approveOtpButton.disabled = false;
+            }
+        });
+
+        document.getElementById('detail-approve-otp').addEventListener('click', async event => {
+            const solicitud = empleadoActual ? solicitudesPorCodigo.get(empleadoActual.codigo) : null;
+            if (!solicitud) return;
+            const boton = event.currentTarget;
+            boton.disabled = true;
+            try {
+                await aprobarSolicitudOtp(solicitud);
+            } catch (error) {
+                alert(`No se pudo aprobar la solicitud OTP: ${error.message}`);
+            } finally {
+                boton.disabled = false;
+            }
+        });
+
+        cargarEmpleados();
+        cargarHistorial();
+        verificarSolicitudesPendientes();
+        setInterval(cargarEmpleados, 5000);
+        setInterval(cargarHistorial, 10000);
+        setInterval(verificarSolicitudesPendientes, 5000);
+    });
+    </script>
+    <script src="js/admin-shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+IMAGENES DE PRODUCTOS - TABLONCITOS
+
+Guarda cada imagen en esta carpeta y nombra el archivo con el ID del producto
+que devuelve /api/productos, seguido de la extension .jpg.
+
+Formato:
+  <ID-del-producto>.jpg
+
+Ejemplos con los productos iniciales:
+  1.jpg  - 1 Pollo Tradicional a la Brasa
+  2.jpg  - 1/2 Pollo a la Brasa
+  3.jpg  - Anticuchos 3 Palos
+  4.jpg  - Parrilla Mixta Personal
+  5.jpg  - Jarra Chicha Morada 1 Litro
+  6.jpg  - 1/4 Pollo a la Brasa
+  7.jpg  - Alitas a la Brasa BBQ
+  8.jpg  - Pollo a la Brasa Familiar
+  9.jpg  - Costillas BBQ a la Parrilla
+  10.jpg - Lomo Fino a la Parrilla
+  11.jpg - Churrasco a la Parrilla
+  12.jpg - Limonada Frozen
+  13.jpg - Inca Kola Personal
+  14.jpg - Coca-Cola 1 Litro
+  15.jpg - Agua Mineral Sin Gas
+  16.jpg - Papas Fritas
+  17.jpg - Ensalada Fresca
+  18.jpg - Yuca Frita
+  19.jpg - Arroz Blanco
+  20.jpg - Choclo con Queso
+
+Recomendaciones:
+  - Usa imagenes JPG de 800 x 600 pixeles (proporcion 4:3).
+  - El nombre distingue mayusculas/minusculas; usa el ID exacto y .jpg.
+  - No uses el nombre del plato como nombre de archivo.
+  - Si agregas productos nuevos, consulta su ID en /api/productos y crea
+    el archivo con ese ID. Por ejemplo, si el ID es 21, usa 21.jpg.
+  - Si una imagen no existe, la tarjeta mostrara el icono de su categoria.
+
+Nota:
+  Esta carpeta esta en los recursos estaticos del proyecto. Cuando se agregue
+  la carga de imagenes desde el panel de administracion, se definira una
+  ubicacion persistente para esas imagenes subidas.

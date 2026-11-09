@@ -28,8 +28,20 @@ public class PedidoService {
     @Autowired
     private ProductoRepository productoRepository;
 
+    @Autowired
+    private PromocionService promocionService;
+
     @Transactional
     public Pedido crearPedidoCompleto(Pedido pedidoCabecera, List<PedidoDetalle> detalles) {
+        return crearPedidoCompleto(pedidoCabecera, detalles, null);
+    }
+
+    @Transactional
+    public Pedido crearPedidoCompleto(
+            Pedido pedidoCabecera,
+            List<PedidoDetalle> detalles,
+            String mozoResponsable) {
+        promocionService.sincronizarPrecios();
         BigDecimal subtotalGeneral = BigDecimal.ZERO;
 
         // 1. Validar y procesar cada detalle (congelando el precio histórico)
@@ -70,7 +82,8 @@ public class PedidoService {
         if (pedidoGuardado.getMesa() != null) {
             Mesa mesa = mesaRepository.findById(pedidoGuardado.getMesa().getId()).orElse(null);
             if (mesa != null) {
-                mesa.setEstado("OCUPADA");
+                mesa.actualizarEstado("OCUPADA", mozoResponsable);
+                mesa.registrarComandaEnviada();
                 mesaRepository.save(mesa);
             }
         }
@@ -93,7 +106,7 @@ public class PedidoService {
         if (pedidoGuardado.getMesa() != null) {
             Mesa mesa = mesaRepository.findById(pedidoGuardado.getMesa().getId()).orElse(null);
             if (mesa != null) {
-                mesa.setEstado("LIBRE");
+                mesa.actualizarEstado("LIBRE");
                 mesaRepository.save(mesa);
             }
         }

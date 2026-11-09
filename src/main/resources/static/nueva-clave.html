@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="web_blank" name="shell-type"/>
+    <title>Tabloncitos - Restablecer Contraseña Corporativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#514533",
+                        "tertiary-fixed": "#f2dfd2",
+                        "primary": "#ffc56c",
+                        "on-primary-fixed": "#281800",
+                        "surface-container": "#201f1e",
+                        "on-primary": "#442c00",
+                        "primary-container": "#f0a500",
+                        "on-secondary": "#640d00",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3938",
+                        "surface-container-highest": "#363433",
+                        "on-background": "#e6e2df",
+                        "surface": "#141312",
+                        "error-container": "#93000a",
+                        "surface-dim": "#141312",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#ffdad3",
+                        "on-surface": "#e6e2df",
+                        "on-tertiary-fixed": "#231a12",
+                        "surface-variant": "#363433",
+                        "on-secondary-fixed-variant": "#891e07",
+                        "on-tertiary-fixed-variant": "#51443b",
+                        "on-secondary-container": "#ff9a84",
+                        "on-tertiary-container": "#50443a",
+                        "primary-fixed-dim": "#ffba44",
+                        "outline": "#9f8e79",
+                        "primary-fixed": "#ffddaf",
+                        "on-secondary-fixed": "#3e0500",
+                        "surface-container-high": "#2b2a29",
+                        "surface-tint": "#ffba44",
+                        "surface-container-low": "#1c1b1a",
+                        "tertiary-fixed-dim": "#d5c3b7",
+                        "on-primary-fixed-variant": "#614000",
+                        "tertiary": "#dfccc0",
+                        "background": "#141312",
+                        "on-surface-variant": "#d6c4ac",
+                        "inverse-on-surface": "#32302f",
+                        "secondary-container": "#891e07",
+                        "secondary": "#ffb4a4",
+                        "on-error": "#690005",
+                        "inverse-primary": "#805600",
+                        "on-tertiary": "#392e26",
+                        "surface-container-lowest": "#0f0e0d",
+                        "secondary-fixed-dim": "#ffb4a4",
+                        "on-primary-container": "#5f3f00",
+                        "inverse-surface": "#e6e2df",
+                        "tertiary-container": "#c2b1a5"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "space-xl": "1.75rem",
+                        "gutter": "0.75rem",
+                        "gutter-kds": "1rem",
+                        "space-lg": "1.25rem",
+                        "space-sm": "0.5rem",
+                        "margin-kds": "1.5rem",
+                        "space-xs": "0.25rem",
+                        "margin": "1rem",
+                        "space-md": "0.75rem"
+                    },
+                    fontFamily: {
+                        "label-numeric-sm": ["JetBrains Mono"],
+                        "label-numeric-lg": ["JetBrains Mono"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-numeric-md": ["JetBrains Mono"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "label-numeric-sm": ["12px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-numeric-lg": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-numeric-md": ["16px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between">
+    
+    <!-- Encabezado con Identidad Tabloncitos -->
+    <header class="w-full py-space-lg flex justify-center">
+        <div class="flex items-center gap-space-sm">
+            <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+                <span class="material-symbols-outlined text-[24px]">local_fire_department</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">TABLONCITOS</span>
+                <span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Pollos &amp; Parrillas</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="w-full flex-1 flex items-center justify-center px-space-md py-space-lg">
+        <div class="flex flex-col w-full max-w-4xl mx-auto">
+            <div class="relative w-full rounded-xl bg-surface-container-low shadow-xl overflow-hidden p-space-md md:p-space-xl flex flex-col gap-space-lg">
+                <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+
+                <!-- Cabecera de Estado y Token -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-xs">
+                    <div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 rounded bg-surface-container-high text-primary font-label-caps text-label-caps">
+                        <span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">lock_reset</span>
+                        <span>PASO 3 DE 3 • ACTUALIZACIÓN DEFINITIVA</span>
+                    </div>
+                    <div class="flex items-center gap-space-xs text-on-surface-variant font-label-numeric-sm text-label-numeric-sm">
+                        <span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                        <span>SESIÓN SEGURA ID: #TBZ-9941</span>
+                    </div>
+                </div>
+
+                <!-- Título e Instrucciones -->
+                <div class="flex flex-col gap-space-xs">
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+                        Establecer Nueva Contraseña Corporativa
+                    </h1>
+                    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                        Configure sus credenciales para terminales POS, paneles KDS y acceso operativo autorizado en sala y parrilla.
+                    </p>
+                </div>
+
+                <!-- Banner Informativo del Empleado -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md p-space-md rounded-lg bg-surface-container text-on-surface">
+                    <div class="flex items-center gap-space-md">
+                        <div class="relative w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+                            <span class="material-symbols-outlined text-[28px]">badge</span>
+                            <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+                                <span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">check</span>
+                            </span>
+                        </div>
+                        <div class="flex flex-col min-w-0">
+                            <div class="flex items-center gap-space-xs flex-wrap">
+                                <span class="font-label-caps text-label-caps text-primary uppercase">Token Verificado con Éxito</span>
+                                <span class="text-outline-variant font-body-sm text-body-sm">•</span>
+                                <span class="font-label-numeric-sm text-label-numeric-sm text-outline">HASH: 78F4-09</span>
+                            </div>
+                            <span class="font-headline-sm text-headline-sm text-on-surface truncate" id="employee-name">Carlos Cajero</span>
+                            <span class="font-body-sm text-body-sm text-on-surface-variant">Personal Operativo • <span class="font-label-numeric-sm text-label-numeric-sm text-primary" id="employee-code">EMP-2044</span></span>
+                        </div>
+                    </div>
+                    <div class="flex sm:flex-col items-center sm:items-end justify-between gap-1 self-stretch sm:self-auto pt-space-xs sm:pt-0">
+                        <span class="font-label-caps text-label-caps text-outline uppercase">Sede Asignada</span>
+                        <span class="font-body-md text-body-md text-on-surface font-semibold">Salón Principal • Turno Tarde</span>
+                    </div>
+                </div>
+
+                <!-- Formulario + Sección de Políticas de Seguridad -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+                    
+                    <!-- Columna Izquierda: Entradas de Texto -->
+                    <div class="lg:col-span-7 flex flex-col gap-space-lg">
+                        
+                        <!-- Input Nueva Contraseña -->
+                        <div class="flex flex-col gap-space-xs">
+                            <label class="font-label-caps text-label-caps text-on-surface uppercase flex items-center justify-between" for="password">
+                                <span>Nueva Contraseña</span>
+                                <span class="text-outline font-label-numeric-sm text-label-numeric-sm">Mín. 8 caracteres</span>
+                            </label>
+                            <div class="relative flex items-center">
+                                <input autocomplete="new-password" class="w-full h-12 bg-surface-container px-space-md pr-12 rounded-lg font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:outline-none focus:bg-surface-container-high transition-colors" id="password" placeholder="Ingrese su nueva clave" type="password"/>
+                                <button aria-label="Mostrar contraseña" class="absolute right-2 w-9 h-9 flex items-center justify-center rounded text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="toggle-password" type="button">
+                                    <span class="material-symbols-outlined text-[20px]" id="eye-icon">visibility</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col gap-1.5 mt-space-xs">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-label-caps text-label-caps text-outline uppercase">Nivel de Seguridad</span>
+                                    <span class="font-label-numeric-sm text-label-numeric-sm text-outline" id="strength-text">PENDIENTE</span>
+                                </div>
+                                <div class="grid grid-cols-4 gap-1.5 h-1.5 w-full">
+                                    <div class="h-full rounded-DEFAULT bg-surface-container-highest transition-colors duration-300" id="bar-1"></div>
+                                    <div class="h-full rounded-DEFAULT bg-surface-container-highest transition-colors duration-300" id="bar-2"></div>
+                                    <div class="h-full rounded-DEFAULT bg-surface-container-highest transition-colors duration-300" id="bar-3"></div>
+                                    <div class="h-full rounded-DEFAULT bg-surface-container-highest transition-colors duration-300" id="bar-4"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Input Confirmar Contraseña -->
+                        <div class="flex flex-col gap-space-xs">
+                            <label class="font-label-caps text-label-caps text-on-surface uppercase flex items-center justify-between" for="confirm-password">
+                                <span>Confirmar Nueva Contraseña</span>
+                                <span class="font-label-numeric-sm text-label-numeric-sm text-outline" id="match-status">NO COINCIDE</span>
+                            </label>
+                            <div class="relative flex items-center">
+                                <input autocomplete="new-password" class="w-full h-12 bg-surface-container px-space-md pr-12 rounded-lg font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:outline-none focus:bg-surface-container-high transition-colors" id="confirm-password" placeholder="Reingrese la contraseña" type="password"/>
+                                <button aria-label="Mostrar confirmación" class="absolute right-2 w-9 h-9 flex items-center justify-center rounded text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="toggle-confirm" type="button">
+                                    <span class="material-symbols-outlined text-[20px]" id="eye-icon-confirm">visibility</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Checkbox Cierre Global -->
+                        <label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container cursor-pointer select-none group transition-colors">
+                            <div class="relative flex items-center justify-center mt-0.5">
+                                <input checked="" class="peer sr-only" id="logout-all" type="checkbox"/>
+                                <div class="w-6 h-6 rounded bg-surface-container-highest peer-checked:bg-primary-container peer-checked:text-on-primary flex items-center justify-center text-transparent transition-all">
+                                    <span class="material-symbols-outlined text-[18px] font-bold">check</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="font-body-md text-body-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+                                    Cerrar sesión en todos los demás dispositivos y terminales activos
+                                </span>
+                                <span class="font-body-sm text-body-sm text-on-surface-variant">
+                                    Recomendado para invalidar tabletas móviles, POS fijas de caja y terminales KDS activas.
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Columna Derecha: Reglas e Info -->
+                    <div class="lg:col-span-5 flex flex-col gap-space-md">
+                        <div class="rounded-lg bg-surface-container p-space-md flex flex-col gap-space-sm">
+                            <div class="flex items-center gap-space-xs text-primary pb-space-xs">
+                                <span class="material-symbols-outlined text-[20px]">verified_user</span>
+                                <span class="font-label-caps text-label-caps uppercase">Políticas Corporativas</span>
+                            </div>
+                            <div class="flex flex-col gap-space-sm">
+                                <div class="flex items-center gap-space-sm text-outline-variant transition-colors" id="rule-len">
+                                    <span class="material-symbols-outlined text-[18px]" id="icon-len">radio_button_unchecked</span>
+                                    <span class="font-body-sm text-body-sm">Mínimo 8 caracteres alfanuméricos</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm text-outline-variant transition-colors" id="rule-case">
+                                    <span class="material-symbols-outlined text-[18px]" id="icon-case">radio_button_unchecked</span>
+                                    <span class="font-body-sm text-body-sm">Al menos una mayúscula y minúscula</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm text-outline-variant transition-colors" id="rule-num">
+                                    <span class="material-symbols-outlined text-[18px]" id="icon-num">radio_button_unchecked</span>
+                                    <span class="font-body-sm text-body-sm">Al menos un dígito numérico (0-9)</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm text-outline-variant transition-colors" id="rule-sym">
+                                    <span class="material-symbols-outlined text-[18px]" id="icon-sym">radio_button_unchecked</span>
+                                    <span class="font-body-sm text-body-sm">Al menos un símbolo especial (!@#$%)</span>
+                                </div>
+                                <div class="flex items-center gap-space-sm text-outline-variant transition-colors" id="rule-name">
+                                    <span class="material-symbols-outlined text-[18px]" id="icon-name">radio_button_unchecked</span>
+                                    <span class="font-body-sm text-body-sm">No incluir nombre, apellido ni código</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rounded-lg bg-surface-container-high p-space-md flex items-start gap-space-sm text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-0.5">schedule</span>
+                            <p class="font-body-sm text-body-sm leading-relaxed">
+                                Su nueva contraseña tendrá una vigencia obligatoria de <strong class="text-on-surface">90 días</strong> conforme al protocolo de Tabloncitos. Al vencer, el terminal solicitará una renovación automática.
+                            </p>
+                        </div>
+
+                        <div class="rounded-lg bg-surface-container p-space-sm flex items-center justify-between text-outline">
+                            <div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm">
+                                <span class="material-symbols-outlined text-[16px]">terminal</span>
+                                <span>KDS-SYNC COMPATIBLE</span>
+                            </div>
+                            <span class="font-label-numeric-sm text-label-numeric-sm text-primary">v4.2.1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-xs">
+                    <a class="h-12 px-space-lg rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-body-md text-body-md font-semibold transition-colors flex items-center justify-center gap-space-xs text-decoration-none" href="index.html">
+                        <span class="material-symbols-outlined text-[18px]">close</span>
+                        <span>CANCELAR Y SALIR</span>
+                    </a>
+                    <button class="h-12 px-space-xl rounded-lg bg-secondary-container hover:bg-on-secondary-fixed-variant text-secondary-fixed font-headline-sm text-headline-sm font-bold tracking-tight shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed" id="btn-submit" type="button">
+                        <span class="material-symbols-outlined text-[22px]">lock</span>
+                        <span>ACTUALIZAR CONTRASEÑA Y ENTRAR AL SISTEMA</span>
+                    </button>
+                </div>
+
+                <div class="hidden p-space-md rounded-lg bg-primary-container text-on-primary flex items-center justify-between gap-space-md shadow-2xl" id="toast-success">
+                    <div class="flex items-center gap-space-sm">
+                        <span class="material-symbols-outlined text-[24px]">verified</span>
+                        <div class="flex flex-col">
+                            <span class="font-headline-sm text-headline-sm font-bold">Credenciales actualizadas exitosamente</span>
+                            <span class="font-body-sm text-body-sm">Redireccionando al terminal central de sala...</span>
+                        </div>
+                    </div>
+                    <span class="font-label-numeric-sm text-label-numeric-sm bg-on-primary/10 px-2 py-1 rounded">2s</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script Interactivo y Conexión con Spring Boot -->
+    <script>
+      (function() {
+        const pwd = document.getElementById('password');
+        const pwdConfirm = document.getElementById('confirm-password');
+        const togglePwd = document.getElementById('toggle-password');
+        const toggleConfirm = document.getElementById('toggle-confirm');
+        const eyeIcon = document.getElementById('eye-icon');
+        const eyeIconConfirm = document.getElementById('eye-icon-confirm');
+        const strengthText = document.getElementById('strength-text');
+        const matchStatus = document.getElementById('match-status');
+        const btnSubmit = document.getElementById('btn-submit');
+        const toast = document.getElementById('toast-success');
+
+        const storedCode = sessionStorage.getItem('emp_recovery_code');
+        if (!storedCode) {
+          window.location.replace('login.html');
+          return;
+        }
+        document.getElementById('employee-code').textContent = storedCode;
+
+        const bars = [
+          document.getElementById('bar-1'),
+          document.getElementById('bar-2'),
+          document.getElementById('bar-3'),
+          document.getElementById('bar-4')
+        ];
+
+        const rules = {
+          len: { el: document.getElementById('rule-len'), icon: document.getElementById('icon-len') },
+          caseCheck: { el: document.getElementById('rule-case'), icon: document.getElementById('icon-case') },
+          num: { el: document.getElementById('rule-num'), icon: document.getElementById('icon-num') },
+          sym: { el: document.getElementById('rule-sym'), icon: document.getElementById('icon-sym') },
+          name: { el: document.getElementById('rule-name'), icon: document.getElementById('icon-name') }
+        };
+
+        function toggleInputType(input, icon) {
+          if (input.type === 'password') {
+            input.type = 'text';
+            icon.textContent = 'visibility_off';
+          } else {
+            input.type = 'password';
+            icon.textContent = 'visibility';
+          }
+        }
+
+        togglePwd.addEventListener('click', () => toggleInputType(pwd, eyeIcon));
+        toggleConfirm.addEventListener('click', () => toggleInputType(pwdConfirm, eyeIconConfirm));
+
+        function setRuleState(ruleObj, passed) {
+          if (passed) {
+            ruleObj.el.classList.remove('text-outline-variant');
+            ruleObj.el.classList.add('text-primary');
+            ruleObj.icon.textContent = 'check_circle';
+            ruleObj.icon.style.fontVariationSettings = "'FILL' 1";
+          } else {
+            ruleObj.el.classList.remove('text-primary');
+            ruleObj.el.classList.add('text-outline-variant');
+            ruleObj.icon.textContent = 'radio_button_unchecked';
+            ruleObj.icon.style.fontVariationSettings = "'FILL' 0";
+          }
+        }
+
+        function evaluate() {
+          const val = pwd.value;
+          const confirmVal = pwdConfirm.value;
+
+          const hasLen = val.length >= 8;
+          const hasCase = /[a-z]/.test(val) && /[A-Z]/.test(val);
+          const hasNum = /[0-9]/.test(val);
+          const hasSym = /[^A-Za-z0-9]/.test(val);
+          const forbidden = new RegExp(`(${storedCode}|juan|martinez|emp)`, 'i');
+          const hasNoForbidden = val.length > 0 && !forbidden.test(val);
+
+          setRuleState(rules.len, hasLen);
+          setRuleState(rules.caseCheck, hasCase);
+          setRuleState(rules.num, hasNum);
+          setRuleState(rules.sym, hasSym);
+          setRuleState(rules.name, hasNoForbidden);
+
+          let score = 0;
+          if (hasLen) score++;
+          if (hasCase) score++;
+          if (hasNum) score++;
+          if (hasSym && hasNoForbidden) score++;
+
+          bars.forEach(b => {
+            b.className = 'h-full rounded-DEFAULT bg-surface-container-highest transition-colors duration-300';
+          });
+
+          if (!val) {
+            strengthText.textContent = 'PENDIENTE';
+            strengthText.className = 'font-label-numeric-sm text-label-numeric-sm text-outline';
+          } else if (score <= 1) {
+            strengthText.textContent = 'DÉBIL';
+            strengthText.className = 'font-label-numeric-sm text-label-numeric-sm text-error';
+            bars[0].className = 'h-full rounded-DEFAULT bg-secondary-container transition-colors duration-300';
+          } else if (score === 2) {
+            strengthText.textContent = 'MEDIA';
+            strengthText.className = 'font-label-numeric-sm text-label-numeric-sm text-primary';
+            bars[0].className = 'h-full rounded-DEFAULT bg-primary-container transition-colors duration-300';
+            bars[1].className = 'h-full rounded-DEFAULT bg-primary-container transition-colors duration-300';
+          } else if (score === 3) {
+            strengthText.textContent = 'SEGURA';
+            strengthText.className = 'font-label-numeric-sm text-label-numeric-sm text-primary';
+            bars[0].className = 'h-full rounded-DEFAULT bg-primary-container transition-colors duration-300';
+            bars[1].className = 'h-full rounded-DEFAULT bg-primary-container transition-colors duration-300';
+            bars[2].className = 'h-full rounded-DEFAULT bg-primary-container transition-colors duration-300';
+          } else {
+            strengthText.textContent = 'ÓPTIMA';
+            strengthText.className = 'font-label-numeric-sm text-label-numeric-sm text-primary';
+            bars.forEach(b => {
+              b.className = 'h-full rounded-DEFAULT bg-primary transition-colors duration-300';
+            });
+          }
+
+          if (!confirmVal) {
+            matchStatus.textContent = 'PENDIENTE';
+            matchStatus.className = 'font-label-numeric-sm text-label-numeric-sm text-outline';
+          } else if (val === confirmVal && val.length > 0) {
+            matchStatus.textContent = 'COINCIDE';
+            matchStatus.className = 'font-label-numeric-sm text-label-numeric-sm text-primary';
+          } else {
+            matchStatus.textContent = 'NO COINCIDE';
+            matchStatus.className = 'font-label-numeric-sm text-label-numeric-sm text-error';
+          }
+        }
+
+        pwd.addEventListener('input', evaluate);
+        pwdConfirm.addEventListener('input', evaluate);
+
+        // Envío hacia el backend en Spring Boot ( /api/auth/actualizar-clave.html )
+        btnSubmit.addEventListener('click', () => {
+          const val = pwd.value;
+          const confirmVal = pwdConfirm.value;
+
+          const allValid = val.length >= 8 &&
+            val === confirmVal &&
+            /[a-z]/.test(val) &&
+            /[A-Z]/.test(val) &&
+            /[0-9]/.test(val) &&
+            /[^A-Za-z0-9]/.test(val);
+
+          if (!allValid) {
+            pwd.focus();
+            return;
+          }
+
+          btnSubmit.disabled = true;
+          btnSubmit.innerHTML = '<span class="material-symbols-outlined text-[22px] animate-spin">progress_activity</span><span>ACTUALIZANDO...</span>';
+
+          fetch('http://localhost:8083/api/auth/actualizar-clave', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ codigo: storedCode, nuevaClave: val })
+          })
+          .then(async res => {
+            const data = await res.json();
+            if (!res.ok) {
+              throw new Error(data.error || 'No se pudo actualizar la contraseña.');
+            }
+            return data;
+          })
+          .then(data => {
+            toast.classList.remove('hidden');
+            
+            // Limpieza de tokens temporales de sesión
+            sessionStorage.removeItem('emp_recovery_code');
+            sessionStorage.removeItem('emp_recovery_email');
+
+            setTimeout(() => {
+              window.location.href = data.next || 'index.html';
+            }, 2000);
+          })
+          .catch(err => {
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = '<span class="material-symbols-outlined text-[22px]">lock</span><span>ACTUALIZAR CONTRASEÑA Y ENTRAR AL SISTEMA</span>';
+            alert(err.message || 'Error al conectar con el servidor central de Tabloncitos');
+          });
+        });
+      })();
+    </script>
+
+    <!-- Pie de página -->
+    <footer class="w-full py-space-md text-center">
+        <span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">Seguridad Operativa y Terminales Internos • Tabloncitos © 2026</span>
+    </footer>
+</body>
+</html>

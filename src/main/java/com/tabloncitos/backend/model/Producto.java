@@ -28,4 +28,7 @@ public class Producto {
 
     @Column(nullable = false)
     private Boolean activo = true;
+
+    @Column(name = "tiene_imagen", nullable = false)
+    private boolean tieneImagen;
 }

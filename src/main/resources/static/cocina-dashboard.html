@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline-variant":"#514533","on-primary-fixed":"#281800","primary-container":"#f0a500","surface-bright":"#3a3938","on-tertiary-fixed":"#231a12","on-primary-fixed-variant":"#614000","surface-container-highest":"#363433","tertiary-fixed-dim":"#d5c3b7","on-tertiary-fixed-variant":"#51443b","secondary":"#ffb4a4","tertiary":"#dfccc0","on-secondary-container":"#ff9a84","on-surface-variant":"#d6c4ac","tertiary-container":"#c2b1a5","surface-dim":"#141312","surface-variant":"#363433","inverse-on-surface":"#32302f","surface":"#141312","secondary-container":"#891e07","surface-container-low":"#1c1b1a","secondary-fixed":"#ffdad3","background":"#141312","on-primary":"#442c00","on-error-container":"#ffdad6","surface-container-high":"#2b2a29","inverse-surface":"#e6e2df","surface-container-lowest":"#0f0e0d","tertiary-fixed":"#f2dfd2","on-secondary-fixed":"#3e0500","on-primary-container":"#5f3f00","primary-fixed":"#ffddaf","secondary-fixed-dim":"#ffb4a4","on-surface":"#e6e2df","error":"#ffb4ab","on-secondary":"#640d00","error-container":"#93000a","outline":"#9f8e79","surface-tint":"#ffba44","on-tertiary":"#392e26","on-background":"#e6e2df","inverse-primary":"#805600","primary":"#ffc56c","on-secondary-fixed-variant":"#891e07","on-tertiary-container":"#50443a","on-error":"#690005","primary-fixed-dim":"#ffba44","surface-container":"#201f1e"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-xl":"1.75rem","margin":"1rem","gutter":"0.75rem","space-sm":"0.5rem","margin-kds":"1.5rem","space-xs":"0.25rem","space-lg":"1.25rem","gutter-kds":"1rem","space-md":"0.75rem"},fontFamily:{"body-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-numeric-sm":["JetBrains Mono"],"label-numeric-md":["JetBrains Mono"],"label-numeric-lg":["JetBrains Mono"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-caps":["Plus Jakarta Sans"]},fontSize:{"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg-mobile":["30px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"800"}],"label-numeric-sm":["12px",{"lineHeight":"14px","fontWeight":"500"}],"label-numeric-md":["16px",{"lineHeight":"20px","fontWeight":"600"}],"label-numeric-lg":["24px",{"lineHeight":"28px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"500"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"700"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-low"><div class="w-9 h-9 rounded-xl bg-secondary-container flex items-center justify-center text-secondary"><span class="material-symbols-outlined text-[22px]">local_fire_department</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary uppercase tracking-tight">Tabloncitos</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pollos &amp; Parrillas</span></div></div><div class="px-space-md py-space-sm bg-surface-container"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Módulo Activo</span><span class="font-label-numeric-sm text-label-numeric-sm text-primary bg-surface-container-high px-space-xs py-0.5 rounded">KDS-COCINA</span></div><div class="font-headline-sm text-headline-sm text-on-surface">Producción &amp; Cocina</div></div><nav class="flex-1 px-space-sm py-space-md flex flex-col gap-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-md"><span class="px-space-sm font-label-caps text-label-caps text-on-surface-variant uppercase mb-space-xs">Operación de Cocina</span><a class="flex items-center justify-between px-space-md py-space-md rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="16-cola-de-cocina-general-kds" href="#"><span class="font-body-md text-body-md">16. Cola de Cocina General (KDS)</span></a><a class="flex items-center justify-between px-space-md py-space-md rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="17-registro-de-mermas-y-desperdicios" href="#"><span class="font-body-md text-body-md">17. Registro de Mermas y Desperdicios</span></a><a class="flex items-center justify-between px-space-md py-space-md rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px]" data-path="18-monitor-de-stock-critico-y-reposicion" href="#"><span class="font-body-md text-body-md">18. Monitor de Stock Crítico y Reposición</span></a><a class="flex items-center justify-between px-space-md py-space-md rounded-xl hover:bg-surface-container-high hover:text-on-surface transition-colors min-h-[48px] bg-primary-container text-on-primary-container font-headline-sm shadow-md" data-path="19-dashboard-de-rendimiento-de-cocina" href="#"><span class="font-body-md text-body-md">19. Dashboard de Rendimiento de Cocina</span></a></nav><div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm"><div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Temperatura Horno</span><span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">385°C</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Stock Carbón</span><span class="font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">3 sacos</span></div></div><a class="flex items-center justify-center py-space-sm px-space-md rounded-lg bg-secondary-container hover:bg-surface-container-highest text-secondary-fixed transition-colors min-h-[44px]" data-path="reportar-incidencia-cocina" href="#"><span class="font-label-caps text-label-caps uppercase font-bold">Reportar Incidencia Cocina</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low/95 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.2)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-primary font-bold">HORNO &amp; BRASAS: 385°C (ÓPTIMO)</span></div><div class="hidden lg:flex items-center gap-space-xs bg-surface-container-high px-space-md py-1 rounded-lg"><span class="material-symbols-outlined text-primary text-[18px]">soup_kitchen</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Estación:</span><span class="font-label-numeric-md text-label-numeric-md text-on-surface">Área Caliente / Horno 01 - Parrilla Principal</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-secondary-container text-on-secondary-container shadow-[0_0_12px_rgba(200,75,49,0.35)]"><span class="material-symbols-outlined text-[20px] text-secondary">timer</span><span class="font-label-caps text-label-caps uppercase font-bold text-secondary-fixed">EN COLA KDS:</span><span class="font-label-numeric-sm text-label-numeric-sm px-1.5 py-0.5 rounded bg-surface-container-lowest text-secondary font-bold">8</span></div><div class="h-8 w-px bg-surface-variant"></div><div class="flex items-center gap-space-md"><div class="flex flex-col text-right"><span class="font-body-sm text-body-sm text-on-surface font-bold leading-tight">Marco Huamán</span><div class="flex items-center justify-end gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant">MAESTRO PARRILLERO</span><span class="font-label-numeric-sm text-label-numeric-sm text-primary">#EMP-3012</span></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg flex flex-col gap-space-lg max-w-[1720px] mx-auto w-full"><!-- 1. ENCABEZADO Y CONTROLES DEL CHEF EJECUTIVO -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-wrap items-center justify-between gap-space-md shadow-md border-b border-surface-container-high">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">dinner_dining</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">Dashboard de Rendimiento &amp; Operación de Cocina</span>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase font-bold">En Vivo KDS</span>
+</div>
+<div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+          Turno Noche Activo (18:00 - 23:30)
+        </span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">local_fire_department</span>
+          Jefe de Cocina: <strong class="text-on-surface">Chef Marco Huamán</strong>
+</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">4 Estaciones Monitoreadas</span>
+</div>
+</div>
+</div>
+<!-- ACCIONES RÁPIDAS DEL CHEF (ACCESO TÁCTIL DESTACADO) -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-secondary-container hover:bg-surface-container-highest text-secondary-fixed transition-colors font-label-caps text-label-caps uppercase font-bold min-h-[44px] shadow-sm" id="btn-quiebre-plato">
+<span class="material-symbols-outlined text-[20px]">block</span>
+<span>Pausar Plato (86 / Quiebre)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface transition-colors font-label-caps text-label-caps uppercase font-bold min-h-[44px] shadow-sm" id="btn-notificar-mozos">
+<span class="material-symbols-outlined text-[20px] text-primary">notifications_active</span>
+<span>Notificar a Pasaplatos</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container transition-colors font-label-caps text-label-caps uppercase font-bold min-h-[44px] shadow-sm" id="btn-reporte-turno">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>Imprimir Reporte Turno</span>
+</button>
+</div>
+</div>
+<!-- 2. FRANJA SUPERIOR DE KPIS CLAVE (ALTO CONTRASTE Y NÚMEROS GRANDES) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1: TIEMPO PROMEDIO SALIDA -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors border-l-4 border-primary">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Tiempo Promedio Salida</span>
+<span class="font-body-sm text-body-sm text-tertiary">Mesa &amp; Delivery consolidado</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary font-bold text-[32px] tracking-tight">11m 45s</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-caps text-label-caps uppercase font-bold">Bajo Umbral</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-primary pt-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span>Meta &lt; 15 min <strong class="text-on-surface font-bold">(Cumplimiento 96.8%)</strong></span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- KPI 2: COMANDAS DESPACHADAS -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors border-l-4 border-primary-container">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Comandas Despachadas</span>
+<span class="font-body-sm text-body-sm text-tertiary">Turno en curso</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+</div>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold text-[32px] tracking-tight">142</span>
+<span class="font-body-md text-body-md text-on-surface-variant">pedidos</span>
+</div>
+<div class="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-bold">Salón: 98</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary font-bold">Delivery: 44</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- KPI 3: EFICIENCIA OPERATIVA -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors border-l-4 border-surface-tint">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Eficiencia Operativa</span>
+<span class="font-body-sm text-body-sm text-tertiary">Tickets a tiempo sin demora</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-label-numeric-lg text-primary font-bold text-[32px] tracking-tight">96.4%</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps uppercase font-bold">SLA Aprobado</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">error_outline</span>
+<span>Solo <strong class="text-secondary font-bold">3 demoras</strong> justificadas</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 96.4%"></div>
+</div>
+</div>
+<!-- KPI 4: MERMAS DEL TURNO -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container-high transition-colors border-l-4 border-tertiary-container">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Mermas del Turno</span>
+<span class="font-body-sm text-body-sm text-tertiary">Costo merma vs costo total</span>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">delete_sweep</span>
+</div>
+</div>
+<div class="my-space-sm flex flex-col">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold text-[32px] tracking-tight">S/ 86.50</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/20 text-primary font-label-caps text-label-caps uppercase font-bold">Bajo Control</span>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">0.42%</span>
+<span>del insumo (Tope máximo: 1.50%)</span>
+</div>
+</div>
+<div class="w-full h-1.5 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 28%"></div>
+</div>
+</div>
+</div>
+<!-- 3. BARRA DE ESTADO TÉRMICO Y CARGA EN COCINA (ALERTA DE PRODUCCIÓN) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm px-space-md flex flex-wrap items-center justify-between gap-space-md shadow-inner border border-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] animate-pulse">local_fire_department</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Estado de Producción &amp; Térmico:</span>
+</div>
+<div class="flex items-center gap-space-md flex-wrap font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface-variant">Horno Brasa 01:</span>
+<strong class="text-primary font-label-numeric-sm text-label-numeric-sm">220°C Óptimo</strong>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface-variant">Horno 02 (Auxiliar):</span>
+<strong class="text-on-surface font-label-numeric-sm text-label-numeric-sm">Activo (190°C)</strong>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-on-surface-variant">Parrilla Central 01:</span>
+<strong class="text-secondary font-label-numeric-sm text-label-numeric-sm">Carga Alta (78%)</strong>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-on-surface-variant">Freidoras Frituras:</span>
+<strong class="text-on-surface font-label-numeric-sm text-label-numeric-sm">180°C Estable</strong>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-numeric-sm text-label-numeric-sm text-primary">
+<span class="material-symbols-outlined text-[16px]">inventory</span>
+<span>Stock Carbón: <strong>3.5 sacos</strong></span>
+</div>
+</div>
+<!-- 4. PESTAÑAS DE NAVEGACIÓN ERGONÓMICAS (CERO FATIGA COGNITIVA) -->
+<div class="flex items-center justify-between border-b border-surface-container-high pb-space-xs gap-space-md flex-wrap">
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase font-bold transition-all shadow-sm" id="tab-btn-estaciones">
+<span class="material-symbols-outlined text-[18px]">kitchen</span>
+<span>Vista Operativa en Vivo (Estaciones)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase font-bold transition-all" id="tab-btn-metricas">
+<span class="material-symbols-outlined text-[18px]">show_chart</span>
+<span>Métricas &amp; Despacho de Turno</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase font-bold transition-all" id="tab-btn-incidentes">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span>Incidentes &amp; Trazabilidad (3)</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">sync</span>
+<span>Sincronizado cada 15s con KDS</span>
+</div>
+</div>
+<!-- SECCIÓN 1: VISTA OPERATIVA EN VIVO POR ESTACIÓN (PESTAÑA ACTIVA POR DEFECTO) -->
+<div class="flex flex-col gap-space-lg" id="tab-content-estaciones">
+<!-- RESUMEN ÁGIL DE LAS 4 ESTACIONES CLAVE -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- ESTACIÓN 1: BRASA & HORNO -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md border-t-4 border-primary">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Brasa &amp; Horno</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Horno 01 &amp; 02 (Pollos a la Brasa)</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">local_fire_department</span>
+</div>
+<div class="my-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Cola en KDS</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">4 pedidos (7 aves)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Tiempo Promedio</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">10m 20s</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Carga Térmica</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">88% Capacidad</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Hornero: C. Ramos</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">FLUIDO</span>
+</div>
+</div>
+<!-- ESTACIÓN 2: PARRILLAS & CORTES -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md border-t-4 border-secondary">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Parrillas &amp; Cortes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bifes, Anticuchos &amp; Mollejas</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">outdoor_grill</span>
+</div>
+<div class="my-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Cola en KDS</span>
+<span class="font-label-numeric-md text-label-numeric-md text-secondary font-bold">5 pedidos (9 cortes)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Tiempo Promedio</span>
+<span class="font-label-numeric-md text-label-numeric-md text-secondary font-bold">14m 15s</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Carga Parrilla</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-secondary font-bold">78% Carga Alta</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden mt-1">
+<div class="h-full bg-secondary-container rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Parrillero: M. Huamán</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-secondary font-label-caps text-label-caps font-bold">ATENCIÓN</span>
+</div>
+</div>
+<!-- ESTACIÓN 3: FRITURAS & GUARNICIONES -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md border-t-4 border-primary-container">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Frituras &amp; Guarniciones</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Papas Nativas, Yucas &amp; Camote</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[24px]">microwave</span>
+</div>
+<div class="my-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Cola en KDS</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">2 canastas en cola</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Tiempo Promedio</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">6m 40s</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Capacidad Aceite</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">180°C Óptimo</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden mt-1">
+<div class="h-full bg-primary-container rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Friturero: J. Quispe</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">RÁPIDO</span>
+</div>
+</div>
+<!-- ESTACIÓN 4: ENSALADAS & PASAPLATOS -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between shadow-md border-t-4 border-tertiary">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Pasaplatos &amp; Despacho</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ensaladas Frescas &amp; Salsas</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[24px]">takeout_dining</span>
+</div>
+<div class="my-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Listos para Salir</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">3 pedidos armados</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Tiempo Pasaplatos</span>
+<span class="font-label-numeric-md text-label-numeric-md text-on-surface font-bold">1m 15s promedio</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Auditoría Calidad</span>
+<span class="font-label-numeric-sm text-label-numeric-sm text-primary font-bold">100% Verificado</span>
+</div>
+<div class="w-full h-2 bg-surface-container-lowest rounded-full overflow-hidden mt-1">
+<div class="h-full bg-tertiary rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-high flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Chef Pase: S. Vargas</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">ÓPTIMO</span>
+</div>
+</div>
+</div>
+<!-- TABLA / RANKING DE PRODUCCIÓN DE PLATOS Y RENDIMIENTO -->
+<div class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Top 5 Platos Más Despachados del Turno</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Velocidad por ítem vs estándar de cocción estimado</span>
+</div>
+<span class="font-label-caps text-label-caps text-primary uppercase bg-surface-container-high px-space-md py-1 rounded font-bold">142 Comandas Registradas</span>
+</div>
+<div class="flex flex-col gap-space-xs overflow-x-auto">
+<!-- PLATO 1 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-lg gap-space-md min-w-[580px]">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-label-numeric-md text-label-numeric-md font-bold">1</div>
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="Traditional Peruvian whole charcoal rotisserie chicken Pollo a la brasa glistening golden-brown crispy skin garnished with rosemary on a charred wooden board inside a rustic warm dark restaurant kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSjoY0B7Sy8jLxpL98tVK3dzQ3XGCkjcvcDivKRI5-IcQM5fdPO_P3OQs2vNV0BbNnrj25Z5pTtd678DKtDyjwEWSJoCzLrgcRvZsfQD6-T7IWwnvGJN_LB6NtHPJ_UXNriGQMp6ghYg_o6udfGpBP2pU78KNvN9Uu4bpd_j-NFV-Jlw7v-baml6QESkWXiL0rcWGykoWzed1gk7SgeCB4Bwsr2Js1u02MwmusuSBh"/>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Pollo a la Brasa Tradicional (Entero)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estación Brasa • Horno 01 &amp; 02</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">68 und</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Despachados</span>
+</div>
+<div class="flex flex-col text-right min-w-[95px]">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">11m 40s</span>
+<span class="font-label-caps text-label-caps text-primary uppercase">Promedio</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">ÓPTIMO</span>
+</div>
+</div>
+<!-- PLATO 2 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-lg gap-space-md min-w-[580px]">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center font-label-numeric-md text-label-numeric-md font-bold">2</div>
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="Golden crisp half Peruvian rotisserie grilled chicken with smoky herbal notes served with roasted potatoes on dark slate in high contrast firelit rustic kitchen ambiance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLwDrfEoGQ0DzhHUBnKKgS1sJpNwSaC1TWZNgL-LXtK2GYudil8qHp_3UFMSOxFJ0sj8uIz38Ig82Gii83KFAK0m5lrNcpnzBHiEcjQh67bhui1gcNSDHEDdt0qZVBkov3sDOh2Au_QyqD-QehjkWbtVcbOmAbHe0m6K7j1nLnvpt1DpOzCz3EXp35E_6OkS9cJLGYGqVq-w3qyhTukyBh3ZGOtTHbNyLtntF8yE5C"/>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">1/2 Pollo Parrillero con Papas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estación Brasa • Corte Rápido</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">34 und</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Despachados</span>
+</div>
+<div class="flex flex-col text-right min-w-[95px]">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">13m 10s</span>
+<span class="font-label-caps text-label-caps text-primary uppercase">Promedio</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">ÓPTIMO</span>
+</div>
+</div>
+<!-- PLATO 3 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-lg gap-space-md min-w-[580px]">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center font-label-numeric-md text-label-numeric-md font-bold">3</div>
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="Sizzling mixed Peruvian grill platter Parrilla Mixta featuring beef steaks chorizos and blood sausages over embers on a dark iron plate with glowing coals background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD487zAvNEi18EnNobwPdalfPqRYSTTsR5gynn_jAsgCktoTMS4AL3eB000QJ1ASYKv7unLf_SkTegzwqpqy5YXFjATAO-Vxl0V3iKeAkFINZS4oIaNIA7vZTAXNE7ph-5aeZ0uNI1VBOIdEiUHU1wzexnPef2B95ERCDColWPGYJfWxKKFGf0-GR8Ba8iwAMAykEf34THxyc8RVIk0ccLWxJsuvnxUOJqFjUafnbuq"/>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Parrilla Mixta Tabloncito</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estación Cortes • Fierro Vivo</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">22 und</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Despachados</span>
+</div>
+<div class="flex flex-col text-right min-w-[95px]">
+<span class="font-label-numeric-md text-label-numeric-md text-secondary font-bold">16m 20s</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase">Alerta SLA</span>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-container text-secondary font-label-caps text-label-caps font-bold">REVISAR</span>
+</div>
+</div>
+<!-- PLATO 4 -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container-high transition-colors rounded-lg gap-space-md min-w-[580px]">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center font-label-numeric-md text-label-numeric-md font-bold">4</div>
+<img class="w-12 h-12 rounded-lg object-cover shadow-sm" data-alt="Skewered anticuchos beef heart marinated in aji panca chili paste sizzling over smoking hot charcoal grill with golden corn cob wheels and potato garnish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg4inkF-zOrEpQ0ZhPW5LHwhhSWgYOFNmNFYoJVJfBEim76H_fPVjiV0o6ksCa2jtnZHmHeZ-Ev4o4J-7aKL_dcoLkK2i9LuJsD1XUB1oAL1ZvaclTj76dwkUHEoVMnbUxaBEtxsOFzGPPKub4nQ62hInqnmYBQFj0PiWXvdxoKroym7JSB3UpF2v_IhJiwTZBEOI_1bblXi3-QMM7Lig0L4tBnH-XGyyjihcJWkYZ"/>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface font-bold">Anticuchos Carretilleros (3 palos)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Estación Parrilla • Sellado Directo</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xl">
+<div class="flex flex-col text-right">
+<span class="font-label-numeric-lg text-label-numeric-lg text-on-surface font-bold">28 und</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Despachados</span>
+</div>
+<div class="flex flex-col text-right min-w-[95px]">
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">8m 45s</span>
+<span class="font-label-caps text-label-caps text-primary uppercase">Ultra Veloz</span>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container-high text-primary font-label-caps text-label-caps font-bold">EXCELENTE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 2: MÉTRICAS & DESPACHO DE TURNO (PESTAÑA SECUNDARIA) -->
+<div class="hidden flex-col gap-space-lg" id="tab-content-metricas">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- CURVA DE TIEMPOS VS VOLUMEN HORARIO -->
+<div class="xl:col-span-8 bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Curva de Despacho Horario vs Tiempos de Salida</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Correlación de minutos reales en KDS por franja horaria</span>
+</div>
+<div class="flex items-center gap-space-md font-label-caps text-label-caps uppercase">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="text-on-surface-variant">Volumen Pedidos</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-1 rounded bg-secondary"></span>
+<span class="text-on-surface-variant">Tiempo Promedio (min)</span>
+</div>
+</div>
+</div>
+<!-- CHART SVG RÚSTICO LIMPIO -->
+<div class="relative w-full h-64 bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between overflow-hidden">
+<div class="relative w-full h-full flex items-end justify-between px-2 pt-4 pb-2 z-10">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 170">
+<rect fill="#363433" height="100" opacity="0.8" rx="3" width="30" x="25" y="60"></rect>
+<rect fill="#f0a500" height="130" opacity="0.4" rx="3" width="30" x="110" y="30"></rect>
+<rect fill="#363433" height="75" opacity="0.8" rx="3" width="30" x="195" y="85"></rect>
+<rect fill="#363433" height="60" opacity="0.8" rx="3" width="30" x="280" y="100"></rect>
+<rect fill="#363433" height="90" opacity="0.8" rx="3" width="30" x="365" y="70"></rect>
+<rect fill="#f0a500" height="145" opacity="0.85" rx="3" width="30" x="450" y="15"></rect>
+<rect fill="#f0a500" height="140" opacity="0.7" rx="3" width="30" x="535" y="20"></rect>
+<rect fill="#363433" height="70" opacity="0.8" rx="3" width="30" x="620" y="90"></rect>
+<path d="M 40 115 L 125 80 L 210 120 L 295 130 L 380 110 L 465 42 L 550 55 L 635 125" fill="none" stroke="#ffb4a4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<circle cx="40" cy="115" fill="#ffb4a4" r="4"></circle>
+<circle cx="125" cy="80" fill="#ffb4a4" r="4"></circle>
+<circle cx="210" cy="120" fill="#ffb4a4" r="4"></circle>
+<circle cx="295" cy="130" fill="#ffb4a4" r="4"></circle>
+<circle cx="380" cy="110" fill="#ffb4a4" r="4"></circle>
+<circle cx="465" cy="42" fill="#891e07" r="6" stroke="#ffb4a4" stroke-width="2"></circle>
+<circle cx="550" cy="55" fill="#ffb4a4" r="4"></circle>
+<circle cx="635" cy="125" fill="#ffb4a4" r="4"></circle>
+</svg>
+<div class="absolute top-2 left-[62%] -translate-x-1/2 bg-secondary-container text-secondary-fixed px-2 py-1 rounded shadow-md flex items-center gap-1 font-label-numeric-sm text-label-numeric-sm">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>Pico 20:30h: 14.8m (31 tickets)</span>
+</div>
+</div>
+<div class="flex justify-between items-center px-4 font-label-numeric-sm text-label-numeric-sm text-on-surface-variant pt-2 border-t-0">
+<span>13:00</span>
+<span>14:00 (Alm.)</span>
+<span>15:00</span>
+<span>18:00</span>
+<span>19:00</span>
+<span class="text-primary font-bold">20:00 (Cena)</span>
+<span class="text-primary font-bold">21:00</span>
+<span>22:00</span>
+</div>
+</div>
+</div>
+<!-- SEGMENTACIÓN DE ENTREGA -->
+<div class="xl:col-span-4 bg-surface-container rounded-xl p-space-lg flex flex-col justify-between shadow-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Distribución de Espera KDS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SLA de entrega sobre 142 tickets</span>
+</div>
+<div class="flex flex-col gap-space-md my-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-on-surface">&lt; 10 min (Inmediato)</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">64% (91)</span>
+</div>
+<div class="w-full h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-on-surface">10 - 15 min (Estándar Parrilla)</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary-container font-bold">32% (46)</span>
+</div>
+<div class="w-full h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-on-surface">&gt; 15 min (Alerta / Demora)</span>
+<span class="font-label-numeric-md text-label-numeric-md text-secondary font-bold">4% (5)</span>
+</div>
+<div class="w-full h-3 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 4%"></div>
+</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Meta General:</span>
+<span class="font-label-numeric-md text-label-numeric-md text-primary font-bold">96.0% en SLA Aprobado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 3: INCIDENTES Y TRAZABILIDAD (PESTAÑA DE RESOLUCIÓN Y AUDITORÍA) -->
+<div class="hidden flex-col gap-space-lg" id="tab-content-incidentes">
+<div class="bg-surface-container rounded-xl p-space-lg flex flex-col gap-space-md shadow-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">report_problem</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Registro de Desvíos &amp; Quiebres Operativos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Auditoría en vivo de comandas demoradas y reposición en mise en place</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-space-md py-1 rounded-lg bg-surface-container-low text-primary font-label-caps text-label-caps uppercase font-bold">3 Casos Resueltos Hoy</span>
+</div>
+</div>
+<!-- TABLA DE TRAZABILIDAD -->
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase">
+<th class="py-space-md px-space-md">Hora</th>
+<th class="py-space-md px-space-md">Comanda</th>
+<th class="py-space-md px-space-md">Mesa / Canal</th>
+<th class="py-space-md px-space-md">Estación</th>
+<th class="py-space-md px-space-md">Motivo Registrado</th>
+<th class="py-space-md px-space-md text-right">Tiempo</th>
+<th class="py-space-md px-space-md">Solución Inmediata</th>
+<th class="py-space-md px-space-md text-center">Estado</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">20:32</td>
+<td class="py-space-md px-space-md font-label-numeric-sm text-label-numeric-sm text-primary font-bold">#COM-9410</td>
+<td class="py-space-md px-space-md"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-bold">Mesa 14</span></td>
+<td class="py-space-md px-space-md"><span class="text-secondary font-bold">Parrilla Central</span></td>
+<td class="py-space-md px-space-md text-on-surface">Bife Ancho solicitado a término bien cocido (temperatura interna alta).</td>
+<td class="py-space-md px-space-md text-right font-label-numeric-md text-label-numeric-md text-secondary font-bold">18m 10s</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Aviso preventivo emitido al mozo para cliente en mesa.</td>
+<td class="py-space-md px-space-md text-center"><span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps uppercase font-bold">Resuelto</span></td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors bg-surface-container-low/40">
+<td class="py-space-md px-space-md font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">19:15</td>
+<td class="py-space-md px-space-md font-label-numeric-sm text-label-numeric-sm text-primary font-bold">#DEL-401</td>
+<td class="py-space-md px-space-md"><span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold">Delivery App</span></td>
+<td class="py-space-md px-space-md"><span class="text-primary font-bold">Horno 01</span></td>
+<td class="py-space-md px-space-md text-on-surface">Pico simultáneo imprevisto de 8 pollos enteros corporativos.</td>
+<td class="py-space-md px-space-md text-right font-label-numeric-md text-label-numeric-md text-secondary font-bold">16m 40s</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Activación de Horno 02 auxiliar y soporte de trozado rápido.</td>
+<td class="py-space-md px-space-md text-center"><span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps uppercase font-bold">Resuelto</span></td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md font-label-numeric-sm text-label-numeric-sm text-on-surface font-bold">21:05</td>
+<td class="py-space-md px-space-md font-label-numeric-sm text-label-numeric-sm text-primary font-bold">#COM-9488</td>
+<td class="py-space-md px-space-md"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-bold">Mesa 03</span></td>
+<td class="py-space-md px-space-md"><span class="text-tertiary font-bold">Guarniciones</span></td>
+<td class="py-space-md px-space-md text-on-surface">Falta de stock precocido de camote glaseado en mise en place.</td>
+<td class="py-space-md px-space-md text-right font-label-numeric-md text-label-numeric-md text-secondary font-bold">15m 25s</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Reposición rápida desde cámara de pre-elaborados por sous chef.</td>
+<td class="py-space-md px-space-md text-center"><span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-caps text-label-caps uppercase font-bold">Resuelto</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+</div>
+<script>
+  // Micro-interacción: Notificación visual al exportar reporte
+  document.getElementById('btn-export-kds')?.addEventListener('click', function() {
+    const btn = this;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Generando Reporte KDS...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Reporte Generado con Éxito';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }, 2000);
+    }, 1200);
+  });
+
+  // Micro-interacción: Feedback al actualizar datos
+  document.getElementById('btn-refresh')?.addEventListener('click', function() {
+    const icon = this.querySelector('.material-symbols-outlined');
+    if (icon) {
+      icon.classList.add('animate-spin');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+      }, 1000);
+    }
+  });
+</script>
+<script src="js/cocina-dashboard.js?v=1"></script>
+</main></div></body></html>
