@@ -1,5 +1,5 @@
 Base URL del servidor: http://localhost:8083/api ( se puede cambiar el 8083 , 8084 por los servidores....)
-.\mvnw spring-boot:run
+RUN ->  .\mvnw spring-boot:run
 
 
 MESAS
