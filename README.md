@@ -71,6 +71,63 @@ Como parte del desarrollo y validación de los servicios backend en Spring Boot 
 <div align="center" style="margin-top: 10px;">
   <img src="./trabajo-antes-backend/prueba5.png" width="45%" alt="Prueba Endpoint 5" />
 </div>
+
+---
+
+## 🖥️ Evidencia Visual de Pantallas e Interfaz (Frontend)
+
+Se desarrollaron y validaron 14 pantallas interactivas alineadas a la arquitectura visual táctil (*Stitch UI Design*) para cubrir los flujos de administración, salón y cocina:
+
+<div align="center">
+  <img src="./pruebas-frontend/prueba1.1.png" width="45%" alt="Pantalla 1" />
+  <img src="./pruebas-frontend/prueba1.2.png" width="45%" alt="Pantalla 2" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.3.png" width="45%" alt="Pantalla 3" />
+  <img src="./pruebas-frontend/prueba1.4.png" width="45%" alt="Pantalla 4" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.5.png" width="45%" alt="Pantalla 5" />
+  <img src="./pruebas-frontend/prueba1.6.png" width="45%" alt="Pantalla 6" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.7.png" width="45%" alt="Pantalla 7" />
+  <img src="./pruebas-frontend/prueba1.8.png" width="45%" alt="Pantalla 8" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.9.png" width="45%" alt="Pantalla 9" />
+  <img src="./pruebas-frontend/prueba1.10.png" width="45%" alt="Pantalla 10" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.11.png" width="45%" alt="Pantalla 11" />
+  <img src="./pruebas-frontend/prueba1.12.png" width="45%" alt="Pantalla 12" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.13.png" width="45%" alt="Pantalla 13" />
+  <img src="./pruebas-frontend/prueba1.14.png" width="45%" alt="Pantalla 14" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.15.png" width="45%" alt="Pantalla 15" />
+  <img src="./pruebas-frontend/prueba1.16.png" width="45%" alt="Pantalla 16" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.17.png" width="45%" alt="Pantalla 17" />
+  <img src="./pruebas-frontend/prueba1.18.png" width="45%" alt="Pantalla 18" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./pruebas-frontend/prueba1.19.png" width="45%" alt="Pantalla 19" />
+  <img src="./pruebas-frontend/prueba1.20.png" width="45%" alt="Pantalla 20" />
+</div>
+
 ---
 
 ## 🛠️ Instalación y Puesta en Marcha
