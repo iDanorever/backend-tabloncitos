@@ -1,3 +1,24 @@
+<div align="center">
+
+  <!-- Tecnologías Principales -->
+  <img src="https://img.shields.io/badge/Java-17-%23ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Spring_Boot-3.x-%236DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/MySQL-8.0-%234479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  
+  <!-- Frontend & Estilos -->
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+
+  <!-- Herramientas y Despliegue -->
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven">
+
+</div>
+
+<br>
+
 # 🍗 Tabloncitos — Sistema de Gestión de Restaurante & KDS
 
 **Tabloncitos** es un sistema de gestión integral de alta fidelidad para restaurantes de pollos y parrillas, diseñado bajo una arquitectura limpia y táctil. Su objetivo principal es maximizar la eficiencia operativa conectando en tiempo real al **administrador**, los **mozos** y la **cocina**.
