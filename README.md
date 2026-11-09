@@ -82,3 +82,7 @@ Como parte del desarrollo y validación de los servicios backend en Spring Boot 
    ```bash
    git clone [https://github.com/iDanorever/Tabloncitos.git](https://github.com/iDanorever/Tabloncitos.git)
    cd Tabloncitos
+   
+2. **RUN**
+    ```bash
+    .\mvnw spring-boot:run
