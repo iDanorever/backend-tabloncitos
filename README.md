@@ -88,9 +88,6 @@ Como parte del desarrollo y validación de los servicios backend en Spring Boot 
   <img src="./trabajo-antes-backend/prueba4.png" width="45%" alt="Prueba Endpoint 4" />
 </div>
 
-<div align="center" style="margin-top: 10px;">
-  <img src="./trabajo-antes-backend/prueba5.png" width="45%" alt="Prueba Endpoint 5" />
-</div>
 
 ---
 
