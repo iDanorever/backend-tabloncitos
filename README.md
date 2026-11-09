@@ -48,6 +48,25 @@ El sistema maneja una arquitectura de pedidos en esquema **Maestro / Detalle** y
 * **16. Cola de Cocina General (KDS):** Pantalla operativa para cocineros con comandas organizadas por tiempo de espera (alertas SLA), control táctil por ítem (`Pendiente`, `En Cocción` / `En Fuego`, `Listo`) y despacho directo hacia el pasaplatos de salón.
 * **19. Dashboard de Rendimiento de Cocina:** Panel analítico para monitorear tiempos promedio de salida, mermas e incidencias de producción.
 
+## 🔌 Pruebas de Endpoints y Backend (API REST)
+
+Como parte del desarrollo y validación de los servicios backend en Spring Boot (con conexión a MySQL/MariaDB), se documentaron y probaron las rutas principales de consultas e inserciones (`GET`/`POST`).
+
+| Documentación de Endpoints | Evidencia de Pruebas Postman / Consola |
+| :---: | :---: |
+| [Ver Documentación txt](./trabajo-antes-backend/Documentacion_Endpoints.txt) | Pruebas de conectividad y respuestas JSON |
+
+### Capturas de Pruebas:
+
+<div align="center">
+  <img src="./trabajo-antes-backend/prueba1.png" width="45%" alt="Prueba Endpoint 1" />
+  <img src="./trabajo-antes-backend/prueba2.png" width="45%" alt="Prueba Endpoint 2" />
+</div>
+
+<div align="center" style="margin-top: 10px;">
+  <img src="./trabajo-antes-backend/prueba3.png" width="45%" alt="Prueba Endpoint 3" />
+  <img src="./trabajo-antes-backend/prueba4.png" width="45%" alt="Prueba Endpoint 4" />
+</div>
 ---
 
 ## 🛠️ Instalación y Puesta en Marcha
