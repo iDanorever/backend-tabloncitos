@@ -1,0 +1,53 @@
+Base URL del servidor: http://localhost:8083/api ( se puede cambiar el 8083 , 8084 por los servidores....)
+.\mvnw spring-boot:run
+
+
+MESAS
+-----------------------
+
+GET  |  ../api/mesas               |  ver las mesas del restaurante que tengo
+                                   |  los estadiso de las mesas esta en LIBRE, OCUPADA, CUENTA_PEDIDA(etc)
+-----------------------
+
+
+
+PAGAR PEDIDO Y LIBERAR MESA
+-----------------------
+
+PUT  |   ../api/pedidos/{id de mesa}/pagar (ejemplo ../api/pedidos/1/pagar)   | cierra la cuenta del pedido  a estado
+                                                                               | PAGADO y liberado de manera auto. (LIBRE)
+-----------------------
+
+
+
+
+MODULO DE PEDIDOS
+-----------------------
+
+POST  | ../api/pedidos             |  Registrar una orden maestro-detalle, calcula el IGV(18%) 
+                                   |  cambia de forma automatica por mesa asiciada a estado que se encuentra
+-----------------------
+body:
+
+{
+  "pedido": {
+    "mesa": { "id": 1 },
+    "mozo": { "id": 1 },
+    "usuario": { "id": 1 },
+    "tipoConsumo": "EN_MESA"
+  },
+  "detalles": [
+    {
+      "producto": { "id": 1 },
+      "cantidad": 1
+    },
+    {
+      "producto": { "id": 5 },
+      "cantidad": 1
+    }
+  ]
+}
+
+--------------------------
+
+
