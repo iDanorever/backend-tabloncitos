@@ -299,7 +299,7 @@
 
                 <!-- Botones de Acción -->
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-xs">
-                    <a class="h-12 px-space-lg rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-body-md text-body-md font-semibold transition-colors flex items-center justify-center gap-space-xs text-decoration-none" href="index.html">
+                    <a class="h-12 px-space-lg rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-body-md text-body-md font-semibold transition-colors flex items-center justify-center gap-space-xs text-decoration-none" href="login.html">
                         <span class="material-symbols-outlined text-[18px]">close</span>
                         <span>CANCELAR Y SALIR</span>
                     </a>
@@ -494,7 +494,7 @@
             sessionStorage.removeItem('emp_recovery_email');
 
             setTimeout(() => {
-              window.location.href = data.next || 'index.html';
+              window.location.href = data.next || 'login.html';
             }, 2000);
           })
           .catch(err => {
