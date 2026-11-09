@@ -100,52 +100,61 @@ Se desarrollaron y validaron 14 pantallas interactivas alineadas a la arquitectu
 
 <div align="center">
   <img src="./pruebas-frontend/prueba1.1.png" width="45%" alt="Pantalla 1" />
-  <img src="./pruebas-frontend/prueba1.2.png" width="45%" alt="Pantalla 2" />
+  <img src="./pruebas-frontend/prueba1.21.png" width="45%" alt="Pantalla 2" />
+</div>
+
+<div align="center">
+  <img src="./pruebas-frontend/prueba1.22.png" width="45%" alt="Pantalla 3" />
+  <img src="./pruebas-frontend/prueba1.23.png" width="45%" alt="Pantalla 4" />
+</div>
+
+<div align="center">
+  <img src="./pruebas-frontend/prueba1.2.png" width="45%" alt="Pantalla 5" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.3.png" width="45%" alt="Pantalla 3" />
-  <img src="./pruebas-frontend/prueba1.4.png" width="45%" alt="Pantalla 4" />
+  <img src="./pruebas-frontend/prueba1.3.png" width="45%" alt="Pantalla 6" />
+  <img src="./pruebas-frontend/prueba1.4.png" width="45%" alt="Pantalla 7" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.5.png" width="45%" alt="Pantalla 5" />
-  <img src="./pruebas-frontend/prueba1.6.png" width="45%" alt="Pantalla 6" />
+  <img src="./pruebas-frontend/prueba1.5.png" width="45%" alt="Pantalla 8" />
+  <img src="./pruebas-frontend/prueba1.6.png" width="45%" alt="Pantalla 9" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.7.png" width="45%" alt="Pantalla 7" />
-  <img src="./pruebas-frontend/prueba1.8.png" width="45%" alt="Pantalla 8" />
+  <img src="./pruebas-frontend/prueba1.7.png" width="45%" alt="Pantalla 10" />
+  <img src="./pruebas-frontend/prueba1.8.png" width="45%" alt="Pantalla 11" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.9.png" width="45%" alt="Pantalla 9" />
-  <img src="./pruebas-frontend/prueba1.10.png" width="45%" alt="Pantalla 10" />
+  <img src="./pruebas-frontend/prueba1.9.png" width="45%" alt="Pantalla 12" />
+  <img src="./pruebas-frontend/prueba1.10.png" width="45%" alt="Pantalla 13" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.11.png" width="45%" alt="Pantalla 11" />
-  <img src="./pruebas-frontend/prueba1.12.png" width="45%" alt="Pantalla 12" />
+  <img src="./pruebas-frontend/prueba1.11.png" width="45%" alt="Pantalla 14" />
+  <img src="./pruebas-frontend/prueba1.12.png" width="45%" alt="Pantalla 15" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.13.png" width="45%" alt="Pantalla 13" />
-  <img src="./pruebas-frontend/prueba1.14.png" width="45%" alt="Pantalla 14" />
+  <img src="./pruebas-frontend/prueba1.13.png" width="45%" alt="Pantalla 16" />
+  <img src="./pruebas-frontend/prueba1.14.png" width="45%" alt="Pantalla 17" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.15.png" width="45%" alt="Pantalla 15" />
-  <img src="./pruebas-frontend/prueba1.16.png" width="45%" alt="Pantalla 16" />
+  <img src="./pruebas-frontend/prueba1.15.png" width="45%" alt="Pantalla 18" />
+  <img src="./pruebas-frontend/prueba1.16.png" width="45%" alt="Pantalla 19" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.17.png" width="45%" alt="Pantalla 17" />
-  <img src="./pruebas-frontend/prueba1.18.png" width="45%" alt="Pantalla 18" />
+  <img src="./pruebas-frontend/prueba1.17.png" width="45%" alt="Pantalla 20" />
+  <img src="./pruebas-frontend/prueba1.18.png" width="45%" alt="Pantalla 21" />
 </div>
 
 <div align="center" style="margin-top: 10px;">
-  <img src="./pruebas-frontend/prueba1.19.png" width="45%" alt="Pantalla 19" />
-  <img src="./pruebas-frontend/prueba1.20.png" width="45%" alt="Pantalla 20" />
+  <img src="./pruebas-frontend/prueba1.19.png" width="45%" alt="Pantalla 22" />
+  <img src="./pruebas-frontend/prueba1.20.png" width="45%" alt="Pantalla 23" />
 </div>
 
 ---
