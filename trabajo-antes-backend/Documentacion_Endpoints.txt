@@ -1,4 +1,6 @@
 Base URL del servidor: http://localhost:8083/api ( se puede cambiar el 8083 , 8084 por los servidores....)
+
+ESTAS PRUEBAS SOLO SE HACEN EN el archivo .zip ( backend-tabloncitos-main.zip)
 RUN ->  .\mvnw spring-boot:run
 
 
