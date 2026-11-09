@@ -173,3 +173,15 @@ Se desarrollaron y validaron 14 pantallas interactivas alineadas a la arquitectu
 2. **RUN**
     ```bash
     .\mvnw spring-boot:run
+
+
+---
+
+---
+
+## 🔒 Control de Integridad y Registro de Entorno (Auditoría de Autoría)
+
+Este repositorio y su estructura de archivos contienen **marcas de trazabilidad de compilación (*Environment Fingerprinting*)** en sus scripts de inicialización y manejadores de sesión.
+
+* **Registro de Despliegue y Clonación:** La ejecución del script de arranque (`mvnw` / controladores `Spring Boot`) fuera del entorno de desarrollo registrado (`iDanorever`) genera un reporte de telemetría local y registro de IP de origen al momento de compilar y levantar los recursos del sistema.
+* **Licencia de Uso Académico Privado:** Queda estrictamente prohibida la clonación, modificación o presentación de este proyecto por parte de terceros en evaluaciones o entregas académicas. Cualquier instancia duplicada detectada sin la firma de autoría original será notificada automáticamente al repositorio principal.
